@@ -637,6 +637,7 @@
                     var rutaPortada = proyecto["portada"];
                     var tipo = proyecto["tipo proyecto"];
                     var subtemas = proyecto["subTema"];
+                    var id = proyecto["id"];
                     var destacado = proyecto.hasOwnProperty("destacado");
                     var verDestacado = "";
                     var displayNone = "";
@@ -651,7 +652,7 @@
 					<div class="hover-detail">
 						<div class="links">
 							<a href="images/proyectos/${rutaPortada}" class="zoom" title="Zoom"><i class="fa fa-search"></i></a>	
-							<a href="#" title="Los detalles en construccion"><i class="fa fa-link"></i></a>
+							<a href="proyectos/detalles.html?id=${id}" title="Los detalles en construccion"><i class="fa fa-link"></i></a>
 							</div>
 						<div class="project-title">
 							<h3>${titulo}</h3>
