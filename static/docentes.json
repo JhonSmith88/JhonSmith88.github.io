@@ -1,0 +1,499 @@
+[
+  {
+    "Titulo": "MGS",
+    "Nombre": "EDWIN SÁNCHEZ",
+    "Area": "Matematicas",
+    "Id": "CD01",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "FABIAN AÑAZCO",
+    "Area": "Matematicas",
+    "Id": "CD02",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "ROBERT ROMERO",
+    "Area": "Matematicas",
+    "Id": "CD03",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MAGALY LOAYZA",
+    "Area": "Matematicas",
+    "Id": "CD04",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "PAULO ROCHA",
+    "Area": "Matematicas",
+    "Id": "CD05",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MAYRA ROMERO",
+    "Area": "Matematicas",
+    "Id": "CD06",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "SANTIAGO CAMPOVERDE",
+    "Area": "Matematicas",
+    "Id": "CD07",
+    "sexo": "M",
+    "directivo": "INSPECTOR GENERAL",
+    "posicion": 4
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MARLY LOAYZA",
+    "Area": "Matematicas",
+    "Id": "CD08",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "JENNY FEIJOO",
+    "Area": "Matematicas",
+    "Id": "CD09",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MIRIAN MATAMOROS",
+    "Area": "Matematicas",
+    "Id": "CD10",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MARITZA CUENCA",
+    "Area": "Matematicas",
+    "Id": "CD11",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MARIA M CARRIÓN",
+    "Area": "Lengua y literatura",
+    "Id": "CD12",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "DEBORA PACHECO",
+    "Area": "Lengua y literatura",
+    "Id": "CD13",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "JHONNY NAVARRETE",
+    "Area": "Lengua y literatura",
+    "Id": "CD14",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "SOLEDAD ARCENTALES",
+    "Area": "Lengua y literatura",
+    "Id": "CD15",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "REVECA RODRIGUEZ",
+    "Area": "Lengua y literatura",
+    "Id": "CD16",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "PATRICIA ARCENTALES",
+    "Area": "Lengua y literatura",
+    "Id": "CD17",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "PATRICIA FEIJOO ",
+    "Area": "Lengua y literatura",
+    "Id": "CD18",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "EDITA PALADINES ROMERO ",
+    "Area": "Lengua y literatura",
+    "Id": "CD19",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "ROSA TOLEDO",
+    "Area": "Lengua y literatura",
+    "Id": "CD20",
+    "sexo": "F",
+    "directivo":"SUBINSPECTORA",
+    "posicion": 3
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "DANIELA MALDONADO",
+    "Area": "EE.SS",
+    "Id": "CD21",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "LILIA  MACAS",
+    "Area": "EE.SS",
+    "Id": "CD22",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MARIA ELENA POGO",
+    "Area": "EE.SS",
+    "Id": "CD23",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "CATALINA LOAYZA",
+    "Area": "EE.SS",
+    "Id": "CD24",
+    "sexo": "F"
+  },
+  { 
+    "Titulo": "LIC", 
+    "Nombre": "ROSA FEJOO", 
+    "Area": "EE.SS", 
+    "Id": "CD25",
+    "sexo": "F" 
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "LORENA AÑAZCO",
+    "Area": "EE.SS",
+    "Id": "CD26",
+    "sexo": "F",
+    "directivo":"VICERRECTORA DEL BGU",
+    "posicion": 5
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MAURICIO  ROMERO ",
+    "Area": "EE.SS",
+    "Id": "CD27",
+    "sexo": "M"
+  },
+  { 
+    "Titulo": "ING", 
+    "Nombre": "JENNY AYALA ", 
+    "Area": "EE.SS", 
+    "Id": "CD28",
+    "sexo": "F" 
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "SANDRA ROMERO ",
+    "Area": "EE.SS",
+    "Id": "CD29",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "LARRY CABRERA",
+    "Area": "CC.NN",
+    "Id": "CD30",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "AUGUSTO LOJAN",
+    "Area": "CC.NN",
+    "Id": "CD31",
+    "sexo": "M",
+    "directivo":"VICERRECTOR EGBS",
+    "posicion": 2
+  },
+  {
+    "Titulo": "BOQ",
+    "Nombre": "JOMAYRA JULIANA HERRERA ",
+    "Area": "CC.NN",
+    "Id": "CD32",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MARIBEL MATAMOROS ",
+    "Area": "CC.NN",
+    "Id": "CD33",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MARCO  ROMERO",
+    "Area": "CC.NN",
+    "Id": "CD34",
+    "sexo": "M",
+    "directivo": "RECTOR",
+    "whatsapp":"+593 983268527",
+    "posicion": 1
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FRANCISCO JAVIER ESPINOZA LEÓN ",
+    "Area": "CC.NN",
+    "Id": "CD35",
+    "sexo": "M"
+  },
+  { 
+    "Titulo": "ING", 
+    "Nombre": "MANUEL VELEZ", 
+    "Area": "CC.NN", 
+    "Id": "CD36",
+    "sexo": "M" 
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "MERWIN AGUILA",
+    "Area": "CC.NN",
+    "Id": "CD37",
+    "sexo": "F"
+  },
+  { 
+    "Titulo": "ING", 
+    "Nombre": "RUFO FEIJOO", 
+    "Area": "CC.NN", 
+    "Id": "CD38",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "JOSÉ AGUILAR",
+    "Area": "CC.NN",
+    "Id": "CD39",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FERNANDO AGUIRRE",
+    "Area": "CC.NN",
+    "Id": "CD40",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "YESSENIA SEDAMANOS ",
+    "Area": "CC.NN",
+    "Id": "CD41",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "DIEGO ZAMBRANO ",
+    "Area": "CC.NN",
+    "Id": "CD42",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FANNY PIEDRA ",
+    "Area": "CC.NN",
+    "Id": "CD43",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "OSCAR AÑAZCO ",
+    "Area": "Inglés",
+    "Id": "CD44",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "LUSMILA TAPIA ",
+    "Area": "Inglés",
+    "Id": "CD45",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MONICA ROMERO ",
+    "Area": "Inglés",
+    "Id": "CD46",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "BETTY VALAREZO ",
+    "Area": "Inglés",
+    "Id": "CD47",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "VICTOR MALDONADO ",
+    "Area": "Inglés",
+    "Id": "CD48",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "MELVA GONZAGA ",
+    "Area": "Inglés",
+    "Id": "CD49",
+    "sexo": "F"
+  },
+  { 
+    "Titulo": "LIC", 
+    "Nombre": "KENNY LUNA ", 
+    "Area": "EE.FF", 
+    "Id": "CD50",
+    "sexo": "M" 
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FABRICIO VALAREZO",
+    "Area": "EE.FF",
+    "Id": "CD51",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "JOSÉ LUIS AÑAZCO",
+    "Area": "EE.FF",
+    "Id": "CD52",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "PAULINA ORDOÑEZ",
+    "Area": "EE.FF",
+    "Id": "CD53",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "FANNY JIMÉNEZ ",
+    "Area": "Agropecuaria",
+    "Id": "CD54",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "DR",
+    "Nombre": "ALVARO RAMÍREZ  ",
+    "Area": "Agropecuaria",
+    "Id": "CD55",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "HOLGER ALCIVAR TORRES YANEZ",
+    "Area": "Agropecuaria",
+    "Id": "CD56",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "DENIS ROMERO",
+    "Area": "Mecánica",
+    "Id": "CD57",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FERNANDO APOLO",
+    "Area": "Mecánica",
+    "Id": "CD58",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "FERNANDO PACHECO",
+    "Area": "Mecánica",
+    "Id": "CD59",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "TEC",
+    "Nombre": "LUIS LOAYZA",
+    "Area": "Mecánica",
+    "Id": "CD60",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "TANIA CARBAY ",
+    "Area": "Cultura Estetica",
+    "Id": "CD61",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "DUNIA PEÑAFIEL ",
+    "Area": "Cultura Estetica",
+    "Id": "CD62",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "ABG",
+    "Nombre": "ISSIA SAMANIEGO ",
+    "Area": "Interdisciplinar",
+    "Id": "CD63",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "ADRIAN URGILES",
+    "Area": "Interdisciplinar",
+    "Id": "CD64",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "LADY VACA ",
+    "Area": "Interdisciplinar",
+    "Id": "CD65",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "ING",
+    "Nombre": "WALTER ROLDAN",
+    "Area": "Interdisciplinar",
+    "Id": "CD66",
+    "sexo": "M"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "AMPARO SOFÍA CEVALLOS CARRIÓN",
+    "Area": "dece",
+    "Id": "CD67",
+    "sexo": "F",
+    "cargo": "Coordinadora DECE" 
+  },
+  {
+    "Titulo": "Psicól",
+    "Nombre": "ALFOSO VINICIO ROMERO CHUCHUCA",
+    "Area": "dece",
+    "Id": "CD68",
+    "sexo": "M",
+    "cargo": "Analista DECE"
+  },
+  {
+    "Titulo": "LIC",
+    "Nombre": "FLOR INÉS LOAYZA ESCANDON",
+    "Area": "dece",
+    "Id": "CD69",
+    "sexo": "F",
+    "cargo": "Analista DECE"
+  }
+]

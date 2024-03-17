@@ -1,0 +1,312 @@
+[
+  {
+    "Frase": "La lectura es el camino hacia la libertad intelectual y el progreso personal",
+    "Autor": "Juan Montalvo",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un pueblo educado es un pueblo fuerte y capaz de superar cualquier desafío",
+    "Autor": "Eloy Alfaro",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "Los libros son faros que iluminan el camino hacia un futuro mejor",
+    "Autor": "Benjamín Carrión",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación es la base de la sociedad y la clave para alcanzar el desarrollo sostenible",
+    "Autor": "José Joaquín de Olmedo",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "La lectura nos permite descubrir nuevos mundos y ampliar nuestra perspectiva sobre la vida",
+    "Autor": "Jorge Enrique Adoum",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un libro es un tesoro que guarda conocimiento y sabiduría para aquellos que tienen la valentía de abrirlo",
+    "Autor": "Alfredo Pareja Diezcanseco",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación es el arma más poderosa que podemos ofrecer a las generaciones futuras",
+    "Autor": "Nicolás Infante Díaz",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "Los libros son el alimento del alma, nutren nuestra mente y fortalecen nuestro espíritu",
+    "Autor": "Iván Égüez",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es el mejor vehículo para viajar a través del tiempo y el espacio sin moverse del lugar",
+    "Autor": "María Augusta Urrutia",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Los libros son el mejor amigo del hombre; no necesitan electricidad, no necesitan baterías y no necesitan wifi",
+    "Autor": "Jorge Luis Borges ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación es el arma más poderosa que puedes usar para cambiar el mundo",
+    "Autor": "Nelson Mandela ",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "La lectura es una herramienta fundamental para la vida, es la puerta que nos abre al conocimiento y a la sabiduría",
+    "Autor": "Gabriela Mistral ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un pueblo educado es un pueblo libre",
+    "Autor": "Simón Bolívar ",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "Los libros son compañeros, maestros, tesoros; son el puente entre el pasado y el futuro",
+    "Autor": "Isabel Allende ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es la llave que abre las puertas de la imaginación y el conocimiento",
+    "Autor": "Rubén Darío ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación es el único camino para la verdadera emancipación",
+    "Autor": "José Martí ",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "Los libros son como un espejo, si un mono se mira en él, no puede esperar ver un ángel",
+    "Autor": "Carlos Fuentes ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es una conversación con los mejores pensadores del mundo",
+    "Autor": "Eduardo Galeano ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un libro es un sueño que tienes en tus manos",
+    "Autor": "Jorge Amado ",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es una herramienta, un vehículo hacia una vida mejor",
+    "Autor": "Laura Bush",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un libro es un regalo que puedes abrir una y otra vez",
+    "Autor": "Garrison Keillor",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Los libros son los pilares de la civilización, la base de la educación y la fuente de conocimiento",
+    "Autor": "Horace Mann",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es esencial para quienes aspiran a liderar una vida de significado",
+    "Autor": "Barack Obama",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación es la clave para transformar la mente ordinaria en extraordinaria",
+    "Autor": "Harriet Ann Jacobs",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "Los libros son los amigos más silenciosos y constantes; siempre están ahí cuando los necesitas",
+    "Autor": "Anonymous",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Los libros abren puertas a nuevos mundos, amplían horizontes y alimentan la imaginación",
+    "Autor": "Anonymous",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La educación no es solo acumular información, sino aprender a pensar de forma crítica y creativa",
+    "Autor": "Martin Luther King Jr",
+    "Tipo": "educacion"
+  },
+  {
+    "Frase": "La lectura nos permite viajar a través del tiempo y el espacio sin movernos de nuestro lugar",
+    "Autor": "Ana María Matute",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un libro puede ser un gran amigo, un consejero sabio y un compañero fiel a lo largo de la vida",
+    "Autor": "Anonymous",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "La lectura es a la mente lo que el ejercicio es al cuerpo",
+    "Autor": "Joseph Addison",
+    "Tipo": "lectura"
+  },
+  {
+    "Frase": "Un buen maestro puede cambiar el curso de la historia de un niño",
+    "Autor": "Adaptación de la película \"El Club de los Poetas Muertos\"",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "Los maestros abren la puerta, pero debes entrar por ti mismo",
+    "Autor": "Proverbio Chino",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "Un buen profesor puede convertir la dificultad en facilidad, la confusión en claridad y el desinterés en entusiasmo",
+    "Autor": "William Arthur Ward",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "La educación no es preparación para la vida; la educación es la vida en sí misma",
+    "Autor": "John Dewey",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "El profesor trabaja para la eternidad; nunca se sabe dónde termina su influencia",
+    "Autor": "Henry Adams",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "El arte supremo del maestro es despertar el placer de la expresión creativa y el conocimiento",
+    "Autor": "Albert Einstein",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "El maestro que intenta enseñar sin inspirar en el alumno el deseo de aprender está martillando en el hierro frío",
+    "Autor": "Horace Mann",
+    "Tipo": "docentes"
+  },
+  {
+    "Frase": "La agricultura es la madre de todas las artes, y en verdad es la madre de todas las ciencias",
+    "Autor": "Samuel Johnson",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "La agricultura es la profesión propia del sabio, la más adecuada al sencillo y la ocupación más digna para todo hombre libre",
+    "Autor": "Cicerón",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "Un medio ambiente no puede existir fuera de la naturaleza, y así la agricultura deberá ser el fundamento para vivir",
+    "Autor": "Masanobu Fukuoka",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "De todos los oficios lucrativos, ninguno mejor ni más productivo, ni más agradable ni más digno de un hombre libre, que la agricultura",
+    "Autor": "Cicerón",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "La Agronomía es la ciencia que convierte el sol y la lluvia en comida",
+    "Autor": "Jim Gaffigan",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "La agronomía es la intersección entre la ciencia y el arte, donde la creatividad se une con el conocimiento para cultivar un futuro mejor",
+    "Autor": "Anonymous",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "La tierra nos da lo que necesitamos para sobrevivir, pero es la agronomía la que nos enseña a aprovechar sus regalos de manera responsable y sabia",
+    "Autor": "Anonymous",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "La agronomía es la madre de todas las industrias, porque sin ella, no habría comida, fibra ni combustible para sostener la civilización humana",
+    "Autor": "Anonymous",
+    "Tipo": "agropecuaria"
+  },
+  {
+    "Frase": "Un poco de ciencia aleja de Dios, pero mucha ciencia devuelve a Él",
+    "Autor": "Louis Pasteur",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia es la progresiva aproximación del hombre al mundo real",
+    "Autor": "Max Planck",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia no sabe de países, porque el conocimiento le pertenece a la humanidad y es la antorcha que ilumina al mundo",
+    "Autor": "Louis Pasteur",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia siempre vale la pena, porque sus descubrimientos, tarde o temprano, siempre se aplican",
+    "Autor": "Albert Einstein",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia es la lengua del universo, y todos los que hablan esa lengua son científicos",
+    "Autor": "Carl Sagan",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia es una forma de conocimiento que se basa en la evidencia y la razón, y es esencial para comprender y mejorar nuestro mundo",
+    "Autor": "Stephen Hawking",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia es la base de nuestra tecnología, y nuestra tecnología es la base de nuestra civilización",
+    "Autor": "Isaac Asimov",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La ciencia es el método que nos permite comprender el mundo, y sin ella, estamos perdidos",
+    "Autor": "Albert Einstein",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La curiosidad es el motor de la ciencia. Por supuesto, nos interesa aplicar la ciencia, pero en esencia, es la curiosidad la que nos motiva",
+    "Autor": "Neil deGrasse Tyson",
+    "Tipo": "ciencias"
+  },
+  {
+    "Frase": "La Mecánica Industrial es la columna vertebral de la producción moderna, donde la precisión y la eficiencia son fundamentales",
+    "Autor": "Henry Ford",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "La industria mecánica es el motor que impulsa la innovación y el progreso tecnológico en todas las áreas de la sociedad",
+    "Autor": "James Watt",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "En la industria mecánica, la precisión es la clave para el éxito; cada milímetro cuenta en la creación de máquinas eficientes",
+    "Autor": "Eli Whitney",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "En la industria mecánica, la creatividad y la innovación son los motores que impulsan el diseño de máquinas que cambian el mundo",
+    "Autor": "Thomas Edison",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "La ingeniería mecánica es el arte de convertir ideas en movimiento, creando máquinas que dan vida a la imaginación",
+    "Autor": "Leonardo da Vinci",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "En la industria mecánica, cada pieza es una pieza clave en el rompecabezas de la tecnología moderna",
+    "Autor": "George Stephenson",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "La industria mecánica es el camino hacia una sociedad más eficiente, más productiva y más justa",
+    "Autor": "John Deere",
+    "Tipo": "mecanizado"
+  },
+  {
+    "Frase": "La industria mecánica es el corazón de la civilización moderna, impulsando el progreso y la innovación",
+    "Autor": "Isaac Newton",
+    "Tipo": "mecanizado"
+  }
+]
