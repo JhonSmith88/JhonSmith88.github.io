@@ -265,7 +265,7 @@
                   height="176"
                   src="images/proyectos/biblioteca-digital.png"
                 />
-                <a href="biblioteca.html">Elaboración del catálogo digital de la biblioteca</a>
+                <a href="proyectos/detalles.html?id=3">Elaboración del catálogo digital de la biblioteca</a>
                 <p>
                   Un grupo de estudiantes de nuestra institución llevó a cabo un proyecto innovador que ha revolucionado la manera en la que se gestiona y accede a la información en su biblioteca.
                 </p>
@@ -317,58 +317,7 @@
               <!-- Widget Categories -->
               <!-- Widget Posts -->
               <aside class="widget widget_posts">
-                <h3 class="widget-title">Ultimas Novedades</h3>
-                <div class="latest-content">
-                  <a title="Post Cover" href="blog-single.html"
-                    ><img
-                      alt="latest-post-1"
-                      width="79"
-                      height="79"
-                      src="images/blog-1-latest-post1.jpg"
-                  /></a>
-                  <h3>
-                    <a
-                      title="Can you tell me how to get how to get"
-                      href="blog-single.html"
-                      >Cosecha de mango en la granja
-                    </a>
-                  </h3>
-                  <span>April 20, 2016</span>
-                </div>
-                <div class="latest-content">
-                  <a title="Post Cover" href="blog-single.html"
-                    ><img
-                      alt="latest-post-2"
-                      width="79"
-                      height="79"
-                      src="images/blog-1-latest-post2.jpg"
-                  /></a>
-                  <h3>
-                    <a
-                      title="On my way where the air is sweet"
-                      href="blog-single.html"
-                      >Cosecha de Tomates en la granja</a
-                    >
-                  </h3>
-                  <span>April 19, 2016</span>
-                </div>
-                <div class="latest-content">
-                  <a title="Post Cover" href="blog-single.html"
-                    ><img
-                      alt="latest-post-3"
-                      width="79"
-                      height="79"
-                      src="images/blog-1-latest-post3.jpg"
-                  /></a>
-                  <h3>
-                    <a
-                      title="The Love Boat soon making another run"
-                      href="blog-single.html"
-                      >presentacion del RIEGO</a
-                    >
-                  </h3>
-                  <span>April 19, 2016</span>
-                </div>
+                <h3 class="widget-title">Ultimos Proyectos</h3>
               </aside>
               <!-- Widget Posts -->
               <!-- Widget Posts -->
@@ -485,16 +434,13 @@
           var filtroAutor;
           var filtroCodigo;
           librosLista = cargarLibros();
-          console.log(librosLista);
           libroPost = librosLista.find(function(elemento) {
             return elemento["ID"].replace(/\s/g, "") === codigo_get;
           });
-          console.log("libro",libroPost);
           var ambito = libroPost["AMBITO"];
           var autores = libroPost["AUTORES"];
           codigo_get = codigo_get.replace(/\s/g, "");
           var codigoEstante = libroPost["CODIGO"][0];
-          console.log(codigoEstante);
           filtroAmbito = obtenerElementosAleatorios(librosLista,5,"AMBITO", ambito);
           filtroAutor = obtenerElementosAleatorios(librosLista,5,"AUTORES", autores);
           filtroCodigo = obtenerElementosAleatorios(librosLista,5,"CODIGO", codigoEstante);
@@ -505,12 +451,62 @@
           librosAleatorios = obtenerElementosAleatorios(librosLista,5,"",""); 
 
           librosAleatorios.map(function(libros){ 
-            $("#libros-recomendados").append(`<li><a href='libros.html?codigo=${libros["CODIGO"].replace(/\s/g, "")}' title='Building'>${libros["TITULO LIBRO"].toLocaleLowerCase()}</a></li>`);
+            $("#libros-recomendados").append(`<li><a href='libros.html?id=${libros["ID"].replace(/\s/g, "")}' title='Building'>${libros["TITULO LIBRO"].toLocaleLowerCase()}</a></li>`);
           });
 
         }
 
-        
+        function mostrarProyectosNuevos(){
+          var archivoProyectos = '../static/proyectos.json';
+            fetch(archivoProyectos)
+            .then(response =>{
+              if(!response.ok){
+                throw new Error('La solicitud no fue exitosa');
+              }
+              return response.json();
+            })
+            .then(datos=>{
+                ordenarProyectosFecha(datos);
+            }).catch(error => {
+              console.error('Ocurrió un error:', error);
+            });
+        }
+
+        function ordenarProyectosFecha(json){
+          var listaOrdenada = json.map(item => {
+            // Desestructurar el objeto y mantener todas las propiedades
+            let { "fecha inicio": fechaInicio, ...restoPropiedades } = item;
+            // Si hay fecha inicio, la convertimos a un objeto Date
+            if (fechaInicio !== "") {
+              var partesFecha = fechaInicio.split('/');
+              fechaInicio = new Date(partesFecha[2], partesFecha[1] - 1, partesFecha[0]); // Año, mes, día
+            }
+            // Retornar un nuevo objeto con la fecha inicio modificada y el resto de las propiedades intactas
+            return {
+                "fecha inicio": fechaInicio,
+                ...restoPropiedades
+            };
+        });
+
+          // Ordenar los elementos por fecha de forma descendente
+          listaOrdenada.sort((a, b) => b.fecha - a.fecha);
+
+          // Agregar elementos sin fecha al final del array ordenado
+          var ultimosPost="";
+          for(i=0;i< 3;i++){
+            if(listaOrdenada[i]["fecha inicio"]){
+              var fecha = listaOrdenada[i]["fecha inicio"];
+              $(".widget_posts").append(`<div class="latest-content">
+                    <a title="${listaOrdenada[i]["tema"]}" href="proyectos/detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" width="79" height="79" src="../images/proyectos/${listaOrdenada[i]["portada"]}"></a>
+                    <h3>
+                      <a title="${listaOrdenada[i]["tema"]}" href="proyectos/detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
+                      </a>
+                    </h3>
+                    <span style="text-transform: capitalize;">${fecha.toLocaleString('es-ES', { month: 'long' })} ${fecha.getDate()},${fecha.getFullYear()}</span>
+                  </div>`);
+            }
+          }
+        }
         
         function mostrarInformacion(){
           var librosLista = cargarLibros();
@@ -519,7 +515,8 @@
           libroPost = librosLista.find(function(elemento) {
             return elemento["ID"].replace(/\s/g, "") === codigo_get;
           });
-          console.log(libroPost);
+          let fechaPublicacion = libroPost["PUBLICACION"];
+          fechaPublicacion = fechaFomart(fechaPublicacion);
           $("#tituloLibro").text(libroPost["TITULO LIBRO"]);
           $("#portada").html(`<center><img src="images/libros/${libroPost["IMAGEN"].replace(/\s/g, "")}" onerror="this.style.display='none';" height="400" style="
               justify-content: center;
@@ -533,6 +530,9 @@
                     <div class="">
                       <a href="biblioteca.html?categoria=${libroPost["AMBITO"]}" title="Categoria"> ${libroPost["AMBITO"]}</a>
                     </div>
+                    <div class='post-comment'>
+                      <a title=' Fecha de publicación'>Publicación: ${fechaPublicacion}</a>
+                      </div>
                     <div class="">
                       <a title="Código">${libroPost["CODIGO"]}</a>
                     </div>`);
@@ -604,11 +604,25 @@
           listaFiltro = datosJSON.filter(function(libro){
             return libro["Tipo"].includes(tipo);
           });
-          console.log(listaFiltro);
           var indice = Math.floor(Math.random() * listaFiltro.length);
           frase = listaFiltro[indice];
     
           $("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
+        }
+
+        function fechaFomart(numeroExcel){
+          if(numeroExcel == ""){
+              return "";
+          }
+          // Convierte el formato de fecha de excel a javascript
+          // Diferencia de días entre la fecha de referencia de Excel y la de JavaScript
+          numeroExcel = parseInt(numeroExcel);
+          var diasDiferencia = 25568; // Esta es la cantidad de días entre el 1 de enero de 1900 y el 1 de enero de 1970
+      
+          // Calcular la fecha
+          var fecha = new Date((numeroExcel - diasDiferencia) * 86400000); // 86400000 = cantidad de milisegundos en un día
+          fecha = `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`; 
+          return fecha;
         }
 		
 
@@ -629,6 +643,7 @@
         recomendarLibros();
         mostrarInformacion();
         escogerFrase();
+        mostrarProyectosNuevos();
       });
 
 
