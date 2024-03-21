@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "titulo": "Revista 60 años",
+    "tema": "Revista 60 añosa",
+    "tipo": "Historia",
+    "subTema": ["Historia Novembrina", "Aniversarios", "Revista"],
+    "autores": [],
+    "fecha inicio": "",
+    "fecha publicacion": "",
+    "descripcion": [
+      { "tipo": "texto", "capitulo": [{ "subtitulo": "", "texto": "" }] }
+    ],
+    "portada": "",
+    "fotografias": [
+      { "tipo": "galeria", "imagenes": [{ "titulo": "", "ruta": "" }] }
+    ],
+    "videos": [{ "titulo": "", "ruta": "" }],
+    "recursos": [{ "titulo": "", "ruta": "" }]
+  }
+]

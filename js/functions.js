@@ -24,7 +24,7 @@
 		var height	=	$(window).height();
 		var heightNav = $("#header").height();
 		/*** set sticky menu ***/
-		if(height <= 700){
+		if(height >= 700){
 			if( scroll >= (heightNav+40) )
 			{	
 				$(".header-section").addClass("navbar-fixed-top animated fadeInDown").delay( 2000 ).fadeIn();
