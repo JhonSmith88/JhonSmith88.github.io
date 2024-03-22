@@ -1,15 +1,15 @@
 [
   {
     "id": "1",
-    "titulo": "Revista 60 años",
-    "tema": "Revista 60 añosa",
-    "tipo": "Historia",
-    "subTema": ["Historia Novembrina", "Aniversarios", "Revista"],
+    "titulo": "",
+    "tema": "",
+    "tipo": "",
+    "subTema": [],
     "autores": [],
     "fecha inicio": "",
     "fecha publicacion": "",
     "descripcion": [
-      { "tipo": "texto", "capitulo": [{ "subtitulo": "", "texto": "" }] }
+      { "tipo": "texto", "contenido": [{ "subtitulo": "", "texto": "" }] }
     ],
     "portada": "",
     "fotografias": [
@@ -17,5 +17,39 @@
     ],
     "videos": [{ "titulo": "", "ruta": "" }],
     "recursos": [{ "titulo": "", "ruta": "" }]
+  },
+  {
+    "id": "2",
+    "titulo": "Revista 60 años",
+    "tema": "Celebrando 60 Años de Historia: La Revista del Colegio 8 de Noviembre",
+    "tipo": "Historia",
+    "subTema": ["Historia Novembrina", "Aniversarios", "Revista"],
+    "autores": [],
+    "fecha inicio": "",
+    "fecha publicacion": "22/03/2024",
+    "descripcion": [
+      {
+        "tipo": "texto",
+        "contenido": [
+          {
+            "subtitulo": "",
+            "texto": "En el marco de un hito histórico para nuestra institución educativa, el Colegio de Bachillerato 8 de Noviembre celebra con orgullo sus 60 años de trayectoria. Como parte de esta celebración tan especial, nos complace presentarles la edición conmemorativa de nuestra revista digital. Esta publicación no solo rinde homenaje a seis décadas de aprendizaje, crecimiento y logros, sino que también refleja el espíritu de comunidad que ha sido fundamental en el desarrollo de nuestro colegio."
+          },
+          {
+            "subtitulo": "La Historia del Colegio y sus Logros Actuales",
+            "texto": "En las páginas de nuestra revista, podrás sumergirte en la fascinante historia de nuestra institución. Desde sus humildes comienzos hasta su posición actual como un bastión de educación de calidad, cada década se relata con detalle, mostrando los hitos y desafíos que han marcado nuestro camino.\nUn aspecto destacado de esta edición es el reconocimiento a nuestros ex alumnos y su impacto en la comunidad. A través de un emotivo artículo de opinión, celebramos los logros y contribuciones de aquellos que una vez llamaron a estas aulas su hogar. Desde destacados profesionales en el ámbito local hasta líderes a nivel nacional, nos enorgullece ver cómo los valores inculcados en el Colegio 8 de Noviembre continúan inspirando el cambio positivo en la sociedad."
+          },
+          {
+            "subtitulo": "El Legado de los Novembrinos y el Arte de la Palabra",
+            "texto": "En esta revista, tenemos el privilegio de contar con las reflexiones del Dr. Jorge Román Espinoza, un ex directivo cuyo liderazgo dejó una huella imborrable en nuestra comunidad educativa. A través de sus palabras, nos adentramos en la esencia misma de nuestra institución y recordamos la importancia de valores como la dedicación, el compromiso y la excelencia académica.\nNo podemos pasar por alto los logros alcanzados en los últimos cinco años por cada una de las áreas académicas de nuestro colegio. Desde innovadoras iniciativas en ciencia y tecnología hasta destacados logros en el ámbito cultural y deportivo, esta sección demuestra el compromiso continuo de nuestra comunidad educativa con la excelencia y el progreso.\nY qué sería una celebración sin poesía. En nuestra revista, hemos reservado un espacio especial para la expresión artística de nuestros estudiantes. A través de sus versos, nos invitan a reflexionar sobre la belleza del lenguaje y la profundidad de las emociones humanas, recordándonos que la educación no solo se trata de adquirir conocimientos, sino también de cultivar el alma."
+          }
+        ]
+      }
+    ],
+    "portada": "REVISTA 60 AÑOS_8NOV_Página_01.png",
+    "fotografias": [],
+    "videos": [],
+    "documento":"REVISTA 60 AÑOS_8NOV.pdf",
+    "recursos": [{ "titulo": "Revista 60 años Colegio 8 de Noviembre", "ruta": "REVISTA 60 AÑOS_8NOV.pdf" }]
   }
 ]
