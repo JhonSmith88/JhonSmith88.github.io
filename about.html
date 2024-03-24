@@ -45,6 +45,43 @@
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
 	<style>
+		.page-banner{
+			background-position: center;
+			background-size: contain !important;
+			background-image: url(images/about-banner.jpg);
+			background-repeat: no-repeat;
+			position: relative;
+			text-align: center;
+			min-height: 278px;
+			align-content: center;
+			width: 100%;
+			min-height: unset;
+    		aspect-ratio: 5.47;
+		}
+		.page-banner h2 {
+			padding: 0px;
+			font-size: 2em;
+			line-height: 26px;
+		}
+		@media screen and (max-width: 700px) {
+			.page-banner h2 {
+				padding: 0px;
+				font-size: 2.5em;
+				line-height: 50px;
+			}
+			.page-banner{
+			background-size: cover !important;
+			background-position: left;
+			background-image: url(images/about-banner.jpg);
+			background-repeat: no-repeat;
+			position: relative;
+			text-align: center;
+			align-content: center;
+			width: 100%;
+			height: 100%;
+		}
+        }
+
 		.social-icons {
 		  position: fixed;
 		  top: 90px;
@@ -55,7 +92,7 @@
 		  margin-left: 10px;
 		}
 		.img-container-simbolos {
-			height: 300px; /* Altura deseada para las imágenes */
+			height: 250px; /* Altura deseada para las imágenes */
 			overflow: hidden; /* Para evitar que las imágenes se desborden */
 			position: relative; /* Para que el contenedor se ajuste a la altura de la imagen */
 		}
@@ -76,7 +113,7 @@
 			font-size: 19px;
 			font-weight: bold;
 			text-transform: uppercase;
-			margin-bottom: 22px;
+			margin-bottom: 15px;
 			letter-spacing: 1.33px;
 			}
 		@media (max-width: 768px) {
@@ -108,6 +145,22 @@
 			width: 60px !important;
 			height: 60px !important;
 		}
+		.audio-himno{
+			cursor: pointer;
+			color: black;
+		}
+		.panel-heading{
+            padding: 0px;
+        }
+        .panel-body {
+			padding: 5px;
+            display: none; /* Ocultar inicialmente el panel */
+            overflow: visible !important;
+            transition: height 0.2s linear; /* Ajustar la velocidad y el tipo de transición */
+            overflow: hidden; /* Ocultar el contenido que se desborda */
+            animation: bounce; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s; /* don't forget to set a duration! */
+        }
 	  </style>
 
 
@@ -362,7 +415,7 @@
 						<div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 col-xs-12 col-padding">
 							<div class="row img-simbolos">
 								<div class="img-container-simbolos">
-									<img class="col-sm-12 col-md-12" src="images/bandera.webp" alt="bandera">
+									<img style="box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 10px; padding: 0px; height: 250px; margin: 0px 2px;" class="col-sm-12 col-md-12" src="images/bandera.webp" alt="bandera">
 								</div>
 								<p class="col-sm-12 col-md-12 img-text text-center">BANDERA</p>
 							</div>
@@ -370,8 +423,17 @@
 					</div>
 					<div><hr></div>
 					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
-							<p class="img-text">HIMNO AL COLEGIO</p>
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom: 10px;">
+							<p class="img-text">HIMNO AL COLEGIO <br><a id="audio-himno" class="audio-himno text-center"><i class="fa fa-volume-up" aria-hidden="true"></i></a></p>
+							<div class="panel-heading"></div>
+							<div class="panel-body">
+								<audio controls>
+									<source src="static/documents/himno_colegio_8_noviembre.mp3" type="audio/mp3">
+									Tu navegador no soporta la reproducción de audio.
+								</audio>
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 text-center">
 							<div class="texto-container">
 								<p style="float: right;">MÚSICA: GERARDO ARIAS ARIAS</p>
 								<p style="float: left;">LETRA: LEOVIGILDO LOAYZA LOAYZA</p>
@@ -563,10 +625,27 @@
                 $('.img-simbolos img').height(maxHeight);
             }
 
+			$("#audio-himno").click(function(){
+				$(".panel-heading").siblings(".panel-body").slideToggle();
+			});
+			
 			$(window).resize(function(){
                 equalizeHeight();
             });
-		
+
+			var imagen = new Image();
+			imagen.src = "images/about-banner.jpg";
+			imagen.onload = function() {
+			var imagenAncho = this.width;
+			var imagenAlto = this.height;
+			var aspectoImagen =  imagenAncho / imagenAlto;
+			aspectoImagen = ""+aspectoImagen+"";
+			// Calcular la altura del div en función del ancho de la pantalla y el tamaño
+
+			// Establecer la altura del div
+			$('#page-banner').css("aspect-ratio",aspectoImagen);
+			
+		};
 		});
 
 	</script>

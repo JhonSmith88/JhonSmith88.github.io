@@ -112,6 +112,56 @@
                 width: auto !important;
                 object-fit: cover;
             }
+            .page-banner{
+			background-position: center;
+			background-size: contain !important;
+			background-image: url(../images/blog-single-banner.jpg) !important;
+			background-repeat: no-repeat;
+			position: relative;
+			text-align: center;
+			min-height: 278px;
+			align-content: center;
+			width: 100%;
+			min-height: unset;
+		}
+		.page-banner h2 {
+			padding: 0px;
+			font-size: 2.4em;
+			line-height: 50px;
+		}
+		@media screen and (max-width: 700px) {
+			.page-banner h2 {
+				padding: 0px;
+				font-size: 2.5em;
+				line-height: 50px;
+			}
+			.page-banner{
+			background-size: cover !important;
+			background-position: left;
+			background-image: url(../images/blog-single-banner.jpg) !important;
+			background-repeat: no-repeat;
+			position: relative;
+			text-align: center;
+			align-content: center;
+			width: 100%;
+			height: 100%;
+		}
+        }
+        .video-container {
+              position: relative;
+              width: 100%;
+              padding-bottom: 56.25%; /* Proporción 16:9 (9/16 = 0.5625) */
+              height: 0;
+              margin-bottom: 30px;
+            }
+
+            .video-container iframe {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+            }
     </style>
   </head>
 
@@ -324,15 +374,8 @@
               <!-- Widget Posts -->
               <aside class="widget widget_tags">
                 <h3 class="widget-title">Actividades populares</h3>
-                <div class="tags">
-                  <a href="#" title="Bricks">Ferias</a>
-                  <a href="#" title="Buildings">Feria del libro</a>
-                  <a href="#" title="Cost">Cosecha</a>
-                  <a href="#" title="Painting">Siembra</a>
-                  <a href="#" title="Elegant">Riego</a>
-                  <a href="#" title="Fire">Ignauracion</a>
-                  <a href="#" title="Graphic">Parrilladas</a>
-                  <a href="#" title="Technology">Tecnologia</a>
+                <div id="tags" class="tags">
+                  
                 </div>
               </aside>
               <!-- Widget Posts -->
@@ -398,7 +441,7 @@
     <script>
       $(document).ready(function(){
         function subTitulos(data){
-          var listaTitulos = [{estudiantes:"",docentes:"",fechaInicial:"", objetivoGeneral:"", objetivosEspecificos:"", descripcion:"",recursos:"",resultados:"",fotografias:""}];
+          var listaTitulos = [{estudiantes:"",docentes:"",fechaInicial:"", objetivoGeneral:"", objetivosEspecificos:"", descripcion:"",recursos:"",resultados:"",fotografias:"",videos:""}];
           (data.estudiantes.length == 0) ? listaTitulos[0].estudiantes = "" : listaTitulos[0].estudiantes = "Estudiantes";
           (data.docentes.length == 0) ? listaTitulos[0].docentes = "" : listaTitulos[0].docentes = "Docentes";
           (data["fecha inicio"] == "") ? listaTitulos[0].fechaInicial = "" : listaTitulos[0].fechaInicial = "Fecha de Inicio";
@@ -408,6 +451,9 @@
           (data.recursos.length == 0) ? listaTitulos[0].recursos = "" : listaTitulos[0].recursos = "Recursos Utilizados";
           (data.resultados == "") ? listaTitulos[0].resultados = "" : listaTitulos[0].resultados = "Resultados";
           (data.fotografias.length == 0) ? listaTitulos[0].fotografias = "" : listaTitulos[0].fotografias = "Galeria de Imágenes";
+          (data.videos.length == 0) ? listaTitulos[0].videos = "" : listaTitulos[0].videos = "Vídeos";
+          (data.archivoAdjunto.length == 0) ? listaTitulos[0].archivoAdjunto = "" : listaTitulos[0].archivoAdjunto = "Archivos Adjuntos";
+          (data.anexos.length == 0) ? listaTitulos[0].anexos = " " : listaTitulos[0].anexos = "Anexos";
           return listaTitulos; 
         }
         function mostrarInformacion(){
@@ -421,6 +467,7 @@
             })
             .then(datos=>{
                 ordenarProyectosFecha(datos);
+                obtenerEtiquetas(datos);
                 var proyectosLista = datos;
                 var urlParams = new URLSearchParams(window.location.search);
                 var codigo_get = urlParams.get('id'); 
@@ -479,14 +526,74 @@
                 }
 
                 var galeria = "";
-                for(i=0;i<proyectoPost["fotografias"].length;i++){
-                    galeria += `<div style="text-align: center;"">
-                        <a href="../images/proyectos/${proyectoPost["fotografias"][i]["ruta"]}" data-imagen='${proyectoPost["fotografias"][i]["ruta"]}' data-lightbox='image-1'>
-                            <img src="../images/proyectos/${proyectoPost["fotografias"][i]["ruta"]}">    
-                        </a>
-                        <p> ${proyectoPost["fotografias"][i]["titulo"]}<p>
-                    </div>`;
 
+                if(proyectoPost["fotografias"].length != 0){
+                  for(i=0;i<proyectoPost["fotografias"][0]["imagenes"].length;i++){
+                    if(proyectoPost["fotografias"][0]["tipo"]=="galeria"){
+                      galeria += `<div style="display: inline-block;margin:10px">
+                          <a href="../images/proyectos/${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}" data-imagen='${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}' data-lightbox='image-1'>
+                              <img style="max-height: 30vh" src="../images/proyectos/${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}">    
+                          </a>
+                      </div>`;
+                    }else if(proyectoPost["fotografias"][0]["tipo"]=="cascada"){
+                      galeria += `<div style="text-align: center;"">
+                          <a href="../images/proyectos/${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}" data-imagen='${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}' data-lightbox='image-1'>
+                              <img style="max-height: 65vh" src="../images/proyectos/${proyectoPost["fotografias"][0]["imagenes"][i]["ruta"]}">    
+                          </a>
+                          <p> ${proyectoPost["fotografias"][0]["imagenes"][i]["titulo"]}</p>
+                      </div>`;
+                    }
+  
+                  }
+                }
+
+                var videos = "";
+                for(i=0;i<proyectoPost["videos"].length;i++){
+                  if(proyectoPost["videos"][i]["fuente"]=="youtube"){
+                    videos += `<p>${proyectoPost["videos"][i]["titulo"]}</p>
+                    <div class="video-container"><iframe src="${proyectoPost["videos"][i]["ruta"]}" 
+                      title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                      </iframe></div>`;
+                  }else if(proyectoPost["videos"][i]["fuente"]=="facebook"){
+                    videos += `<p>${proyectoPost["videos"][i]["titulo"]}</p>
+                    <div class="video-container">
+                      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=${proyectoPost["videos"][i]["ruta"]}%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                    </div>
+                    `;
+                  }
+                }
+
+                var archivoAdjunto ="";
+                if(proyectoPost["archivoAdjunto"].length !=0){
+                  for(i=0;i<proyectoPost["archivoAdjunto"].length;i++){
+                    archivoAdjunto += `<li>
+                      <a href="../static/documents/${proyectoPost["archivoAdjunto"][i]["ruta"]}" download>${proyectoPost["archivoAdjunto"][i]["titulo"]} <i class="fa fa-download" aria-hidden="true"></i></a>
+                    </li>`;
+                  }
+                  
+                }
+
+                var anexos ="";
+                for(i=0;i<proyectoPost["anexos"].length;i++){
+                  anexos += `<li><a href="${proyectoPost["anexos"][i]["ruta"]}" target="_blank">${proyectoPost["anexos"][i]["titulo"]}<i class="fa fa-link"></i></a></li>`;
+                }
+
+                var etiquetas= "";
+                if(proyectoPost["subTema"] != "" && proyectoPost["subTema"] != undefined){
+                  for(i=0;i<proyectoPost["subTema"].length;i++){
+                    etiquetas += `<a style="text-decoration: none;cursor: pointer;font-size: 13px;font-weight: 400;background: #eee;color: #4d4f59;padding: 5px 6px;margin: 0 3px 8px 0;border-radius: 4px;display: inline-block;">
+                          ${proyectoPost["subTema"][i]}
+                        </a>`;
+                  }
+                  etiquetas = `<div style="position: relative;padding: 10px;padding-left: 110px;width: 100%;float: left;">
+                      <div style="color: black;position: absolute;left: 0;top: 10px;text-align: center;width: 100px;text-transform: uppercase;font-size: 12px;padding: 5px 10px;background: #ffb400;border-radius: 4px;">
+                        Etiquetas:
+                      </div>
+                      <div>
+                        ${etiquetas}
+                      </div>
+                    </div>`;
                 }
 
                 $(".entry-content").html(`<h3 class="entry-title">${proyectoPost["tema"]}</h3>
@@ -519,6 +626,17 @@
                     <p>${proyectoPost["resultados"].replace(/\n/g, "<br><br>")}</p>
                     <h3>${listSubTiulos[0].fotografias}</h3>
                     ${galeria}
+                    <h3>${listSubTiulos[0].videos}</h3>
+                    ${videos}
+                    <h3>${listSubTiulos[0].archivoAdjunto}</h3>
+                    <ul>
+                      ${archivoAdjunto}
+                    </ul>
+                    <h3>${listSubTiulos[0].anexos}</h3>
+                    <ul>
+                      ${anexos}  
+                    </ul>
+                    ${etiquetas}
                 </div>`);
             }).catch(error => {
               console.error('Ocurrió un error:', error);
@@ -584,7 +702,6 @@
           listaOrdenada.sort((a, b) => b.fecha - a.fecha);
 
           // Agregar elementos sin fecha al final del array ordenado
-          console.log(listaOrdenada[0]["fecha inicio"]);
           var ultimosPost="";
           for(i=0;i< 3;i++){
             if(listaOrdenada[i]["fecha inicio"]){
@@ -603,6 +720,67 @@
         //recomendarLibros();
         mostrarInformacion();
         escogerFrase();
+
+        var imagen = new Image();
+        imagen.src = "../images/blog-single-banner.jpg";
+        imagen.onload = function() {
+          var imagenAncho = this.width;
+          var imagenAlto = this.height;
+          var aspectoImagen =  imagenAncho / imagenAlto;
+          aspectoImagen = ""+aspectoImagen+"";
+          // Calcular la altura del div en función del ancho de la pantalla y el tamaño
+          // Establecer la altura del div
+          $('#page-banner').css("aspect-ratio",aspectoImagen);
+        }
+
+
+        function seleccionarElementosAleatorios(lista) {
+          // Verificar si la lista tiene menos de 8 elementos
+          if (lista.length <= 8) {
+              return lista; // Devolver la lista original si tiene 8 o menos elementos
+          }
+
+          var elementosSeleccionados = []; // Lista para almacenar los elementos seleccionados
+          var indicesSeleccionados = {}; // Objeto para rastrear los índices seleccionados
+
+          // Mientras la lista de elementos seleccionados no tenga 8 elementos
+          while (elementosSeleccionados.length < 8) {
+              // Generar un índice aleatorio dentro del rango de la lista
+              var indice = Math.floor(Math.random() * lista.length);
+              
+              // Verificar si este índice ya fue seleccionado
+              if (!indicesSeleccionados[indice]) {
+                  // Agregar el elemento correspondiente al índice a la lista de elementos seleccionados
+                  elementosSeleccionados.push(lista[indice]);
+                  // Marcar el índice como seleccionado
+                  indicesSeleccionados[indice] = true;
+              }
+          }
+
+          return elementosSeleccionados;
+      }
+
+        function obtenerEtiquetas(datos){
+          var palabrasUnicas = {};
+          // Iterar sobre cada elemento del JSON
+          datos.forEach(function(elemento) {
+              // Iterar sobre cada palabra en la lista de etiquetas del elemento
+              elemento["subTema"].forEach(function(palabra) {
+                  // Agregar la palabra al objeto de palabras únicas
+                  palabrasUnicas[palabra] = true;
+              });
+          });
+
+          // Obtener las palabras únicas del objeto
+          var listaPalabras = Object.keys(palabrasUnicas); 
+          listaPalabras = seleccionarElementosAleatorios(listaPalabras);
+          // Mostrar la lista de palabras
+          listaPalabras.forEach(function(etiqueta){
+            $("#tags").append(`<a href="#" title="${etiqueta}">${etiqueta}</a>`)
+          })
+        }
+
+
       });
 
       
@@ -611,7 +789,7 @@
     </script>
 
     <div class="social-icons">
-      <a href="https://www.facebook.com/PAGINA_DE_FACEBOOK" target="_blank"
+      <a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"
         ><img src="../images/Facebook.png" alt="Facebook"
       /></a>
     </div>

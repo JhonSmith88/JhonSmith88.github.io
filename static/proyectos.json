@@ -28,7 +28,7 @@
       [
         { "denominación": "ángulo de 2\"x3/16\"", "cantidad": 1 },
         { "denominación": "platina de 2\"x3/16\"", "cantidad": 1 },
-        { "denominación": "tornillos con tuercas y arandelas de 3/8\"",          "cantidad": 14},
+        { "denominación": "tornillos con tuercas y arandelas de 3/8\"","cantidad": 14},
         { "denominación": "chumaceras de 3/4\"", "cantidad": 4 },
         { "denominación": "Bandas A 42\"", "cantidad": 2 },
         { "denominación": "Eje de transmisión de 3/4\"", "cantidad": 1 },
@@ -46,13 +46,26 @@
       ]
     ],
     "resultados": "Mediante pruebas realizadas en granos como maíz y maní se obtiene los siguientes resultados: en maíz la máquina tiene una capacidad de moler 1 libra por minuto obteniendo un molido adecuado a las características necesarias para la alimentación de aves de corral; en el molido de maní la capacidad de molido es de 1 ½ libra por minuto con un molido adecuado a la alimentación del hogar. En pruebas de molido manual el resultado es inferior al molido con máquina en un 50% lo que garantiza la optimización de tiempo, esfuerzo y ahorro de mano de obra en la ejecución de un trabajo que al ser manual se sustituye por un trabajo mecánico.",
-    "fotografias": [
+    "fotografias": [{"tipo":"galeria","imagenes":[
       { "titulo": "", "ruta": "proyecto-molino-granos.png" },
       { "titulo": "", "ruta": "proyecto-molino-granos_2.png" },
-      { "titulo": "", "ruta": "proyecto-molino-granos_3.png" }
+      { "titulo": "", "ruta": "proyecto-molino-granos_3.png" }]}
     ],
     "portada": "proyecto-molino-granos.png",
-    "destacado":2
+    "destacado":2,
+    "videos":[],
+    "archivoAdjunto":[
+      {
+        "titulo":"Planificación del Proyecto",
+        "ruta":"PROYECTO MOLINO REVISTA.docx"
+      }
+    ],
+    "anexos":[
+      {
+        "titulo": "Diseño y construcción de un molino artesanal para molienda de granos secos de capacidad 250 Kg/h",
+        "ruta": "https://bibdigital.epn.edu.ec/bitstream/15000/6940/1/CD-5195.pdf"
+      }
+    ]
   },
   {
     "id": "2",
@@ -75,7 +88,7 @@
       "Los recursos para la elaboración del yogurt son: Termómetro, olla, cocina, medidas, cernidor, jarra, cuchillos, recipiente, gas, fosforera, refrigeradora, manteles, batidor, leche, fermento, frutas, azúcar, agua, tarrinas, vasos y balanza.\nImplementos de Bioseguridad son: Mascarilla, guantes, delantal, gorro quirúrgico, implementos de limpieza, desinfectante, trapeador, escoba, recogedor y franelas. \nEn lo que respecta a los recursos económicos para la implementación del proyecto, los padres de familia lo proporcionaron, hasta obtener ganancias y poder devolver ese dinero."
     ],
     "resultados": "Se elaboró periódicamente el yogurt, con buenos resultados en la elaboración y venta del mismo, cuyos costos de producción en término medio son: \n<div style='text-align:center'><p><strong>CP=MP+MOD+CI</strong> \n<strong>CP</strong>=3,41+14,82+7,41+12,87 \n<strong>CP</strong>=62,10$  <strong>Egresos</strong>  \n<strong>Para elaborar 40 L de yogur*3,50 cada litro=140$</strong> \nRELACION BENEFICIO /COSTO \n 140-62,10=77.9 <strong>Ingreso neto</strong> \n77.9/62.10 = <strong>1.25</strong></p></div>",
-    "fotografias": [
+    "fotografias": [{"tipo":"cascada","imagenes":[
       { "titulo": "", "ruta": "proyecto-yogur_1.png" },
       {
         "titulo": "<strong>Figura 1: </strong>Flujograma de elaboración de Yogur",
@@ -108,10 +121,13 @@
       {
         "titulo": "<strong>Figura 8: </strong>Presentación en la casa abierta Institucional",
         "ruta": "proyecto-yogur_9.png"
-      }
+      }]}
     ],
     "portada": "proyecto-yogur.png",
-    "destacado":2
+    "destacado":2,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "3",
@@ -130,14 +146,17 @@
       "Puede consultar el catálogo de nuestra biblioteca haciendo clic <a href=..\\biblioteca.html>aquí</a>."
     ],
     "resultados": "",
-    "fotografias": [
+    "fotografias": [{"tipo":"cascada","imagenes":[
       {
         "titulo": "GRUPO DE PARTICIAPCION ESTUDIANTIL",
         "ruta": "biblioteca-digital_1.png"
-      }
+      }]}
     ],
     "portada": "biblioteca-digital.png",
-    "destacado":1
+    "destacado":1,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "4",
@@ -156,7 +175,10 @@
     "resultados": "",
     "fotografias": [],
     "portada": "agora-colegio_1.jpg",
-    "destacado":4
+    "destacado":4,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "5",
@@ -174,7 +196,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "practicas_granja_2.jpg"
+    "portada": "practicas_granja_2.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "6",
@@ -192,7 +217,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "practicas_granja_3.jpg"
+    "portada": "practicas_granja_3.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "7",
@@ -210,7 +238,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "practicas_granja_4.jpg"
+    "portada": "practicas_granja_4.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "8",
@@ -229,7 +260,10 @@
     "resultados": "",
     "fotografias": [],
     "portada": "practicas_granja_5.jpg",
-    "destacado":5
+    "destacado":5,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "9",
@@ -248,7 +282,10 @@
     "resultados": "",
     "fotografias": [],
     "portada": "practicas_granja_6.jpg",
-    "destacado":6
+    "destacado":6,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "10",
@@ -267,7 +304,10 @@
     "resultados": "",
     "fotografias": [],
     "portada": "practicas_granja_7.jpg",
-    "destacado":7
+    "destacado":7,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "11",
@@ -286,7 +326,10 @@
     "resultados": "",
     "fotografias": [],
     "portada": "practicas_granja_1.jpg",
-    "destacado":8
+    "destacado":8,
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "12",
@@ -304,7 +347,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "agora-colegio_2.jpg"
+    "portada": "agora-colegio_2.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "13",
@@ -322,7 +368,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "proyecto-carne.jpg"
+    "portada": "proyecto-carne.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "14",
@@ -340,7 +389,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "plataforma-office.jpg"
+    "portada": "plataforma-office.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "15",
@@ -358,7 +410,10 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "bar-estudiantil.jpg"
+    "portada": "bar-estudiantil.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   },
   {
     "id": "16",
@@ -376,6 +431,9 @@
     "recursos": [],
     "resultados": "",
     "fotografias": [],
-    "portada": "proyecto-camisetas.jpg"
+    "portada": "proyecto-camisetas.jpg",
+    "videos":[],
+    "archivoAdjunto":[],
+    "anexos":[]
   }
 ]

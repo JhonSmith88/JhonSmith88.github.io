@@ -9,7 +9,7 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Biblioteca - 8 de Noviembre</title>
+    <title>Blog - 8 de Noviembre</title>
 
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="images/favicon.png" />
@@ -132,6 +132,15 @@
 			width: 100%;
 			height: 100%;
 		}
+        }
+        .descripcion-blog{
+            height: 120px;
+            text-overflow: ellipsis;
+            white-space: pre-wrap;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
         }
 	  </style>
 </head>
@@ -337,25 +346,33 @@
                 </div>
             </div>
         </div>
-
-
+        
         <div class="container">
-            <div id="result">
-                <div>
-                    <!-- Loader -->
-                    <div id="site-loader-article" class="load-complete load-parcial">
-                        <div class="loader">
-                            <div class="loader-inner ball-clip-rotate">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div><!-- Loader /- -->
+            <div class="row" id="listBlog">
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/blogs/Dracula_1.jpeg" alt="..." style="max-height: 300px;">
+                    <div class="caption">
+                      <h3>Thumbnail label</h3>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                  </div>
                 </div>
-                <div id="articleBook" class="col-md-12 col-sm-12 display-none-div" style="padding: 0;">
-                    
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/blogs/Dracula.jpg" alt="..." style="
+                  max-height: 300px;
+              ">
+                    <div class="caption">
+                      <h3>Thumbnail label</h3>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                  </div>
                 </div>
-                
-            </div>
+              </div>
+            
             <nav class="ow-pagination">
                 <ul class="pagination">
                     <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i class="fa fa-angle-double-left"></i></a></li>
@@ -519,52 +536,22 @@
             // Función para hacer la consulta del archivo JSON
             function consultarJSON() {
                 // Ruta del archivo JSON local
-                var archivoJSON = 'static/biblioteca.json';
-                var librosFiltrados;
-                var datosJSON; 
-                fetch('static/versionBiblioteca.json')
-                .then(response => {
+                var archivoJSON = 'static/blogs.json';
+                var datosJSON;
+                fetch('static/blogs.json')
+                .then(response =>{
                     if (!response.ok) {
                         throw new Error('La solicitud no fue exitosa');
                     }
                     return response.json();
                 })
-                .then(versionData => {
-                    const versionActual = versionData.version;
-
-                    // Comparar la versión almacenada con la versión actual
-                    if (!localStorage.getItem('datosJSON') || parseInt(localStorage.getItem('versionJSON')) !== versionActual) {
-                        fetch(archivoJSON)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('La solicitud no fue exitosa');
-                                }
-                                return response.json();
-                            })
-                            .then(datos => {
-                                loaderAnimate();
-                                datosJSON = datos;
-                                localStorage.setItem('datosJSON', JSON.stringify(datos));
-                                localStorage.setItem('versionJSON', versionActual);
-                                filtrarDatos(datosJSON);
-                            })
-                            .then(animate => {
-                                $("#articleBook").removeClass("display-none-div");
-                                setTimeout(animateArticle, 500);
-                            })
-                            .catch(error => {
-                                console.error('Ocurrió un error:', error);
-                            });
-                    } else {
-                        loaderAnimate();
-                        datosJSON = JSON.parse(localStorage.getItem('datosJSON'));
-                        filtrarDatos(datosJSON);
-                        $("#articleBook").removeClass("display-none-div");
-                        setTimeout(animateArticle, 500);
-                    }
-                })
-                .catch(error => {
-                    console.error('Ocurrió un error al cargar la versión:', error);
+                .then(datos =>{
+                    datosJSON = datos;
+                    filtrarDatos(datosJSON);
+                }).then(datos =>{
+                    $("#listBlog").removeClass("display-none-div");
+                }).catch(error => {
+                    console.error('Ocurrió un error:', error);
                 });
 
             }
@@ -578,75 +565,9 @@
             }
     
             function filtrarDatos(datosJSON){
-                var urlParams = new URLSearchParams(window.location.search);
-                var titulo_get = urlParams.get('titulo');
-                var autor_get = urlParams.get('autor');
-                var categoria_get = urlParams.get('categoria');
-                var resumen_get = urlParams.get('resumen');
-                var codigo_get = urlParams.get('codigo');
-
-                titulo_get = isNaN(titulo_get) ? titulo_get: "" ;
-                autor_get = isNaN(autor_get) ? autor_get: "" ;
-                categoria_get = isNaN(categoria_get) ? categoria_get: "" ;
-                resumen_get = isNaN(resumen_get) ? resumen_get: "" ;
-                codigo_get = isNaN(codigo_get) ? codigo_get: "" ;
-
-                titulo_get = titulo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                autor_get = autor_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                categoria_get = categoria_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                resumen_get = resumen_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                codigo_get = codigo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                
-                
-                $("#inputTitulo").val(titulo_get);
-                $("#inputAutor").val(autor_get);
-                $("#inputCategoria").val(categoria_get);
-                $("#inputResumen").val(resumen_get);
-                $("#inputCodigo").val(codigo_get);
-                
-                librosFiltrados = datosJSON.filter(function(libro){
-                    var titulo = libro["TITULO LIBRO"].toLowerCase();
-                    titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
-                    var autor = libro["AUTORES"].toLowerCase();
-                    autor = autor.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
-                    var categoria = libro["AMBITO"].toLowerCase();
-                    categoria = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                    var resumen = libro["RESUMEN"].toLowerCase();
-                    resumen = resumen.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                    var codigo = libro["CODIGO"].toLowerCase();
-                    codigo = codigo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                    if(autor_get=="Desconocido" && categoria_get=="Ninguno"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor === "" && categoria === "";
-                    }else if(autor_get=="Desconocido"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor === "";  
-                    }else if(categoria_get=="Ninguno"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor.includes(autor_get.toLocaleLowerCase()) && categoria === "";    
-                    }else{
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor.includes(autor_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase());  
-                    }
-
-                });
-
                 var urlBibliotetaBusqueda="";
                 var busqueda="";
-                if(titulo_get=="" && autor_get=="" && resumen_get=="" && categoria_get=="" && codigo_get==""){
-                    urlBibliotetaBusqueda = "";
-                }else{
-                    busqueda = {titulo:titulo_get,autor:autor_get,resumen:resumen_get,categoria:categoria_get,codigo:codigo_get};
-                    for (var key in busqueda) {
-                        if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
-                            urlBibliotetaBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
-                        }
-                    }
-                    urlBibliotetaBusqueda ="&" + urlBibliotetaBusqueda.slice(0, -1);
-                }
 
-                datosJSON = librosFiltrados;
                 numPage = Math.ceil((datosJSON.length)/20);
                 if(numPage == 1){
                     $("#page-one").addClass("active-page")
@@ -800,27 +721,10 @@
                 }
 
 
-                $("#articleBook").addClass("display-none-div");
+                $("#listBlog").addClass("display-none-div");
                 mostrarDatosPorPagina(datosJSON, numeroPagina, elementosPorPagina);
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
-            }
-
-            function verificarExistenciaImagen(url, callback) {
-                
-                try {
-                    var img = new Image();
-                    img.onload = function() {
-                        callback(true);
-                    };
-                    img.onerror = function() {
-                        callback(false);
-                    };
-                    img.src = url;
-                } catch (error) {
-                    console.error("Error al verificar la existencia de la imagen:", error);
-                    callback(false);
-                }
             }
 
             // Función para mostrar los datos basados en el número de página
@@ -836,38 +740,30 @@
                 var portada = "";
                 
                 datosPagina.map(function(libro){
-                    let titulo = libro["TITULO LIBRO"];
-                    let resumen = libro["RESUMEN"];
-                    let codigo = libro["CODIGO"];
-                    let autor = libro["AUTORES"];
-                    let ambito = libro["AMBITO"];
-                    let imagen = libro["IMAGEN"];
-                    let id = libro["ID"];
+                    let titulo = libro["titulo"];
+                    let resumen = libro["resumen"];
+                    let categoria = libro["categoria"];
+                    let imagen = libro["portada"];
+                    let id = libro["id"];
 
-                    let fechaPublicacion = libro["PUBLICACION"];
-                    fechaPublicacion = fechaFomart(fechaPublicacion);
+                    let fechaPublicacion = libro["fecha publicacion"];
 
-                    datosArticleBook += `<article class='type-post col-md-12 type-post-book'>
-                        <div class='entry-content article-book'><h3 class='entry-title'>
-                            <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Título del libro'>${titulo}</a>
-                            </h3><div class='entry-meta'><div class='byline'>Autor: <a href='biblioteca.html?autor=${(autor=="") ? "Desconocido" : autor}' title='autor'>${(autor=="") ? "Desconocido" : autor}</a></div><div class='post-comment'>
-                                <a href='biblioteca.html?categoria=${(ambito=="") ? "Ninguno" : ambito}' title='categoria'> ${(ambito=="") ? "Ninguno" : ambito}</a></div>
-                                <div class='post-comment'><a title=' Fecha de publicación'>Publicación: ${fechaPublicacion}</a></div><div class='post-comment'><a title='código'> ${codigo.replace(/\s/g, "")}</a></div>
-                                </div><p class='descripcion-book'>${resumen}</p>
-                                <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Leer Más'>Leer Más<i class='fa fa-long-arrow-right'></i></a> 
-                                <a class="portada" data-imagen="${imagen.replace(/\s/g, "")}"></a></div></article>`;
+                    datosArticleBook += `
                     
-                    verificarExistenciaImagen("images/libros/"+imagen.replace(/\s/g, ""), function(existe) {
-                        if (existe) {
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").attr("data-lightbox","image-1");
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").attr("href","images/libros/"+ imagen.replace(/\s/g, "") );
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").html("<i class='fa fa-eye'></i>");
-                            
-                        }
-                    });
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                            <img src="images/blogs/${imagen}" alt="..." style="height: 250px;object-fit: contain;">
+                            <div class="caption">
+                                <h3 style="height:50px">${titulo}</h3>
+                                <p class="descripcion-blog">${resumen}</p>
+                                <p><a href="../blog/detalles.html?id=${id}" class="btn btn-primary" role="button">Ver más</a></p>
+                            </div>
+                            </div>
+                        </div>`;
+                    
                 });
                 
-                $("#articleBook").html(datosArticleBook);
+                $("#listBlog").html(datosArticleBook);
     
     
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
@@ -875,26 +771,10 @@
             }
     
             function animateArticle(){
-                $("#articleBook article").addClass("animated fadeInLeft");
+                $("#listBlog div").addClass("animated fadeInLeft");
             }
             // Suponiendo que tienes un array de objetos JSON llamado 'libros'
-            
-            function fechaFomart(numeroExcel){
-                if(numeroExcel == ""){
-                    return "";
-                }
-                // Convierte el formato de fecha de excel a javascript
-                // Diferencia de días entre la fecha de referencia de Excel y la de JavaScript
-                numeroExcel = parseInt(numeroExcel);
-                var diasDiferencia = 25568; // Esta es la cantidad de días entre el 1 de enero de 1900 y el 1 de enero de 1970
-            
-                // Calcular la fecha
-                var fecha = new Date((numeroExcel - diasDiferencia) * 86400000); // 86400000 = cantidad de milisegundos en un día
-                fecha = `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`; 
-                return fecha;
-            }
 
-    
             // Obtener el número de página actual
             var numeroPagina = obtenerNumeroPagina();
             

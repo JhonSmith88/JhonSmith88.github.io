@@ -1,55 +1,396 @@
 [
   {
     "id": "1",
-    "titulo": "",
-    "tema": "",
-    "tipo": "",
-    "subTema": [],
-    "autores": [],
+    "titulo": "Analisis del libro Drácula de Abraham Stoker",
+    "tema": "Analisis del libro Drácula de Abraham Stoker",
+    "resumen":"Una prueba de formato para la base de datos",
+    "categoria": "Literatura",
+    "etiquetas": ["Libro","Biblioteca", "Analisis"],
+    "autores": ["Juan Pablo Neyra"],
     "fecha inicio": "",
-    "fecha publicacion": "",
+    "fecha publicacion": "23/03/2024",
     "descripcion": [
-      { "tipo": "texto", "contenido": [{ "subtitulo": "", "texto": "" }] }
+      {
+        "subtitulo": "",
+        "tipo": "",
+        "contenido": ""
+      }
     ],
-    "portada": "",
+    "portada": "Sin-señal.jpg",
     "fotografias": [
       { "tipo": "galeria", "imagenes": [{ "titulo": "", "ruta": "" }] }
     ],
-    "videos": [{ "titulo": "", "ruta": "" }],
-    "recursos": [{ "titulo": "", "ruta": "" }]
+    "videos": [{
+      "fuente":"",
+      "titulo": "",
+      "ruta": ""
+    }],
+    "documentos":"",
+    "recursos": [{ "titulo": "", "ruta": "" }],
+    "anexos": [{ "titulo": "", "ruta": "" }]
   },
   {
     "id": "2",
     "titulo": "Revista 60 años",
     "tema": "Celebrando 60 Años de Historia: La Revista del Colegio 8 de Noviembre",
-    "tipo": "Historia",
-    "subTema": ["Historia Novembrina", "Aniversarios", "Revista"],
+    "resumen":"En el marco de un hito histórico para nuestra institución educativa, el Colegio de Bachillerato 8 de Noviembre celebra con orgullo sus 60 años de trayectoria. Como parte de esta celebración tan especial, nos complace presentarles la edición conmemorativa de nuestra revista digital.",
+    "categoria": "Historia",
+    "etiquetas": ["Historia Novembrina", "Aniversarios", "Revista"],
     "autores": [],
     "fecha inicio": "",
     "fecha publicacion": "22/03/2024",
     "descripcion": [
       {
-        "tipo": "texto",
-        "contenido": [
-          {
-            "subtitulo": "",
-            "texto": "En el marco de un hito histórico para nuestra institución educativa, el Colegio de Bachillerato 8 de Noviembre celebra con orgullo sus 60 años de trayectoria. Como parte de esta celebración tan especial, nos complace presentarles la edición conmemorativa de nuestra revista digital. Esta publicación no solo rinde homenaje a seis décadas de aprendizaje, crecimiento y logros, sino que también refleja el espíritu de comunidad que ha sido fundamental en el desarrollo de nuestro colegio."
-          },
-          {
-            "subtitulo": "La Historia del Colegio y sus Logros Actuales",
-            "texto": "En las páginas de nuestra revista, podrás sumergirte en la fascinante historia de nuestra institución. Desde sus humildes comienzos hasta su posición actual como un bastión de educación de calidad, cada década se relata con detalle, mostrando los hitos y desafíos que han marcado nuestro camino.\nUn aspecto destacado de esta edición es el reconocimiento a nuestros ex alumnos y su impacto en la comunidad. A través de un emotivo artículo de opinión, celebramos los logros y contribuciones de aquellos que una vez llamaron a estas aulas su hogar. Desde destacados profesionales en el ámbito local hasta líderes a nivel nacional, nos enorgullece ver cómo los valores inculcados en el Colegio 8 de Noviembre continúan inspirando el cambio positivo en la sociedad."
-          },
-          {
-            "subtitulo": "El Legado de los Novembrinos y el Arte de la Palabra",
-            "texto": "En esta revista, tenemos el privilegio de contar con las reflexiones del Dr. Jorge Román Espinoza, un ex directivo cuyo liderazgo dejó una huella imborrable en nuestra comunidad educativa. A través de sus palabras, nos adentramos en la esencia misma de nuestra institución y recordamos la importancia de valores como la dedicación, el compromiso y la excelencia académica.\nNo podemos pasar por alto los logros alcanzados en los últimos cinco años por cada una de las áreas académicas de nuestro colegio. Desde innovadoras iniciativas en ciencia y tecnología hasta destacados logros en el ámbito cultural y deportivo, esta sección demuestra el compromiso continuo de nuestra comunidad educativa con la excelencia y el progreso.\nY qué sería una celebración sin poesía. En nuestra revista, hemos reservado un espacio especial para la expresión artística de nuestros estudiantes. A través de sus versos, nos invitan a reflexionar sobre la belleza del lenguaje y la profundidad de las emociones humanas, recordándonos que la educación no solo se trata de adquirir conocimientos, sino también de cultivar el alma."
-          }
-        ]
+        "subtitulo": "",
+        "tipo":"parrafo",
+        "contenido":"En el marco de un hito histórico para nuestra institución educativa, el Colegio de Bachillerato 8 de Noviembre celebra con orgullo sus 60 años de trayectoria. Como parte de esta celebración tan especial, nos complace presentarles la edición conmemorativa de nuestra revista digital. Esta publicación no solo rinde homenaje a seis décadas de aprendizaje, crecimiento y logros, sino que también refleja el espíritu de comunidad que ha sido fundamental en el desarrollo de nuestro colegio."
+      },
+      {
+        "subtitulo": "La Historia del Colegio y sus Logros Actuales",
+        "tipo":"parrafo",
+        "contenido":"En las páginas de nuestra revista, podrás sumergirte en la fascinante historia de nuestra institución. Desde sus humildes comienzos hasta su posición actual como un bastión de educación de calidad, cada década se relata con detalle, mostrando los hitos y desafíos que han marcado nuestro camino.\nUn aspecto destacado de esta edición es el reconocimiento a nuestros ex alumnos y su impacto en la comunidad. A través de un emotivo artículo de opinión, celebramos los logros y contribuciones de aquellos que una vez llamaron a estas aulas su hogar. Desde destacados profesionales en el ámbito local hasta líderes a nivel nacional, nos enorgullece ver cómo los valores inculcados en el Colegio 8 de Noviembre continúan inspirando el cambio positivo en la sociedad."
+      },
+      {
+        "subtitulo": "El Legado de los Novembrinos y el Arte de la Palabra",
+        "tipo":"parrafo",
+        "contenido":"En esta revista, tenemos el privilegio de contar con las reflexiones del Dr. Jorge Román Espinoza, un ex directivo cuyo liderazgo dejó una huella imborrable en nuestra comunidad educativa. A través de sus palabras, nos adentramos en la esencia misma de nuestra institución y recordamos la importancia de valores como la dedicación, el compromiso y la excelencia académica.\nNo podemos pasar por alto los logros alcanzados en los últimos cinco años por cada una de las áreas académicas de nuestro colegio. Desde innovadoras iniciativas en ciencia y tecnología hasta destacados logros en el ámbito cultural y deportivo, esta sección demuestra el compromiso continuo de nuestra comunidad educativa con la excelencia y el progreso.\nY qué sería una celebración sin poesía. En nuestra revista, hemos reservado un espacio especial para la expresión artística de nuestros estudiantes. A través de sus versos, nos invitan a reflexionar sobre la belleza del lenguaje y la profundidad de las emociones humanas, recordándonos que la educación no solo se trata de adquirir conocimientos, sino también de cultivar el alma."
       }
     ],
     "portada": "REVISTA 60 AÑOS_8NOV_Página_01.png",
     "fotografias": [],
     "videos": [],
-    "documento":"REVISTA 60 AÑOS_8NOV.pdf",
-    "recursos": [{ "titulo": "Revista 60 años Colegio 8 de Noviembre", "ruta": "REVISTA 60 AÑOS_8NOV.pdf" }]
+    "documento": "REVISTA 60 AÑOS_8NOV.pdf",
+    "recursos": [
+      {
+        "titulo": "Revista 60 años Colegio 8 de Noviembre",
+        "ruta": "REVISTA 60 AÑOS_8NOV.pdf"
+      }
+    ],
+    "anexos": []
+  },
+  {
+    "id": "3",
+    "titulo": "Analisis del libro Drácula de Bram Stoker",
+    "tema": "Analisis del libro Drácula de Bram Stoker",
+    "resumen":"'Drácula' es una obra que va más allá de una simple historia de terror. Bram Stoker utiliza el miedo como una herramienta para explorar temas más profundos, como la sexualidad reprimida, el miedo al Otro y la lucha entre la razón y la superstición.",
+    "categoria": "Literatura",
+    "etiquetas": ["Libro", "Análisis"],
+    "autores": ["Juan Pablo Neyra"],
+    "fecha inicio": "",
+    "fecha publicacion": "23/03/2024",
+    "descripcion": [
+      {
+        "subtitulo": "Introducción",
+        "tipo": "parrafo",
+        "contenido": "'Drácula' es una novela gótica escrita por el autor irlandés Bram Stoker y publicada por primera vez en 1897. Es considerada una de las obras más influyentes en el género del horror y ha dejado una huella perdurable en la cultura popular. La historia sigue la lucha entre el Conde Drácula, un vampiro inmortal, y un grupo de personajes que intentan detener sus malévolos planes. A través de su trama envolvente y sus temas profundos, 'Drácula' explora la tensión entre el bien y el mal, la sexualidad reprimida y la lucha por la supervivencia."
+      },
+      {
+        "subtitulo": "Ilustración hecha con IA",
+        "tipo": "imagen",
+        "contenido": "Dracula_0.jpeg"
+      },
+      {
+        "subtitulo": "Resumen",
+        "tipo": "parrafo",
+        "contenido": "La novela comienza con Jonathan Harker, un joven abogado inglés, viajando a Transilvania para cerrar un trato inmobiliario con el enigmático Conde Drácula. Durante su estancia en el castillo del conde, Harker descubre que su anfitrión es un vampiro sediento de sangre y se convierte en su prisionero. Mientras tanto, en Inglaterra, Lucy Westenra, amiga de Mina Murray (la prometida de Harker), comienza a enfermar misteriosamente después de recibir propuestas de matrimonio de tres pretendientes: Arthur Holmwood, Dr. John Seward y Quincey Morris."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_1.jpeg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La salud de Lucy continúa deteriorándose y los médicos no pueden determinar la causa de su enfermedad. Mina, preocupada por su amiga, se une a su prometido Jonathan Harker en Transilvania. Mientras tanto, Lucy es visitada por un misterioso barco fantasma que llega a la costa inglesa con su tripulación muerta y una gran cantidad de ratas. Después de que Lucy fallece, Van Helsing, un experto en enfermedades raras, llega a la conclusión de que ha sido víctima de un vampiro."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_2.jpg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Van Helsing y los demás hombres involucrados en el círculo social de Lucy descubren la verdadera naturaleza de su enfermedad y la transformación en un vampiro. Juntos, liderados por Van Helsing, deciden destruir a Drácula y salvar a Mina, quien ha sido marcada como la próxima víctima del conde.Mientras tanto, Drácula se dirige a Inglaterra para perseguir a Mina y desatar su malvado plan de convertirla en su compañera inmortal. El grupo de Van Helsing, armado con conocimientos sobre los vampiros y herramientas para luchar contra ellos, sigue el rastro de Drácula en un tenso juego del gato y el ratón."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_3.jpg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La trama se desarrolla a través de una serie de encuentros y confrontaciones entre el grupo de Van Helsing y Drácula, culminando en una batalla final en Transilvania, donde Drácula es finalmente destruido. Durante la confrontación, Drácula lucha contra ellos con todas sus fuerzas, pero el grupo de Van Helsing se muestra decidido a acabar con él y poner fin a su reinado de terror. Utilizan diferentes estrategias y armas, incluyendo estacas de madera y cuchillos, para atacar al vampiro. Además, Mina, que tiene una conexión psíquica con Drácula debido a una mordedura que recibió, también participa activamente en la lucha.Finalmente, Van Helsing y los demás logran incapacitar a Drácula lo suficiente como para clavar una estaca de madera en su corazón, un acto que, es lo que finalmente lo destruye."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_4.jpeg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Al final, Jonathan Harker y Mina Murray regresan a Inglaterra, casados y con la certeza de que han vencido al mal. Sin embargo, la experiencia ha dejado una marca indeleble en ellos, y saben que la lucha contra las fuerzas oscuras nunca termina completamente."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_5.jpg" },
+      {
+        "subtitulo": "Análisis",
+        "tipo": "parrafo",
+        "contenido": "'Drácula' es una obra que va más allá de una simple historia de terror. Bram Stoker utiliza el miedo como una herramienta para explorar temas más profundos, como la sexualidad reprimida, el miedo al Otro y la lucha entre la razón y la superstición. El personaje de Drácula encarna el mal en su forma más seductora, desafiando las normas sociales y morales de la época victoriana.\nLa estructura epistolar de la novela añade profundidad al relato, permitiendo al lector experimentar los eventos desde múltiples perspectivas y creando una sensación de inmediatez y realismo. Los personajes, especialmente Mina y Van Helsing, son complejos y multidimensionales, enfrentándose no solo a la amenaza física de Drácula, sino también a sus propios miedos y deseos más profundos."
+      },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La ambientación en Transilvania y la descripción detallada de los paisajes y la arquitectura contribuyen a la atmósfera ominosa de la novela, sumergiendo al lector en un mundo donde el mal acecha en cada sombra."
+      },
+      {
+        "subtitulo": "",
+        "tipo": "cita",
+        "contenido": [
+          {"texto":"\"La historia de Drácula es un recordatorio de que, en la oscuridad más profunda, aún puede brillar la luz de la valentía y la esperanza.\" - Anne Rice","ruta":"https://es.wikipedia.org/wiki/Dr%C3%A1cula,_de_Bram_Stoker"}]
+      },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Esta novela ha sido una fuente de inspiración inagotable para numerosas obras literarias que exploran temas similares de horror, vampiros y lucha entre el bien y el mal. Algunas novelas que han sido influenciadas por 'Drácula' son:"
+      },
+      {
+        "subtitulo": "",
+        "tipo": "lista",
+        "formato": "ordenada",
+        "contenido": [
+          "<strong>\"Entrevista con el vampiro\"</strong> de Anne Rice: Publicada en 1976, esta novela es la primera de la serie \"Crónicas vampíricas\" de Rice y sigue la vida de un vampiro llamado Louis de Pointe du Lac, quien comparte su historia con un periodista. La obra de Rice revitalizó el género vampírico y estableció nuevos estándares para la narrativa de vampiros.",
+          "<strong>\"Salem's Lot\"</strong> de Stephen King: Publicada en 1975, esta novela de King presenta a un escritor que regresa a su pueblo natal solo para descubrir que está siendo invadido por vampiros. La influencia de \"Drácula\" es evidente en la ambientación y la trama, así como en la exploración del miedo y la lucha contra el mal.",
+          "<strong>\"Anno Dracula\"</strong> de Kim Newman: Esta novela, publicada en 1992, presenta un mundo alternativo en el que Drácula no fue derrotado y ahora gobierna sobre el Reino Unido. La historia combina elementos de terror, misterio y sátira, y presenta una amplia gama de personajes históricos y ficticios.",
+          "<strong>\"Carmilla\"</strong> de Joseph Sheridan Le Fanu: Publicada en 1872, esta novela es una de las precursoras del género de vampiros y ha sido una influencia significativa en obras posteriores como \"Drácula\". La historia sigue la relación entre una joven llamada Laura y una misteriosa mujer llamada Carmilla, que resulta ser un vampiro.",
+          "<strong>\"El guardián entre el centeno\"</strong> de J.D. Salinger: Aunque es una novela completamente diferente en tono y género, \"El guardián entre el centeno\", publicada en 1951, ha sido influida por la obra de Stoker en términos de exploración de temas como la lucha entre el bien y el mal, así como el aislamiento y la alienación."
+        ]
+      },
+      {
+        "subtitulo": "Reflexión",
+        "tipo": "parrafo",
+        "contenido": "'Drácula sigue siendo relevante en la actualidad debido a su exploración de temas universales como el miedo, la mortalidad y la lucha entre el bien y el mal. La figura del vampiro ha perdurado en la cultura popular, siendo reinterpretada una y otra vez en diversas formas de medios, desde películas hasta series de televisión y novelas contemporáneas.\nAdemás, la novela plantea cuestiones sobre la naturaleza humana y la sociedad que siguen siendo pertinentes en la actualidad. La idea de la dualidad entre la luz y la oscuridad, la civilización y la barbarie, resuena en un mundo donde la línea entre el bien y el mal a menudo parece difuminarse.\nEn última instancia, 'Drácula' perdura como una obra maestra del género del horror, no solo por su capacidad para asustar, sino también por su exploración de temas profundos que continúan fascinando a los lectores a lo largo del tiempo."
+      },
+      {
+        "subtitulo": "Tabla",
+        "tipo": "tabla",
+        "contenido": [
+          {
+            "Novela": "Entrevista con el vampiro",
+            "Autor": "Anne Rice",
+            "Publicación": "1976"
+          },
+          {
+            "Novela": "Salem's Lot",
+            "Autor": "Stephen King",
+            "Publicación": "1975"
+          },
+          {
+            "Novela": "Anno Dracula",
+            "Autor": "Kim Newman",
+            "Publicación": "1992"
+          },
+          {
+            "Novela": "Carmilla",
+            "Autor": "Joseph Sheridan Le Fanu",
+            "Publicación": "1872"
+          },
+          {
+            "Novela": "El guardián entre el centeno",
+            "Autor": "J.D. Salinger",
+            "Publicación": "1951"
+          }
+        ]
+      }
+    ],
+    "portada": "Dracula.jpg",
+    "fotografias": [
+      {
+        "tipo": "galeria",
+        "imagenes": [
+          { "titulo": "", "ruta": "Dracula_0.jpeg" },
+          { "titulo": "", "ruta": "Dracula_1.jpeg" },
+          { "titulo": "", "ruta": "Dracula_2.jpg" },
+          { "titulo": "", "ruta": "Dracula_3.jpg" },
+          { "titulo": "", "ruta": "Dracula_4.jpeg" },
+          { "titulo": "", "ruta": "Dracula_5.jpg" },
+          { "titulo": "", "ruta": "Dracula_6.jpg" },
+          { "titulo": "", "ruta": "Dracula_7.jpg" },
+          { "titulo": "", "ruta": "Dracula_8.jpg" },
+          { "titulo": "", "ruta": "Dracula_9.jpg" }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "fuente":"youtube",
+        "titulo": "Drácula : La Historia en 1 Video",
+        "ruta": "https://www.youtube.com/embed/dq5qR_u3_Ek"
+      }
+    ],
+    "documento": "",
+    "recursos": [
+      {
+        "titulo": "Abraham Stoker - Drácula",
+        "ruta": "Abraham Stoker - Drácula .pdf"
+      }
+    ],
+    "anexos": [
+      {
+        "titulo": "Abraham Stoker - Drácula",
+        "ruta": "https://es.wikipedia.org/wiki/Anne_Rice"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "titulo": "Analisis del libro Drácula de Bram Stoker",
+    "tema": "Analisis del libro Drácula de Bram Stoker",
+    "resumen":"Un test de formatos alternativos para elementos del blog",
+    "categoria": "Literatura",
+    "etiquetas": ["Libro", "Análisis"],
+    "autores": ["Juan Pablo Neyra"],
+    "fecha inicio": "",
+    "fecha publicacion": "23/03/2024",
+    "descripcion": [
+      {
+        "subtitulo": "Introducción",
+        "tipo": "parrafo",
+        "contenido": "'Drácula' es una novela gótica escrita por el autor irlandés Bram Stoker y publicada por primera vez en 1897. Es considerada una de las obras más influyentes en el género del horror y ha dejado una huella perdurable en la cultura popular. La historia sigue la lucha entre el Conde Drácula, un vampiro inmortal, y un grupo de personajes que intentan detener sus malévolos planes. A través de su trama envolvente y sus temas profundos, 'Drácula' explora la tensión entre el bien y el mal, la sexualidad reprimida y la lucha por la supervivencia."
+      },
+      {
+        "subtitulo": "Ilustración hecha con IA",
+        "tipo": "imagen",
+        "contenido": "Dracula_0.jpeg"
+      },
+      {
+        "subtitulo": "Resumen",
+        "tipo": "parrafo",
+        "contenido": "La novela comienza con Jonathan Harker, un joven abogado inglés, viajando a Transilvania para cerrar un trato inmobiliario con el enigmático Conde Drácula. Durante su estancia en el castillo del conde, Harker descubre que su anfitrión es un vampiro sediento de sangre y se convierte en su prisionero. Mientras tanto, en Inglaterra, Lucy Westenra, amiga de Mina Murray (la prometida de Harker), comienza a enfermar misteriosamente después de recibir propuestas de matrimonio de tres pretendientes: Arthur Holmwood, Dr. John Seward y Quincey Morris."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_1.jpeg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La salud de Lucy continúa deteriorándose y los médicos no pueden determinar la causa de su enfermedad. Mina, preocupada por su amiga, se une a su prometido Jonathan Harker en Transilvania. Mientras tanto, Lucy es visitada por un misterioso barco fantasma que llega a la costa inglesa con su tripulación muerta y una gran cantidad de ratas. Después de que Lucy fallece, Van Helsing, un experto en enfermedades raras, llega a la conclusión de que ha sido víctima de un vampiro."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_2.jpg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Van Helsing y los demás hombres involucrados en el círculo social de Lucy descubren la verdadera naturaleza de su enfermedad y la transformación en un vampiro. Juntos, liderados por Van Helsing, deciden destruir a Drácula y salvar a Mina, quien ha sido marcada como la próxima víctima del conde.Mientras tanto, Drácula se dirige a Inglaterra para perseguir a Mina y desatar su malvado plan de convertirla en su compañera inmortal. El grupo de Van Helsing, armado con conocimientos sobre los vampiros y herramientas para luchar contra ellos, sigue el rastro de Drácula en un tenso juego del gato y el ratón."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_3.jpg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La trama se desarrolla a través de una serie de encuentros y confrontaciones entre el grupo de Van Helsing y Drácula, culminando en una batalla final en Transilvania, donde Drácula es finalmente destruido. Durante la confrontación, Drácula lucha contra ellos con todas sus fuerzas, pero el grupo de Van Helsing se muestra decidido a acabar con él y poner fin a su reinado de terror. Utilizan diferentes estrategias y armas, incluyendo estacas de madera y cuchillos, para atacar al vampiro. Además, Mina, que tiene una conexión psíquica con Drácula debido a una mordedura que recibió, también participa activamente en la lucha.Finalmente, Van Helsing y los demás logran incapacitar a Drácula lo suficiente como para clavar una estaca de madera en su corazón, un acto que, es lo que finalmente lo destruye."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_4.jpeg" },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Al final, Jonathan Harker y Mina Murray regresan a Inglaterra, casados y con la certeza de que han vencido al mal. Sin embargo, la experiencia ha dejado una marca indeleble en ellos, y saben que la lucha contra las fuerzas oscuras nunca termina completamente."
+      },
+      { "subtitulo": "", "tipo": "imagen", "contenido": "Dracula_5.jpg" },
+      {
+        "subtitulo": "Análisis",
+        "tipo": "parrafo",
+        "contenido": "'Drácula' es una obra que va más allá de una simple historia de terror. Bram Stoker utiliza el miedo como una herramienta para explorar temas más profundos, como la sexualidad reprimida, el miedo al Otro y la lucha entre la razón y la superstición. El personaje de Drácula encarna el mal en su forma más seductora, desafiando las normas sociales y morales de la época victoriana.\nLa estructura epistolar de la novela añade profundidad al relato, permitiendo al lector experimentar los eventos desde múltiples perspectivas y creando una sensación de inmediatez y realismo. Los personajes, especialmente Mina y Van Helsing, son complejos y multidimensionales, enfrentándose no solo a la amenaza física de Drácula, sino también a sus propios miedos y deseos más profundos."
+      },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "La ambientación en Transilvania y la descripción detallada de los paisajes y la arquitectura contribuyen a la atmósfera ominosa de la novela, sumergiendo al lector en un mundo donde el mal acecha en cada sombra."
+      },
+      {
+        "subtitulo": "",
+        "tipo": "cita",
+        "contenido": [
+          {"texto":"\"La historia de Drácula es un recordatorio de que, en la oscuridad más profunda, aún puede brillar la luz de la valentía y la esperanza.\" - Anne Rice","ruta":"https://es.wikipedia.org/wiki/Dr%C3%A1cula,_de_Bram_Stoker"}]
+      },
+      {
+        "subtitulo": "",
+        "tipo": "parrafo",
+        "contenido": "Esta novela ha sido una fuente de inspiración inagotable para numerosas obras literarias que exploran temas similares de horror, vampiros y lucha entre el bien y el mal. Algunas novelas que han sido influenciadas por 'Drácula' son:"
+      },
+      {
+        "subtitulo": "",
+        "tipo": "lista",
+        "formato": "ordenada",
+        "contenido": [
+          "<strong>\"Entrevista con el vampiro\"</strong> de Anne Rice: Publicada en 1976, esta novela es la primera de la serie \"Crónicas vampíricas\" de Rice y sigue la vida de un vampiro llamado Louis de Pointe du Lac, quien comparte su historia con un periodista. La obra de Rice revitalizó el género vampírico y estableció nuevos estándares para la narrativa de vampiros.",
+          "<strong>\"Salem's Lot\"</strong> de Stephen King: Publicada en 1975, esta novela de King presenta a un escritor que regresa a su pueblo natal solo para descubrir que está siendo invadido por vampiros. La influencia de \"Drácula\" es evidente en la ambientación y la trama, así como en la exploración del miedo y la lucha contra el mal.",
+          "<strong>\"Anno Dracula\"</strong> de Kim Newman: Esta novela, publicada en 1992, presenta un mundo alternativo en el que Drácula no fue derrotado y ahora gobierna sobre el Reino Unido. La historia combina elementos de terror, misterio y sátira, y presenta una amplia gama de personajes históricos y ficticios.",
+          "<strong>\"Carmilla\"</strong> de Joseph Sheridan Le Fanu: Publicada en 1872, esta novela es una de las precursoras del género de vampiros y ha sido una influencia significativa en obras posteriores como \"Drácula\". La historia sigue la relación entre una joven llamada Laura y una misteriosa mujer llamada Carmilla, que resulta ser un vampiro.",
+          "<strong>\"El guardián entre el centeno\"</strong> de J.D. Salinger: Aunque es una novela completamente diferente en tono y género, \"El guardián entre el centeno\", publicada en 1951, ha sido influida por la obra de Stoker en términos de exploración de temas como la lucha entre el bien y el mal, así como el aislamiento y la alienación."
+        ]
+      },
+      {
+        "subtitulo": "Reflexión",
+        "tipo": "parrafo",
+        "contenido": "'Drácula sigue siendo relevante en la actualidad debido a su exploración de temas universales como el miedo, la mortalidad y la lucha entre el bien y el mal. La figura del vampiro ha perdurado en la cultura popular, siendo reinterpretada una y otra vez en diversas formas de medios, desde películas hasta series de televisión y novelas contemporáneas.\nAdemás, la novela plantea cuestiones sobre la naturaleza humana y la sociedad que siguen siendo pertinentes en la actualidad. La idea de la dualidad entre la luz y la oscuridad, la civilización y la barbarie, resuena en un mundo donde la línea entre el bien y el mal a menudo parece difuminarse.\nEn última instancia, 'Drácula' perdura como una obra maestra del género del horror, no solo por su capacidad para asustar, sino también por su exploración de temas profundos que continúan fascinando a los lectores a lo largo del tiempo."
+      },
+      {
+        "subtitulo": "Tabla",
+        "tipo": "tabla",
+        "contenido": [
+          {
+            "Novela": "Entrevista con el vampiro",
+            "Autor": "Anne Rice",
+            "Publicación": "1976"
+          },
+          {
+            "Novela": "Salem's Lot",
+            "Autor": "Stephen King",
+            "Publicación": "1975"
+          },
+          {
+            "Novela": "Anno Dracula",
+            "Autor": "Kim Newman",
+            "Publicación": "1992"
+          },
+          {
+            "Novela": "Carmilla",
+            "Autor": "Joseph Sheridan Le Fanu",
+            "Publicación": "1872"
+          },
+          {
+            "Novela": "El guardián entre el centeno",
+            "Autor": "J.D. Salinger",
+            "Publicación": "1951"
+          }
+        ]
+      }
+    ],
+    "portada": "Dracula.jpg",
+    "fotografias": [
+      {
+        "tipo": "cascada",
+        "imagenes": [
+          { "titulo": "Ilustración 1", "ruta": "Dracula_0.jpeg" },
+          { "titulo": "Ilustración 2", "ruta": "Dracula_1.jpeg" },
+          { "titulo": "Ilustración 3", "ruta": "Dracula_2.jpg" },
+          { "titulo": "Ilustración 4", "ruta": "Dracula_3.jpg" },
+          { "titulo": "Ilustración 5", "ruta": "Dracula_4.jpeg" },
+          { "titulo": "Ilustración 6", "ruta": "Dracula_5.jpg" },
+          { "titulo": "Ilustración 7", "ruta": "Dracula_6.jpg" },
+          { "titulo": "Ilustración 8", "ruta": "Dracula_7.jpg" },
+          { "titulo": "Ilustración 9", "ruta": "Dracula_8.jpg" },
+          { "titulo": "Ilustración 10", "ruta": "Dracula_9.jpg" }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "fuente":"facebook",
+        "titulo": "Existió Realmente Dracula?!?! - La Terrorífica Historia de Vlad Dracul",
+        "ruta": "https://www.facebook.com/HypnosMorfeoPaginaoficial/videos/399193480906020"
+      },
+      {
+        "fuente":"youtube",
+        "titulo": "Drácula : La Historia en 1 Video",
+        "ruta": "https://www.youtube.com/embed/dq5qR_u3_Ek"
+      }
+    ],
+    "documento": "Abraham Stoker - Drácula .pdf",
+    "recursos": [
+      {
+        "titulo": "Abraham Stoker - Drácula",
+        "ruta": "Abraham Stoker - Drácula .pdf"
+      }
+    ],
+    "anexos": [
+      {
+        "titulo": "Abraham Stoker - Drácula",
+        "ruta": "https://es.wikipedia.org/wiki/Anne_Rice"
+      }
+    ]
   }
 ]
