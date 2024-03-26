@@ -297,7 +297,7 @@
 								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
 							</ul>
 						</li>
-						<li><a href="../blog.html" title="Blog">Blog</a></li>
+						<li class="active"><a href="../blog.html" title="Blog">Blog</a></li>
 						<li><a href="../contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -369,13 +369,12 @@
               <!-- Widget Search -->
               <!-- widget Search /- -->
               <!-- Widget Categories -->
-              <aside class="widget widget_categories">
+              <aside class="widget widget_posts" id="novedades">
                 <h3 class="widget-title">Novedades</h3>
-                <ul></ul>
               </aside>
               <!-- Widget Categories -->
               <!-- Widget Posts -->
-              <aside class="widget widget_posts">
+              <aside class="widget widget_posts" id="last-post">
                 <h3 class="widget-title">Ultimos Proyectos</h3>
               </aside>
               <!-- Widget Posts -->
@@ -481,6 +480,7 @@
               return response.json();
             })
             .then(datos=>{
+              ordenarBlogsFecha(datos);
                 obtenerEtiquetas(datos);
                 var proyectosLista = datos;
                 var urlParams = new URLSearchParams(window.location.search);
@@ -596,6 +596,8 @@
                           recursosDetalles+="<tr>";
                       }
                       contenido += `<div class="panel panel-default"><table class="table">${cabeceraDetalles} ${recursosDetalles}</table></div>`
+                  }else if(proyectoPost["descripcion"][i]["tipo"] =="twitter" || proyectoPost["descripcion"][i]["tipo"] =="facebook"){
+                    contenido += `<h3 style="margin-top:20px;margin-bottom:30px">${proyectoPost["descripcion"][i]["subtitulo"]}</h3><center style="margin-bottom: 40px;">${proyectoPost["descripcion"][i]["contenido"]}</center>`
                   }
                   }
                   
@@ -646,7 +648,7 @@
                         Categoria:
                       </div>
                       <div>
-                        <a style="text-decoration: none;cursor: pointer;font-size: 13px;font-weight: 400;background: #eee;color: #4d4f59;padding: 5px 6px;margin: 0 3px 8px 0;border-radius: 4px;display: inline-block;">
+                        <a href="../blog.html?categoria=${proyectoPost["categoria"]}" style="text-decoration: none;cursor: pointer;font-size: 13px;font-weight: 400;background: #eee;color: #4d4f59;padding: 5px 6px;margin: 0 3px 8px 0;border-radius: 4px;display: inline-block;">
                           ${proyectoPost["categoria"]}
                         </a>
                       </div>
@@ -655,7 +657,7 @@
                 
                 if(proyectoPost["etiquetas"] != "" && proyectoPost["etiquetas"] != undefined){
                   for(i=0;i<proyectoPost["etiquetas"].length;i++){
-                    etiquetas += `<a style="text-decoration: none;cursor: pointer;font-size: 13px;font-weight: 400;background: #eee;color: #4d4f59;padding: 5px 6px;margin: 0 3px 8px 0;border-radius: 4px;display: inline-block;">
+                    etiquetas += `<a href="../blog.html?etiquetas=${proyectoPost["etiquetas"][i]}" style="text-decoration: none;cursor: pointer;font-size: 13px;font-weight: 400;background: #eee;color: #4d4f59;padding: 5px 6px;margin: 0 3px 8px 0;border-radius: 4px;display: inline-block;">
                           ${proyectoPost["etiquetas"][i]}
                         </a>`;
                   }
@@ -697,8 +699,9 @@
 
                 if(proyectoPost["documento"] != undefined && proyectoPost["documento"] != ""){
                   var source_pdf = `../static/documents/${proyectoPost["documento"]}`;
-                  var option_pdf = {webgl:true};
+                  var option_pdf = {webgl:true, backgroundColor: "#eeeeee",};
                   var flipBook_pdf = $("#df_manual_book").flipBook(source_pdf,option_pdf);
+                  //$("#df_manual_book").css("background-color","black")
                 }
                 
             }).catch(error => {
@@ -762,14 +765,15 @@
           });
 
           // Ordenar los elementos por fecha de forma descendente
-          listaOrdenada.sort((a, b) => b.fecha - a.fecha);
-
+          listaOrdenada.sort((a, b) => b["fecha inicio"] - a["fecha inicio"]);
+          var listaOrdenada = listaOrdenada.slice(0,5);
+          
           // Agregar elementos sin fecha al final del array ordenado
           var ultimosPost="";
-          for(i=0;i< 3;i++){
+          for(i=0;i< listaOrdenada.length;i++){
             if(listaOrdenada[i]["fecha inicio"]){
               var fecha = listaOrdenada[i]["fecha inicio"];
-              $(".widget_posts").append(`<div class="latest-content">
+              $("#last-post").append(`<div class="latest-content">
                     <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" width="79" height="79" src="../images/proyectos/${listaOrdenada[i]["portada"]}"></a>
                     <h3>
                       <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
@@ -782,6 +786,43 @@
         }
         //recomendarLibros();
 
+        function ordenarBlogsFecha(json){
+          
+          var listaOrdenada = json.map(item => {
+            // Desestructurar el objeto y mantener todas las propiedades
+            let { "fecha publicacion": fechaInicio, ...restoPropiedades } = item;
+            // Si hay fecha inicio, la convertimos a un objeto Date
+            if (fechaInicio !== "") {
+              var partesFecha = fechaInicio.split('/');
+              fechaInicio = new Date(partesFecha[2], partesFecha[1] - 1, partesFecha[0]); // Año, mes, día
+            }
+            // Retornar un nuevo objeto con la fecha inicio modificada y el resto de las propiedades intactas
+            return {
+                "fecha publicacion": fechaInicio,
+                ...restoPropiedades
+            };
+          });
+
+          // Ordenar los elementos por fecha de forma descendente
+          listaOrdenada.sort((a, b) => b["fecha publicacion"] - a["fecha publicacion"]);
+          var listaOrdenada = listaOrdenada.slice(0,5);
+          
+          // Agregar elementos sin fecha al final del array ordenado
+          var ultimosPost="";
+          for(i=0;i< listaOrdenada.length;i++){
+            if(listaOrdenada[i]["fecha publicacion"]){
+              var fecha = listaOrdenada[i]["fecha publicacion"];
+              $("#novedades").append(`<div class="latest-content">
+                    <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" style="max-height: 100px;max-width: 80px !important;" src="../images/blogs/${listaOrdenada[i]["portada"]}"></a>
+                    <h3>
+                      <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
+                      </a>
+                    </h3>
+                    <span style="text-transform: capitalize;">${fecha.toLocaleString('es-ES', { month: 'long' })} ${fecha.getDate()},${fecha.getFullYear()}</span>
+                  </div>`);
+            }
+          }
+        }
 
 
         mostrarInformacion();
@@ -842,7 +883,7 @@
           listaPalabras = seleccionarElementosAleatorios(listaPalabras);
           // Mostrar la lista de palabras
           listaPalabras.forEach(function(etiqueta){
-            $("#tags").append(`<a href="#" title="${etiqueta}">${etiqueta}</a>`)
+            $("#tags").append(`<a href="../blog.html?etiquetas=${etiqueta}" title="${etiqueta}">${etiqueta}</a>`)
           })
         }
 

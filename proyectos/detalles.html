@@ -361,13 +361,13 @@
               <!-- Widget Search -->
               <!-- widget Search /- -->
               <!-- Widget Categories -->
-              <aside class="widget widget_categories">
+              <aside class="widget widget_posts" id="novedades">
                 <h3 class="widget-title">Novedades</h3>
                 <ul></ul>
               </aside>
               <!-- Widget Categories -->
               <!-- Widget Posts -->
-              <aside class="widget widget_posts">
+              <aside class="widget widget_posts" id="last-post">
                 <h3 class="widget-title">Ultimos Proyectos</h3>
               </aside>
               <!-- Widget Posts -->
@@ -458,6 +458,21 @@
         }
         function mostrarInformacion(){
             var archivoProyectos = '../static/proyectos.json';
+            var archivoBlogs = '../static/blogs.json';
+
+          fetch(archivoBlogs)
+          .then(response =>{
+            if(!response.ok){
+                throw new Error('La solicitud no fue exitosa');
+              }
+              return response.json();
+          })
+          .then(datos=>{
+            ordenarBlogsFecha(datos);
+          }).catch(error => {
+              console.error('Ocurrió un error:', error);
+            });
+
             fetch(archivoProyectos)
             .then(response =>{
               if(!response.ok){
@@ -695,18 +710,19 @@
             return {
                 "fecha inicio": fechaInicio,
                 ...restoPropiedades
-            };
-        });
+              };
+          });
 
           // Ordenar los elementos por fecha de forma descendente
-          listaOrdenada.sort((a, b) => b.fecha - a.fecha);
-
+          listaOrdenada.sort((a, b) => b["fecha inicio"] - a["fecha inicio"]);
+          listaOrdenada = listaOrdenada.slice(0,5);
+          console.log(listaOrdenada);
           // Agregar elementos sin fecha al final del array ordenado
           var ultimosPost="";
-          for(i=0;i< 3;i++){
+          for(i=0;i< listaOrdenada.length;i++){
             if(listaOrdenada[i]["fecha inicio"]){
               var fecha = listaOrdenada[i]["fecha inicio"];
-              $(".widget_posts").append(`<div class="latest-content">
+              $("#last-post").append(`<div class="latest-content">
                     <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" width="79" height="79" src="../images/proyectos/${listaOrdenada[i]["portada"]}"></a>
                     <h3>
                       <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
@@ -718,6 +734,45 @@
           }
         }
         //recomendarLibros();
+
+        function ordenarBlogsFecha(json){
+          
+          var listaOrdenada = json.map(item => {
+            // Desestructurar el objeto y mantener todas las propiedades
+            let { "fecha publicacion": fechaInicio, ...restoPropiedades } = item;
+            // Si hay fecha inicio, la convertimos a un objeto Date
+            if (fechaInicio !== "") {
+              var partesFecha = fechaInicio.split('/');
+              fechaInicio = new Date(partesFecha[2], partesFecha[1] - 1, partesFecha[0]); // Año, mes, día
+            }
+            // Retornar un nuevo objeto con la fecha inicio modificada y el resto de las propiedades intactas
+            return {
+                "fecha publicacion": fechaInicio,
+                ...restoPropiedades
+              };
+            });
+
+          // Ordenar los elementos por fecha de forma descendente
+          listaOrdenada.sort((a, b) => b["fecha publicacion"] - a["fecha publicacion"]);
+          var listaOrdenada = listaOrdenada.slice(0,5);
+          
+          // Agregar elementos sin fecha al final del array ordenado
+          var ultimosPost="";
+          for(i=0;i< listaOrdenada.length;i++){
+            if(listaOrdenada[i]["fecha publicacion"]){
+              var fecha = listaOrdenada[i]["fecha publicacion"];
+              $("#novedades").append(`<div class="latest-content">
+                    <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" style="max-height: 100px;max-width: 80px !important;" src="../images/blogs/${listaOrdenada[i]["portada"]}"></a>
+                    <h3>
+                      <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
+                      </a>
+                    </h3>
+                    <span style="text-transform: capitalize;">${fecha.toLocaleString('es-ES', { month: 'long' })} ${fecha.getDate()},${fecha.getFullYear()}</span>
+                  </div>`);
+            }
+          }
+        }
+
         mostrarInformacion();
         escogerFrase();
 

@@ -358,15 +358,7 @@
               <!-- Widget Posts -->
               <aside class="widget widget_tags">
                 <h3 class="widget-title">Actividades populares</h3>
-                <div class="tags">
-                  <a href="#" title="Bricks">Ferias</a>
-                  <a href="#" title="Buildings">Feria del libro</a>
-                  <a href="#" title="Cost">Cosecha</a>
-                  <a href="#" title="Painting">Siembra</a>
-                  <a href="#" title="Elegant">Riego</a>
-                  <a href="#" title="Fire">Ignauracion</a>
-                  <a href="#" title="Graphic">Parrilladas</a>
-                  <a href="#" title="Technology">Tecnologia</a>
+                <div class="tags" id="tags">
                 </div>
               </aside>
               <!-- Widget Posts -->
@@ -544,6 +536,20 @@
         }
         
         function mostrarInformacion(){
+          var archivoBlogs = '../static/blogs.json';
+          fetch(archivoBlogs)
+          .then(response =>{
+            if(!response.ok){
+              throw new Error('La solicitud no fue exitosa');
+            }
+            return response.json();
+          })
+          .then(datos=>{
+            obtenerEtiquetas(datos);
+          }).catch(error => {
+            console.error('Ocurrió un error:', error);
+          });
+
           var librosLista = cargarLibros();
           var urlParams = new URLSearchParams(window.location.search);
           var codigo_get = urlParams.get('id'); 
@@ -687,6 +693,54 @@
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}
+
+
+      function seleccionarElementosAleatorios(lista) {
+          // Verificar si la lista tiene menos de 8 elementos
+          if (lista.length <= 8) {
+              return lista; // Devolver la lista original si tiene 8 o menos elementos
+          }
+
+          var elementosSeleccionados = []; // Lista para almacenar los elementos seleccionados
+          var indicesSeleccionados = {}; // Objeto para rastrear los índices seleccionados
+
+          // Mientras la lista de elementos seleccionados no tenga 8 elementos
+          while (elementosSeleccionados.length < 8) {
+              // Generar un índice aleatorio dentro del rango de la lista
+              var indice = Math.floor(Math.random() * lista.length);
+              
+              // Verificar si este índice ya fue seleccionado
+              if (!indicesSeleccionados[indice]) {
+                  // Agregar el elemento correspondiente al índice a la lista de elementos seleccionados
+                  elementosSeleccionados.push(lista[indice]);
+                  // Marcar el índice como seleccionado
+                  indicesSeleccionados[indice] = true;
+              }
+          }
+
+          return elementosSeleccionados;
+      }
+
+      function obtenerEtiquetas(datos){
+          var palabrasUnicas = {};
+          // Iterar sobre cada elemento del JSON
+          datos.forEach(function(elemento) {
+              // Iterar sobre cada palabra en la lista de etiquetas del elemento
+              elemento["etiquetas"].forEach(function(palabra) {
+                  // Agregar la palabra al objeto de palabras únicas
+                  palabrasUnicas[palabra] = true;
+              });
+          });
+
+          // Obtener las palabras únicas del objeto
+          var listaPalabras = Object.keys(palabrasUnicas); 
+          listaPalabras = seleccionarElementosAleatorios(listaPalabras);
+          console.log(listaPalabras);
+          // Mostrar la lista de palabras
+          listaPalabras.forEach(function(etiqueta){
+            $("#tags").append(`<a href="blog.html?etiquetas=${etiqueta}" title="${etiqueta}">${etiqueta}</a>`)
+          })
+        }
 
         recomendarLibros();
         mostrarInformacion();

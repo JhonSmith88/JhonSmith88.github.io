@@ -40,11 +40,20 @@
     <!-- Lightbox -->
     <script src="libraries/lightbox-plus-jquery.js"></script>
     <link href="libraries/lightbox.css" rel="stylesheet" />
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="libraries/daterangepicker/daterangepicker.css">
+
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="libraries/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
 		
 	<!--[if lt IE 9]>
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
 	<style>
+        .daterangepicker{
+            color:black !important;
+        }
 		.social-icons {
 		  position: fixed;
 		  top: 90px;
@@ -88,6 +97,29 @@
             height: 100% !important;
             padding: 12px 22px !important;
         }
+        .calendario{
+            background-color: white; /* Color de fondo predeterminado */
+            transition: background-color 0.5s ease; /* Transición suave del color de fondo */
+        }
+        .calendario-parpadeo{
+            background-color: white; /* Color de fondo predeterminado */
+            transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo */
+            animation: parpadeoAnimacion 1s infinite alternate;
+        }
+        .calendario:hover {
+            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+        }
+
+        @keyframes parpadeoAnimacion {
+            0% {
+                background-color: #ddd;
+            }
+            100% {
+                background-color: white;
+            }
+        }
+
         @media only screen and (max-width: 768px) {
         .widget {
                 margin-bottom: 15px; /* Altura reducida para pantallas pequeñas */
@@ -130,8 +162,15 @@
 			text-align: center;
 			align-content: center;
 			width: 100%;
-			height: 100%;
+			height: 100%;    
 		}
+    }
+    
+    @media screen and (max-width: 992px) {
+        .button-post{
+            text-align: end;
+        }
+        
         }
         .descripcion-blog{
             height: 120px;
@@ -260,7 +299,7 @@
                                 <li><a href="proyectos.html?proyecto=participacion" title="Proyectos Participación Estudiantil">Programas de Participación Estudiantil</a></li>
 							</ul>
 						</li>
-						<li class="dropdown active">
+						<li class="dropdown">
 							<a href="#" title="RECURSOS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
@@ -268,7 +307,7 @@
 								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
 							</ul>
 						</li>
-						<li><a href="blog.html" title="Blog">Blog</a></li>
+						<li class="active"><a href="blog.html" title="Blog">Blog</a></li>
 						<li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -285,33 +324,25 @@
 		
 		<div class="section-padding"></div>
         <div class="section-header">
-            <h3>Biblioteca</h3>
-            <p>nuestra biblioteca cuenta con más de 5000 libros</p>
+            <h3>Blogs</h3>
         </div>
         <div class="container">
             <div class="row">
-                <div class=" p-find col-md-3 col-sm-7 col-xs-12">
+                <div class=" p-find col-md-3 col-sm-6 col-xs-12">
                     <aside class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <input id="inputTitulo" type="text" placeholder="Título" class="form-control">
                         </div>
                     </aside>
                 </div>
-                <div class="p-find col-md-2 col-sm-5 col-xs-5">
-                    <aside class="widget widget_search">
-                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
-                            <input id="inputAutor" type="text" placeholder="Autor" class="form-control">
-                        </div>
-                    </aside>
-                </div>
-                <div class="p-find col-md-3 col-sm-5 col-xs-7">
+                <div class="p-find col-md-3 col-sm-6 col-xs-6">
                     <aside class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <input id="inputResumen" type="text" placeholder="Descripción" class="form-control">
                         </div>
                     </aside>
                 </div>
-                <div class="p-find col-md-2 col-sm-4 col-xs-7">
+                <div class="p-find col-md-2 col-sm-6 col-xs-6">
                     <aside id="categoria-menu" class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <!-- Input de texto -->
@@ -322,18 +353,30 @@
                                 <!-- Menú desplegable -->
                                 <ul id="listaCategorias" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                     <li><a class="option-categoria">Todos</a></li>
-                                    <li><a class="option-categoria">Ninguno</a></li>
                                 </ul>
                             </div>
                         </div>
                     </aside>
                 </div>
-                <div class="p-find col-md-1 col-sm-2 col-xs-3">
+                <div class=" form-group p-find col-md-3 col-sm-5 col-xs-10">
                     <aside class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
-                            <input id="inputCodigo" type="text" placeholder="Código" class="form-control">
+                            <!-- Input de texto -->
+                            <!-- Botón desplegable -->
+                            
+                            <div class="input-group-btn calendario-parpadeo" id="calendario">
+                                <a class="btn btn-default btn-find"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
+                                    <span style="font-size: 16px;">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </a>
+                                <!-- Menú desplegable -->
+                            </div>
+                            <input type="text" class="form-control float-right" id="reservation" style="padding: 10px 2px">
                         </div>
                     </aside>
+                    <!-- /.input group -->
+                    
                 </div>
                 <div class=" p-find col-md-1 col-sm-1 col-xs-2 text-center">
                     <aside class="widget widget_search">
@@ -376,11 +419,11 @@
             <nav class="ow-pagination">
                 <ul class="pagination">
                     <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i class="fa fa-angle-double-left"></i></a></li>
-                    <li><a id="page-one" href="biblioteca.html?page=1">1</a></li>
+                    <li><a id="page-one" href="blog.html?page=1">1</a></li>
                     <li id="left-page" class="display-page"><a>...</a></li>
-                    <li id="page-two-li"><a id="page-two" href="biblioteca.html?page=2">2</a></li>
-                    <li id="page-three-li"><a id="page-three" href="biblioteca.html?page=3">3</a></li>
-                    <li id="page-four-li" class="display-page"><a id="page-four" href="biblioteca.html?page=4">4</a></li>
+                    <li id="page-two-li"><a id="page-two" href="blog.html?page=2">2</a></li>
+                    <li id="page-three-li"><a id="page-three" href="blog.html?page=3">3</a></li>
+                    <li id="page-four-li" class="display-page"><a id="page-four" href="blog.html?page=4">4</a></li>
                     <li id="right-page"><a>...</a></li>
                     <li id="page-last-li"><a id="page-last" href="#"></a></li>
                     <li id="page-next-li"><a id="page-next" href="#" aria-label="Next"><i class="fa fa-angle-double-right"></i></a></li>
@@ -443,6 +486,12 @@
 
     <!-- Library - Theme JS -->	
     <script src="js/functions.js"></script>
+
+    <script src="libraries/moment/moment.min.js"></script>
+    <script src="libraries/daterangepicker/daterangepicker.js"></script>
+    
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="libraries/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> 
     
     <div class="social-icons">
 		<a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img src="images/Facebook.png" alt="Facebook"></a>
@@ -455,7 +504,7 @@
         $(document).ready(function() {
             // Número de elementos por página
             var elementosPorPagina = 20;
-            var listCategorias = ['Literatura', 'Ciencias sociales', 'economia', 'Agropecuaria', 'Ciencias Naturales', 'Filosofía', 'Historia', 'Psicología', 'Arte', 'Religión', 'Matemática', 'Pedagogía', 'Emprendimiento', 'Educación cívica', 'cocina', 'Informática', 'Artes visuales:', 'Salud y bienestar', 'fisica', 'Derecho', 'Mecánica', 'Lengua extranjera', ''];
+            var listCategorias = ['Literatura', 'Historia', ''];
 
             listCategorias.map(function(categoria){
                 $("#listaCategorias").append("<li><a class='option-categoria'>"+ categoria +"</a></li>")
@@ -481,18 +530,29 @@
             });
 
             $('#btnBuscarLibro').click(function() {
+                buscar();
+            });
+
+            $(".row input").keypress(function(event) {
+                if (event.which === 13) { // 13 es el código de la tecla Enter
+                    // Aquí puedes activar el evento que desees
+                    buscar();
+                    // Por ejemplo, puedes hacer algo como submit de un formulario o ejecutar una función
+                }
+            });
+    
+
+            function buscar(){
                 titulo = $("#inputTitulo").val();
-                autor = $("#inputAutor").val();
-                categoria = $("#inputCategoria").val();
                 resumen = $("#inputResumen").val();
-                codigo = $("#inputCodigo").val();
+                categoria = $("#inputCategoria").val();
 
                 var urlBusqueda="";
                 var busqueda="";
-                if(titulo=="" && autor=="" && resumen=="" && categoria=="" && codigo==""){
+                if(titulo=="" && resumen=="" && categoria==""){
                     urlBusqueda = "";
                 }else{
-                    busqueda = {titulo:titulo,autor:autor,resumen:resumen,categoria:categoria,codigo:codigo};
+                    busqueda = {titulo:titulo,descripcion:resumen,categoria:categoria};
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
@@ -501,37 +561,8 @@
                     urlBusqueda ="&" + urlBusqueda.slice(0, -1);
                 }
 
-                window.location.href = "biblioteca.html?page=1"+ urlBusqueda;
-            });
-
-            $(".row input").keypress(function(event) {
-                if (event.which === 13) { // 13 es el código de la tecla Enter
-                    // Aquí puedes activar el evento que desees
-                    titulo = $("#inputTitulo").val();
-                    autor = $("#inputAutor").val();
-                    categoria = $("#inputCategoria").val();
-                    resumen = $("#inputResumen").val();
-                    codigo = $("#inputCodigo").val();
-
-                    var urlBusqueda="";
-                    var busqueda="";
-                    if(titulo=="" && autor=="" && resumen=="" && categoria=="" && codigo==""){
-                        urlBusqueda = "";
-                    }else{
-                        busqueda = {titulo:titulo,autor:autor,resumen:resumen,categoria:categoria,codigo:codigo};
-                        for (var key in busqueda) {
-                            if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
-                                urlBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
-                            }
-                        }
-                        urlBusqueda ="&" + urlBusqueda.slice(0, -1);
-                    }
-
-                    window.location.href = "biblioteca.html?page=1"+ urlBusqueda;
-                    // Por ejemplo, puedes hacer algo como submit de un formulario o ejecutar una función
-                }
-            });
-    
+                window.location.href = "blog.html?page=1"+ urlBusqueda;
+            }
 
             // Función para hacer la consulta del archivo JSON
             function consultarJSON() {
@@ -564,14 +595,83 @@
                 return pagina ? parseInt(pagina) : 1; // Si no se especifica la página, se asume la página 1
             }
     
+            function filtrarPorListaEtiquetas(json, palabras) {
+                return json.filter(elemento =>
+                    palabras.every(palabra =>
+                    elemento.etiquetas.some(etiqueta =>
+                        normalizarTexto(etiqueta).includes(normalizarTexto(palabra))
+                    )
+                    )
+                );
+            }
+
+            function normalizarTexto(texto) {
+                return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+            }
+            
             function filtrarDatos(datosJSON){
+                var urlParams = new URLSearchParams(window.location.search);
+                var titulo_get = urlParams.get('titulo');
+                var descripcion_get = urlParams.get('descripcion');
+                var categoria_get = urlParams.get('categoria');
+                var etiquetas_get = urlParams.get('etiquetas');
+                
+
+
+                titulo_get = isNaN(titulo_get) ? titulo_get: "" ;
+                descripcion_get = isNaN(descripcion_get) ? descripcion_get: "" ;
+                categoria_get = isNaN(categoria_get) ? categoria_get: "" ;
+
+                titulo_get = titulo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                descripcion_get = descripcion_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                categoria_get = categoria_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                $("#inputTitulo").val(titulo_get);
+                $("#inputResumen").val(descripcion_get);
+                $("#inputCategoria").val(categoria_get);
+
+                librosFiltrados = datosJSON.filter(function(blog){
+                    var titulo = blog["titulo"].toLowerCase();
+                    titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    var descripcion = blog["resumen"].toLowerCase();
+                    descripcion = descripcion.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    var categoria = blog["categoria"].toLowerCase();
+                    categoria = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    return titulo.includes(titulo_get.toLocaleLowerCase()) && descripcion.includes(descripcion_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase());
+
+                });
+
+                if(isNaN(urlParams.get('etiquetas'))){
+                    etiquetas_get = etiquetas_get.split("-");
+                    librosFiltrados = filtrarPorListaEtiquetas(librosFiltrados, etiquetas_get);
+                    etiquetas_get = etiquetas_get.join("-");
+                }
+
                 var urlBibliotetaBusqueda="";
                 var busqueda="";
 
-                numPage = Math.ceil((datosJSON.length)/20);
+                if(titulo_get=="" && descripcion_get=="" && categoria_get=="" && etiquetas_get==""){
+                    urlBibliotetaBusqueda = "";
+                }else{
+                    busqueda = {titulo:titulo_get,descripcion:descripcion_get,categoria:categoria_get, etiquetas:etiquetas_get};
+                    
+                    for (var key in busqueda) {
+                        if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
+                            urlBibliotetaBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
+                        }
+                    }
+                    urlBibliotetaBusqueda ="&" + urlBibliotetaBusqueda.slice(0, -1);
+                    
+                }
+
+                datosJSON = librosFiltrados;
+                numPage = Math.ceil((datosJSON.length)/6);
                 if(numPage == 1){
                     $("#page-one").addClass("active-page")
-                    $("#page-one").attr("href","biblioteca.html?page="+numPage+urlBibliotetaBusqueda);
+                    $("#page-one").attr("href","blog.html?page="+numPage+urlBibliotetaBusqueda);
                     $("#page-two-li").addClass("display-page")
                     $("#page-three-li").addClass("display-page")
                     $("#page-last-li").addClass("display-page")
@@ -586,39 +686,41 @@
                         $("#page-two").addClass("active-page")
                     }
                     $("#page-two-li").removeClass("display-page")
-                    $("#page-three-li").removeClass("display-page")
+                    $("#page-three-li").addClass("display-page")
                     $("#page-last-li").addClass("display-page")
                     $("#page-four-li").addClass("display-page")
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
-                    $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
+                    $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                    $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                    $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                    $("#page-next").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
                 }
                 else if(numPage == 3){
                     if(numeroPagina==1){
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                         $("#page-one").addClass("active-page")
                         $("#page-three").removeClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-next").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
                     }
                     else if (numeroPagina==2){
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                         $("#page-two").addClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-next").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
                     } 
                     else{
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-next").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
                     }
                     $("#page-two-li").removeClass("display-page");
                     $("#page-three-li").removeClass("display-page");
@@ -630,43 +732,43 @@
                 else{
                     
                     $("#page-last").text(numPage);
-                    $("#page-last").attr("href","biblioteca.html?page="+numPage+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                    $("#page-last").attr("href","blog.html?page="+numPage+urlBibliotetaBusqueda);
+                    $("#page-next").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
                     if(numeroPagina==1){
                         $("#page-one").addClass("active-page")
                         $("#left-page").addClass("display-page")
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
                     }
                     if(numeroPagina==2){
                         $("#page-two").addClass("active-page");
                         $("#left-page").addClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
                     }
                     if(numeroPagina==3){
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-four-li").removeClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","biblioteca.html?page="+(4)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-four").attr("href","blog.html?page="+(4)+urlBibliotetaBusqueda);
                     }
                     if(numeroPagina>3 && numeroPagina < (numPage-2)){
                         $("#page-three").text(numeroPagina);
                         $("#page-two").text((numeroPagina-1));
                         $("#page-four").text((numeroPagina+1));
                         
-                        $("#page-three").attr("href","biblioteca.html?page="+numeroPagina+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+numeroPagina+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-four").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
 
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
 
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
@@ -678,51 +780,51 @@
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
                         $("#page-four-li").removeClass("display-page");
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-four").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#page-four").text((numeroPagina-1));
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina-2)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(numeroPagina-2)+urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina-2));
                         $("#page-two-li").addClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                     }
                     if(numeroPagina == (numPage-1) && numPage != 4){
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#page-two").text((numeroPagina-1));
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                     }
                     if(numeroPagina == (numPage-2) && numPage != 4){
                         $("#left-page").removeClass("display-page")
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href","blog.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page");
                         $("#page-four-li").removeClass("display-page");
                         $("#page-four").text((numeroPagina+1));
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-four").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
                         $("#page-two").text((numeroPagina-1));
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
                         $("#right-page").removeClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
                     }
 
                 }
 
 
                 $("#listBlog").addClass("display-none-div");
-                mostrarDatosPorPagina(datosJSON, numeroPagina, elementosPorPagina);
+                mostrarDatosPorPagina(datosJSON, numeroPagina, 6);
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
             }
@@ -735,6 +837,7 @@
     
                 // Filtramos los datos para obtener solo los elementos de la página actual
                 var datosPagina = datos.slice(inicio, fin);
+                datosPagina.reverse();
                 var datosArticleBook = "";
                 // Hacemos algo con los datos, por ejemplo, imprimirlos en la consola
                 var portada = "";
@@ -756,7 +859,7 @@
                             <div class="caption">
                                 <h3 style="height:50px">${titulo}</h3>
                                 <p class="descripcion-blog">${resumen}</p>
-                                <p><a href="../blog/detalles.html?id=${id}" class="btn btn-primary" role="button">Ver más</a></p>
+                                <p class="button-post"><a href="../blog/detalles.html?id=${id}" class="btn btn-primary" role="button">Ver más</a></p>
                             </div>
                             </div>
                         </div>`;
@@ -832,7 +935,27 @@
             };
             // Mostrar los datos para la página actual
     
-            
+            //Date range picker
+            $('#reservation').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('#reservation').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+            });
+
+            $('#reservation').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+            $("#calendario").click(function(){
+                $("#calendario").removeClass("calendario-parpadeo");
+                $("#calendario").addClass("calendario");
+            });
+
             var imagen = new Image();
 			imagen.src = "images/about-banner.jpg";
 			imagen.onload = function() {
@@ -841,7 +964,6 @@
 				var aspectoImagen =  imagenAncho / imagenAlto;
 				aspectoImagen = ""+aspectoImagen+"";
 				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				console.log(aspectoImagen);
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}
