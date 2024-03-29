@@ -138,6 +138,7 @@
 								<li><a href="about.html#propositoMisional">Propósito Misional</a></li>
 								<li><a href="about.html#comunidad">Nuestra Historia</a></li>
 								<li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
+								<li><a href="about.html#uniformeInstitucional">Uniforme Institucional</a></li>
                                 <li><a href="about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
 							</ul>
 						</li>
@@ -571,7 +572,16 @@
 			</div>
 		</div><!-- Why choose Section /- -->
 		
-	
+	<!-- Client Section -->
+	<div class="client-section container-fluid no-padding">
+		<!-- Container -->
+		<div class="container">
+			<div class="client-carousel">
+				
+			</div>
+		</div><!-- Container /- -->
+	</div><!-- Client Section /- -->
+	<br><br>
 	<!-- Footer Section -->
 	<div class="footer-section container-fluid no-padding">
 		<!-- Container -->
@@ -581,7 +591,11 @@
 				<a href="contact-us.html" title="contact us">CONTÁCTENOS</a>
 			</div>
 			
+
 		</div><!-- Container /- -->
+
+		
+		
 		<div class="footer-bottom container-fluid no-padding">
 			<div class="container">
 				<div class="row">
@@ -731,6 +745,66 @@
             $(window).resize(function(){
                 equalizeHeight();
             });
+
+
+			function logosSponsor(){
+			fetch("static/aprocinadores.json")
+			.then(response =>{
+				if (!response.ok) {
+					throw new Error('La solicitud no fue exitosa');
+				}
+				return response.json();
+			})
+			.then(data =>{
+				data.map(function(sponsor){
+					let nombre = sponsor.nombre;
+					let logo = sponsor.logo;
+					let link = sponsor.link;
+
+					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+				});
+			}).then(data =>{
+				carrusel();
+			})
+			
+			
+		}
+		
+		function carrusel(){
+			if( $(".client-section").length ) {
+			$(".client-carousel").owlCarousel({
+				loop: true,
+				nav: true,
+				dots: false,
+				margin: 0,
+				smartSpeed: 200,				
+				autoplay: true,
+				responsive:{
+					0:{
+						items: 2
+					},
+					480:{
+						items: 3
+					},
+					640:{
+						items: 3
+					},
+					992:{
+						items: 6
+					}
+				}
+			})
+			
+			$(".client-section").each(function () {
+				var $this = $(this);
+				var myVal = $(this).data("value");
+				$this.appear(function() {
+					$(".client-section").addClass( "animated bounceInLeft");
+				});
+			});
+		}
+		};
+		logosSponsor();
         })
     </script>
 

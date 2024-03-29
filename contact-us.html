@@ -89,6 +89,23 @@
 			height: 100%;
 		}
         }
+		.icono{
+			width: auto !important;
+			height: auto  !important;
+			display: inline-block  !important;
+			background-color: transparent  !important;
+			color: #ffffff  !important;
+			line-height: normal  !important;
+			font-size: inherit !important;
+			text-align: center !important;
+			position: inherit !important;
+		}
+		.contact-info i::after {
+			display: none;
+		}
+		.contact-info i:hover {
+			color:#0fa804f4 !important;
+		}
 	  </style>
 
 
@@ -174,6 +191,7 @@
 								<li><a href="about.html#propositoMisional">Propósito Misional</a></li>
 								<li><a href="about.html#comunidad">Nuestra Historia</a></li>
 								<li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
+								<li><a href="about.html#uniformeInstitucional">Uniforme Institucional</a></li>
                                 <li><a href="about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
 							</ul>
 						</li>
@@ -239,34 +257,53 @@
 		<!-- Container -->
 		<div class="container">
 			<div class="row contact-detail">
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="contact-info">
-						<i class="icon icon-Pointer"></i>
-						<h5>Dirección</h5>
-						<p>Juan José Loayza y Segundo Figueróa</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="col-md-5 col-md-offset-1 col-sm-5 col-ms-offset-1 col-xs-6">
 					<div class="contact-info">
 						<i class="icon icon-Phone2"></i>
 						<h5>Teléfono</h5>
-						<a href="tell:+011234567896" title="(+01) 123 456 7896">(+593) 07 9764216</a>
-						<a href="tell:+011234567890" title="(+01) 123 456 7890">(+593) 07 9764216</a>
+						<div style="height: 75px;">
+							<a href="tell:(+593) 07 9764216" title="(+593) 07 9764216">(+593) 07 9764216</a>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="col-md-5 col-sm-5 col-xs-6">
 					<div class="contact-info">
 						<i class="icon icon-Mail"></i>
 						<h5>Email</h5>
-						<a href="mailto:info@8 de Noviembre.com" title="Info@8 de Noviembre.Com">marcoromero@col8nov.com</a>
-						<a href="mailto:support@8 de Noviembre.com" title="Support@8 de Noviembre.Com">admin@col8nov.com</a>
+						<div style="height: 75px;">
+							<a href="mailto:info@8 de Noviembre.com" title="Info@8 de Noviembre.Com">marcoromero@col8nov.com</a>
+							<a href="mailto:support@8 de Noviembre.com" title="Support@8 de Noviembre.Com">admin@col8nov.com</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-10 col-md-offset-1 col-sm-10 col-xs-12" style="margin-top: 20px;">
+					<div class="contact-info">
+						<i class="icon icon-Pointer"></i>
+						<h5>Dirección</h5>
+						<p style="font-size: 16px !important;">
+							<a id="ubi_1" style="display: inline;font-size: 16px !important;color: #0fa804f4;cursor: pointer;">Ubicación 1</a> / <a id="ubi_2" style="display: inline;font-size: 16px !important;cursor: pointer;">Ubicación 2</a>
+						</p>
+						<p id="direccion">C. Juan José Loayza y C. Segundo Figueróa <a style="display: inline;" href="https://www.google.com/maps/search/Colegio+de+Bachillerato+%228+de+Noviembre%22/@-3.6835567,-79.6830349,16z?hl=es-419&entry=ttu"> <i class="fa fa-map-marker icono" aria-hidden="true"></i></a></p>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12" id="mapa">
+								<iframe style="width: inherit;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7963.151487823262!2d-79.68303487081052!3d-3.6835566851525092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9034a09e1b44bf3d%3A0x1c6663a9c2b173d6!2sInstituto%20Tecnologico%20Ocho%20de%20Noviembre!5e0!3m2!1ses-419!2sec!4v1711687371595!5m2!1ses-419!2sec" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="section-padding"></div>
 
-		</div>
+		<!-- Client Section -->
+		<div class="client-section container-fluid no-padding">
+			<!-- Container -->
+			<div class="container">
+				<div class="client-carousel">
+					
+				</div>
+			</div><!-- Container /- -->
+		</div><!-- Client Section /- -->
 
 		
 	</main>
@@ -322,14 +359,84 @@
 				var aspectoImagen =  imagenAncho / imagenAlto;
 				aspectoImagen = ""+aspectoImagen+"";
 				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				console.log(aspectoImagen);
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}
-		})
+
+			$("#ubi_1").click(function(){
+				$(this).css("color","#0fa804f4");
+				$("#ubi_2").css("color","white");
+				$("#direccion").html(`C. Juan José Loayza y C. Segundo Figueróa <a style="display: inline;" href="https://maps.app.goo.gl/eAXzpmnb4Fv8MHGL6"> <i class="fa fa-map-marker icono" aria-hidden="true"></i></a>`);
+				$("#mapa").html(`<iframe style="width: inherit;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7963.151487823262!2d-79.68303487081052!3d-3.6835566851525092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9034a09e1b44bf3d%3A0x1c6663a9c2b173d6!2sInstituto%20Tecnologico%20Ocho%20de%20Noviembre!5e0!3m2!1ses-419!2sec!4v1711687371595!5m2!1ses-419!2sec" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`);
+			})
+			$("#ubi_2").click(function(){
+				$(this).css("color","#0fa804f4");
+				$("#ubi_1").css("color","white");
+				$("#direccion").html(`Ciudadela Villa Elvita<a style="display: inline;" href="https://maps.app.goo.gl/p518BzQbbNJxLU829"> <i class="fa fa-map-marker icono" aria-hidden="true"></i></a>`);
+				$("#mapa").html(`<iframe style="width: inherit;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15926.164521528352!2d-79.67850809913223!3d-3.691285539734688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9034a16f453c09df%3A0x44a0d73c1addc831!2sColegio%20de%20Bchillerato%20%228%20de%20Noviembre%22!5e0!3m2!1ses-419!2sec!4v1711689518952!5m2!1ses-419!2sec" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`);
+			})
+
+			function logosSponsor(){
+			fetch("static/aprocinadores.json")
+			.then(response =>{
+				if (!response.ok) {
+					throw new Error('La solicitud no fue exitosa');
+				}
+				return response.json();
+			})
+			.then(data =>{
+				data.map(function(sponsor){
+					let nombre = sponsor.nombre;
+					let logo = sponsor.logo;
+					let link = sponsor.link;
+
+					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+				});
+			}).then(data =>{
+				carrusel();
+			})
+			
+			
+		}
+		
+		function carrusel(){
+			if( $(".client-section").length ) {
+			$(".client-carousel").owlCarousel({
+				loop: true,
+				nav: true,
+				dots: false,
+				margin: 0,
+				smartSpeed: 200,				
+				autoplay: true,
+				responsive:{
+					0:{
+						items: 2
+					},
+					480:{
+						items: 3
+					},
+					640:{
+						items: 3
+					},
+					992:{
+						items: 6
+					}
+				}
+			})
+			
+			$(".client-section").each(function () {
+				var $this = $(this);
+				var myVal = $(this).data("value");
+				$this.appear(function() {
+					$(".client-section").addClass( "animated bounceInLeft");
+				});
+			});
+		}
+		};
+		logosSponsor();
+		});
 	</script>
 	<div class="social-icons">
-		
 		<a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img src="images/Facebook.png" alt="Facebook"></a>
 	  </div>
 </body>

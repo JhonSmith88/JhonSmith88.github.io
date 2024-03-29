@@ -173,6 +173,7 @@
 								<li><a href="about.html#propositoMisional">Propósito Misional</a></li>
 								<li><a href="about.html#comunidad">Nuestra Historia</a></li>
 								<li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
+								<li><a href="about.html#uniformeInstitucional">Uniforme Institucional</a></li>
                                 <li><a href="about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
 							</ul>
 						</li>
@@ -309,18 +310,12 @@
 				<a href="contact-us.html" class="contact-btn" title="contact us">CONTÁCTENOS</a>
 			</div><!-- Container /- -->
 		</div><!-- Call Out Section /- -->
-
+		<div class="section-padding"></div>
 		<!-- Client Section -->
 		<div class="client-section container-fluid no-padding">
 			<!-- Container -->
 			<div class="container">
 				<div class="client-carousel">
-					<a href="#" title="Logo"><img src="images/client1.png" width="86" height="74" alt="Client" /></a>
-					<a href="#" title="Logo"><img src="images/client2.png" width="112" height="63" alt="Client" /></a>
-					<a href="#" title="Logo"><img src="images/client3.png" width="98" height="80" alt="Client" /></a>
-					<a href="#" title="Logo"><img src="images/client4.png" width="107" height="76" alt="Client" /></a>
-					<a href="#" title="Logo"><img src="images/client5.png" width="120" height="67" alt="Client" /></a>
-					<a href="#" title="Logo"><img src="images/client6.png" width="90" height="82" alt="Client" /></a>
 				</div>
 			</div><!-- Container /- -->
 		</div><!-- Client Section /- -->
@@ -421,6 +416,65 @@
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}
+
+			function logosSponsor(){
+			fetch("static/aprocinadores.json")
+			.then(response =>{
+				if (!response.ok) {
+					throw new Error('La solicitud no fue exitosa');
+				}
+				return response.json();
+			})
+			.then(data =>{
+				data.map(function(sponsor){
+					let nombre = sponsor.nombre;
+					let logo = sponsor.logo;
+					let link = sponsor.link;
+
+					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+				});
+			}).then(data =>{
+				carrusel();
+			})
+			
+			
+		}
+		
+		function carrusel(){
+			if( $(".client-section").length ) {
+			$(".client-carousel").owlCarousel({
+				loop: true,
+				nav: true,
+				dots: false,
+				margin: 0,
+				smartSpeed: 200,				
+				autoplay: true,
+				responsive:{
+					0:{
+						items: 2
+					},
+					480:{
+						items: 3
+					},
+					640:{
+						items: 3
+					},
+					992:{
+						items: 6
+					}
+				}
+			})
+			
+			$(".client-section").each(function () {
+				var $this = $(this);
+				var myVal = $(this).data("value");
+				$this.appear(function() {
+					$(".client-section").addClass( "animated bounceInLeft");
+				});
+			});
+		}
+		};
+		logosSponsor();
 		});
 	</script>
 	<div class="social-icons">

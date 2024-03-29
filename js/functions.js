@@ -292,38 +292,7 @@
 		}
 		
 		/* -- Client Section */
-		if( $(".client-section").length ) {
-			$(".client-carousel").owlCarousel({
-				loop: true,
-				nav: true,
-				dots: false,
-				margin: 0,
-				smartSpeed: 200,				
-				autoplay: true,
-				responsive:{
-					0:{
-						items: 2
-					},
-					480:{
-						items: 3
-					},
-					640:{
-						items: 3
-					},
-					992:{
-						items: 6
-					}
-				}
-			})
-			
-			$(".client-section").each(function () {
-				var $this = $(this);
-				var myVal = $(this).data("value");
-				$this.appear(function() {
-					$(".client-section").addClass( "animated bounceInLeft");
-				});
-			});
-		}
+
 		
 		/* -- Testimonial Section */
 		if( $(".testimonial-section").length ) {

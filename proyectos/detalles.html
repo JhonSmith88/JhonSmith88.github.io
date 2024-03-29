@@ -243,7 +243,8 @@
 								<li><a href="../about.html#propositoMisional">Propósito Misional</a></li>
 								<li><a href="../about.html#comunidad">Nuestra Historia</a></li>
 								<li><a href="../about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
-                                <li><a href="../about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
+                <li><a href="../about.html#uniformeInstitucional">Uniforme Institucional</a></li>
+                <li><a href="../about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -387,6 +388,17 @@
         <div class="section-padding"></div>
       </div>
       <!-- Latest News Section /- -->
+      <!-- Client Section -->
+      <div class="client-section container-fluid no-padding">
+        <!-- Container -->
+        <div class="container">
+          <div class="client-carousel">
+            
+          </div>
+        </div><!-- Container /- -->
+      </div><!-- Client Section /- -->
+
+      <br><br>
     </main>
 
 	<!-- Footer Section -->
@@ -660,7 +672,7 @@
         }
       
         function escogerFrase(){
-          var archivoFrases = 'static/frases.json';
+          var archivoFrases = '../static/frases.json';
           var frasesJson;
     
           if(!localStorage.getItem('datosFrases')){
@@ -762,9 +774,9 @@
             if(listaOrdenada[i]["fecha publicacion"]){
               var fecha = listaOrdenada[i]["fecha publicacion"];
               $("#novedades").append(`<div class="latest-content">
-                    <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" style="max-height: 100px;max-width: 80px !important;" src="../images/blogs/${listaOrdenada[i]["portada"]}"></a>
+                    <a title="${listaOrdenada[i]["tema"]}" href="../blog/detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank"><img alt="latest-post-${listaOrdenada[i]["id"]}" style="max-height: 100px;max-width: 80px !important;" src="../images/blogs/${listaOrdenada[i]["portada"]}"></a>
                     <h3>
-                      <a title="${listaOrdenada[i]["tema"]}" href="detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
+                      <a title="${listaOrdenada[i]["tema"]}" href="../blog/detalles.html?id=${listaOrdenada[i]["id"]}" target="_blank">${listaOrdenada[i]["tema"]}
                       </a>
                     </h3>
                     <span style="text-transform: capitalize;">${fecha.toLocaleString('es-ES', { month: 'long' })} ${fecha.getDate()},${fecha.getFullYear()}</span>
@@ -835,6 +847,64 @@
           })
         }
 
+        function logosSponsor(){
+			fetch("../static/aprocinadores.json")
+			.then(response =>{
+				if (!response.ok) {
+					throw new Error('La solicitud no fue exitosa');
+				}
+				return response.json();
+			})
+			.then(data =>{
+				data.map(function(sponsor){
+					let nombre = sponsor.nombre;
+					let logo = sponsor.logo;
+					let link = sponsor.link;
+
+					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="../images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+				});
+			}).then(data =>{
+				carrusel();
+			})
+			
+			
+		}
+		
+		function carrusel(){
+			if( $(".client-section").length ) {
+			$(".client-carousel").owlCarousel({
+				loop: true,
+				nav: true,
+				dots: false,
+				margin: 0,
+				smartSpeed: 200,				
+				autoplay: true,
+				responsive:{
+					0:{
+						items: 2
+					},
+					480:{
+						items: 3
+					},
+					640:{
+						items: 3
+					},
+					992:{
+						items: 6
+					}
+				}
+			})
+			
+			$(".client-section").each(function () {
+				var $this = $(this);
+				var myVal = $(this).data("value");
+				$this.appear(function() {
+					$(".client-section").addClass( "animated bounceInLeft");
+				});
+			});
+		}
+		};
+		logosSponsor();
 
       });
 
