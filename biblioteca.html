@@ -53,6 +53,7 @@
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
 	<style>
+        
         .daterangepicker{
             color:black !important;
         }
@@ -145,6 +146,51 @@
             background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
             cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
         }
+        .ordenar:hover {
+            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+        }
+        .btn-fecha-select{
+            background-color: #d5d5d5;
+            border: #ffffff solid 0px;
+        }
+        .ventana {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #888888;
+        }
+        .ventana button{
+            border: none;
+            border-radius: 10px;
+            padding: 6px 13px;
+            margin: 7px;
+        }
+        .ventana {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Asegura que el div esté por encima de otros elementos */
+            display: none;
+        }
+        .btn-find-date:hover{
+            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+        }
+        #contBook{
+            margin-bottom: 3px;
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            text-transform: capitalize;
+            letter-spacing: 0.84px;
+            font-size: 19px;
+            padding: 10px 0px 5px 0px;
+            color: #000000
+        }
+
+        
 
         @keyframes parpadeoAnimacion {
             0% {
@@ -156,6 +202,9 @@
         }
 
         @media only screen and (max-width: 768px) {
+        .menu-principal{
+            margin: 0px 1px 0px 1px;
+        }
         .widget {
                 margin-bottom: 4px; /* Altura reducida para pantallas pequeñas */
             }
@@ -356,7 +405,7 @@
             <p>nuestra biblioteca cuenta con más de 5000 libros</p>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row menu-principal">
                 <div class=" p-find col-md-3 col-sm-7 col-xs-12">
                     <aside class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
@@ -422,7 +471,7 @@
                     </div>
                     <div class="panel-body">
                         
-                        <div class="p-find col-md-3 col-sm-4 col-xs-6">
+                        <div class="p-find col-md-3 col-sm-6 col-xs-6">
                             <aside id="categoria-menu-doc" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
@@ -447,7 +496,7 @@
                                 </div>
                             </aside>
                         </div>
-                        <div class=" p-find col-md-2 col-sm-4 col-xs-6">
+                        <div class=" p-find col-md-2 col-sm-6 col-xs-6">
                             <aside id="categoria-menu-estado" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
@@ -463,13 +512,13 @@
                                             <li><a class="option-estado" data-estado="nuevo">Nuevo</a></li>
                                             <li><a class="option-estado" data-estado="reparacion">Reparación</a></li>
                                             <li><a class="option-estado" data-estado="roto">Roto</a></li>
-                                            <li><a class="option-estado" data-estado="vacíos">Sin definir</a></li>
+                                            <li><a class="option-estado" data-estado="vacios">Sin definir</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </aside>
                         </div>
-                        <div class="p-find col-md-3 col-sm-4 col-xs-6">
+                        <div class="p-find col-md-3 col-sm-6 col-xs-12">
                             <aside id="categoria-menu-asignatura" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
@@ -480,7 +529,6 @@
                                         <!-- Menú desplegable -->
                                         <ul id="listaAsignatura" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                             <li><a class="option-asignatura" data-asignatura="">Todos</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Agropecuaria">Agropecuaria</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Autoayuda superacion personal">Autoayuda superacion personal</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Biologia">Biologia</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Educacion Cultural y Artistica">Educacion Cultural y Artistica</a></li>
@@ -501,13 +549,13 @@
                                 </div>
                             </aside>
                         </div>
-                        <div class=" form-group p-find col-md-3 col-sm-5 col-xs-6">
+                        <div class="form-group p-find col-md-4 col-sm-6 col-xs-12">
                             <aside class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
                                     <!-- Botón desplegable -->
                                     
-                                    <div class="input-group-btn calendario-parpadeo" id="calendario">
+                                    <div class="input-group-btn calendario-parpadeo" id="calendario" data-toggle-button="true">
                                         <a class="btn btn-default btn-find"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
                                             <span style="font-size: 16px;">
                                                 <i class="far fa-calendar-alt"></i>
@@ -515,7 +563,16 @@
                                         </a>
                                         <!-- Menú desplegable -->
                                     </div>
-                                    <input type="text" class="form-control float-right" id="reservation" style="padding: 10px 2px">
+                                    <input autocomplete="off" type="text" class="form-control float-right" id="reservation" style="padding: 10px 2px">
+                                    <!-- Botón Ordenar -->
+                                    <div class="input-group-btn ordenar" id="ordenar" data-sort="desc">
+                                        <a class="btn btn-default btn-find" title="Descendente"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
+                                            <span style="font-size: 16px;">
+                                                <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <!-- Menú desplegable -->
+                                    </div>
                                 </div>
                             </aside>
                             <!-- /.input group -->
@@ -524,10 +581,22 @@
                     </div>
                   </div>
             </div>
+            <div id="fechas" class="ventana" class="conjunto-fechas">
+                <div id="conjuntoFecha"></div>
+                <div id="conjuntoFechaSiglo"></div>
+                <div id="conjuntoYear"></div>
+                <hr style="margin-top: 15px;margin-bottom: 5px;">
+                <div style="float:right">
+                    <button id="btn-find-date" class="btn-find-date">Aceptar</button>
+                </div>
+            </div>
         </div>
 
 
         <div class="container" style="margin-top: 30px;">
+            <div id="contBook">
+                <p>Resultados</p>
+            </div>
             <div id="result">
                 <div>
                     <!-- Loader -->
@@ -613,6 +682,7 @@
         </div>
     </div>
 </div>
+
 </div><!-- Footer Section /- -->
 
     <!-- JQuery v1.11.3 -->
@@ -637,11 +707,13 @@
     <script>
         
         // Variable global para almacenar los datos del JSON
-        
+        var listaFechasLibros;
+        var sigloIndex;
         $(document).ready(function() {
+            
             // Número de elementos por página
             var elementosPorPagina = 20;
-            var listCategorias = ['Literatura', 'Ciencias sociales', 'economia', 'Agropecuaria', 'Ciencias Naturales', 'Filosofía', 'Historia', 'Psicología', 'Arte', 'Religión', 'Matemática', 'Pedagogía', 'Emprendimiento', 'Educación cívica', 'cocina', 'Informática', 'Artes visuales:', 'Salud y bienestar', 'fisica', 'Derecho', 'Mecánica', 'Lengua extranjera', ''];
+            var listCategorias = ['Agropecuaria','Arte', 'Artes visuales:','Ciencias Naturales', 'Ciencias sociales', 'cocina','Derecho', 'economia', 'Educación cívica','Emprendimiento','Filosofía', 'fisica', 'Informática', 'Lengua extranjera','Literatura', 'Matemática',  'Mecánica', 'Pedagogía', 'Psicología', 'Religión', 'Salud y bienestar', ''];
 
             listCategorias.map(function(categoria){
                 $("#listaCategorias").append("<li><a class='option-categoria'>"+ categoria +"</a></li>")
@@ -746,8 +818,66 @@
             });
 
             $("#calendario").click(function(){
+                var posicionBoton = $(this).offset();
+                var desplazamientoX = 0;
+                if(window.innerWidth>768){
+                    desplazamientoX = 60;
+                }
+
+                $(".ventana").css({
+                    top: posicionBoton.top + $(this).outerHeight(),
+                    left: posicionBoton.left - desplazamientoX
+                });
+                if($(this).attr("data-toggle-button")=="true"){
+                    $("#fechas").css("display","block");
+                    $(this).attr("data-toggle-button","false")
+                }else{
+                    $("#fechas").css("display","none");
+                    $(this).attr("data-toggle-button","true")
+                }
                 $("#calendario").removeClass("calendario-parpadeo");
                 $("#calendario").addClass("calendario");
+                siglo = Object.keys(listaFechasLibros);
+                $("#conjuntoFecha").html("Examinar por siglo</br>");
+                $("#conjuntoYear").html("");
+                $("#conjuntoFechaSiglo").html("");
+                siglo.map(function(siglo){
+                    $("#conjuntoFecha").append(`<button class="btn-siglo btn-fecha" data-periodo="siglo" data-fecha="${siglo}">${siglo}</button>`);
+                })
+                
+            });
+
+            $("#fechas").on("click", ".btn-siglo", function() {
+                siglo = Object.keys(listaFechasLibros);
+                var listSiglo = Object.keys(listaFechasLibros);
+                var indexSiglo = listSiglo.indexOf($(this).text());
+                sigloIndex = indexSiglo;
+                // Acción que deseas realizar cuando se hace clic en los nuevos botones
+                decada = Object.keys(listaFechasLibros[siglo[indexSiglo]])
+                
+                $("#conjuntoYear").html("");
+                $("#conjuntoFechaSiglo").html("Examinar por decada<br>");
+                
+                decada.map(function(decada){
+                    $("#conjuntoFechaSiglo").append(`<button class="btn-decada btn-fecha" data-periodo="decada" data-fecha="${decada}">${decada}</button>`)
+                });
+            });
+            
+            $("#fechas").on("click", ".btn-decada", function() {
+                $("#conjuntoYear").html("Examinar por año<br>");
+                siglo = Object.keys(listaFechasLibros);
+                var listDecadas = listaFechasLibros[siglo[sigloIndex]]
+                var decadas = Object.keys(listDecadas);
+                var decada = $(this).text();
+                decada = parseInt(decada); 
+                listDecadas[decada].map(function(fecha){
+                    $("#conjuntoYear").append(`<button class="btn-year btn-fecha" data-periodo="year" data-fecha="${fecha["año"]}">${fecha["año"]} (${fecha["cantidad"]})</button>`);
+                });
+            });
+
+            $("#fechas").on("click", ".btn-fecha", function() {
+                $(".btn-fecha").removeClass("btn-fecha-select");
+                $(this).addClass("btn-fecha-select");
             });
 
             $('#btnBuscarLibro').click(function() {
@@ -761,8 +891,16 @@
             });
     
             function buscar(){
-                fechaInicio = $('#reservation').data('daterangepicker').startDate.format('DD-MM-YYYY'); 
-                fechaFin = $('#reservation').data('daterangepicker').endDate.format('DD-MM-YYYY'); 
+                var publicacion = $("#reservation").val();
+                publicacion = publicacion.replace(/\s+/g, '');
+                validarFecha= validarFormatoRangoFecha(publicacion);
+                var sort = $("#ordenar").attr("data-sort");
+
+                if(!validarFecha){
+                    publicacion = "";
+                }
+                
+                
                 ////////////////////////////////////////////////////
                 titulo = $("#inputTitulo").val();
                 autor = $("#inputAutor").val();
@@ -775,10 +913,10 @@
 
                 var urlBusqueda="";
                 var busqueda="";
-                if(titulo=="" && autor=="" && resumen=="" && categoria=="" && codigo=="" && tipo_doc=="" && estado=="" && asignatura==""){
-                    urlBusqueda = "";
+                if(titulo=="" && autor=="" && resumen=="" && categoria=="" && codigo=="" && tipo_doc=="" && estado=="" && asignatura=="" && publicacion ==""){
+                    urlBusqueda = `&orden=${sort}`;
                 }else{
-                    busqueda = {titulo:titulo,autor:autor,resumen:resumen,categoria:categoria,codigo:codigo,doc:tipo_doc,estado:estado,asignatura:asignatura};
+                    busqueda = {titulo:titulo,autor:autor,resumen:resumen,categoria:categoria,codigo:codigo,doc:tipo_doc,estado:estado,asignatura:asignatura,publicacion:publicacion,orden:sort};
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
@@ -862,7 +1000,9 @@
                 var tipo_doc_get = urlParams.get('doc');
                 var estado_get = urlParams.get('estado');
                 var asignatura_get = urlParams.get('asignatura');
-
+                var publicacion_get = urlParams.get('publicacion');
+                var sort_get = urlParams.get('orden');
+                
                 titulo_get = isNaN(titulo_get) ? titulo_get: "" ;
                 autor_get = isNaN(autor_get) ? autor_get: "" ;
                 categoria_get = isNaN(categoria_get) ? categoria_get: "" ;
@@ -871,6 +1011,9 @@
                 tipo_doc_get = isNaN(tipo_doc_get) ? tipo_doc_get: "" ;
                 estado_get = isNaN(estado_get) ? estado_get: "" ;
                 asignatura_get =isNaN(asignatura_get) ? asignatura_get: "" ;
+                publicacion_get =isNaN(publicacion_get) ? publicacion_get: "" ;
+                sort_get =isNaN(sort_get) ? sort_get: "" ;
+                
                 
                 titulo_get = titulo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 autor_get = autor_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -880,6 +1023,8 @@
                 tipo_doc_get = tipo_doc_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 estado_get = estado_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 asignatura_get = asignatura_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                publicacion_get = publicacion_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                sort_get = sort_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 
                 
                 $("#inputTitulo").val(titulo_get);
@@ -890,16 +1035,39 @@
                 $("#inputTipoDoc").val(tipo_doc_get);
                 $("#inputEstado").val(estado_get);
                 $("#inputAsignatura").val(asignatura_get);
+                $("#reservation").val(publicacion_get);
+                
+                if(sort_get == "desc"){
+                    $("#ordenar a").attr("title","Descendente");
+                    $("#ordenar").attr("data-sort","desc");
+                    $("#ordenar a").html(`<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>`);
+                }else if(sort_get =="asc"){
+                    $("#ordenar a").attr("title","Ascendente");
+                    $("#ordenar").attr("data-sort","asc");
+                    $("#ordenar a").html(`<i class="fa fa-sort-amount-asc" aria-hidden="true"></i>`);
+                }else{
+                    $("#ordenar a").attr("title","Descendente");
+                    $("#ordenar").attr("data-sort","desc");
+                    $("#ordenar a").html(`<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>`);
+                }
                 
                 librosFiltrados = datosJSON.filter(function(libro){
-                    var titulo = libro["TITULO LIBRO"].toLowerCase();
-                    titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
                     var autor = libro["AUTORES"].toLowerCase();
                     autor = autor.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    if(autor_get=="Desconocido"){
+                        return autor === autor_get;
+                    }else{
+                        return autor.includes(autor_get.toLocaleLowerCase()) ;
+                    }
+
+                });
+                
+                
+                librosFiltrados = librosFiltrados.filter(function(libro){
                     
-                    var categoria = libro["AMBITO"].toLowerCase();
-                    categoria = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    var titulo = libro["TITULO LIBRO"].toLowerCase();
+                    titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
                     var resumen = libro["RESUMEN"].toLowerCase();
                     resumen = resumen.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -909,31 +1077,75 @@
                     
                     var tipo_doc = libro["TIPO_DOC"].toLowerCase();
                     tipo_doc = tipo_doc.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
+
+                    var categoria = libro["AMBITO"].toLowerCase();
+                    categoria = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
                     var estado = libro["ESTADO"].toLowerCase();
                     estado = estado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                     
+                    if(categoria_get=="Ninguno" && estado_get=="Sin definir"){ 
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria === "" && estado === "";    
+                    }else if(categoria_get=="Ninguno"){ 
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && categoria === "";    
+                    }else if(estado_get=="Sin definir"){ 
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado === "";    
+                    }else{
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase());    
+                    }
+                })
+
+                librosFiltrados = librosFiltrados.filter(function(libro){
                     var asignatura = libro["ASIGNATURA"].toLowerCase();
                     asignatura = asignatura.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                    if(autor_get=="Desconocido" && categoria_get=="Ninguno"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor === "" && categoria === "";
-                    }else if(autor_get=="Desconocido"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor === "";  
-                    }else if(categoria_get=="Ninguno"){
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor.includes(autor_get.toLocaleLowerCase()) && categoria === "";    
+                    
+                    if(asignatura_get=="Sin Definir"){
+                        return asignatura ==="";
                     }else{
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && autor.includes(autor_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && tipo_doc.includes(tipo_doc_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && asignatura.includes(asignatura_get.toLocaleLowerCase()) ;  
+                        return asignatura.includes(asignatura_get.toLocaleLowerCase());
                     }
+                    
+                })
+                
+                
+                if(validarFormatoRangoFecha(publicacion_get)){
 
-                });
+                    fechaInicio = moment(publicacion_get.split("-")[0],'DD/MM/YYYY', true);
+                    fechaFin = moment(publicacion_get.split("-")[1],'DD/MM/YYYY', true);
+    
+                    librosFiltrados = librosFiltrados.filter(function(libro){
+                        var fechaExcel = parseFloat(libro.PUBLICACION);
+                        var fecha = fechaDeExcelANumero(fechaExcel);
+                        fecha = moment(fecha);
+                        return fecha.isBetween(fechaInicio, fechaFin, null, '[]'); // [] para incluir los límites            
+                    });
+
+                }
+
+                if(sort_get){
+                    librosFiltrados.sort(function(a, b) {
+                            var a = parseFloat(a.PUBLICACION);
+                            var a = fechaDeExcelANumero(a);
+                            var b = parseFloat(b.PUBLICACION);
+                            var b = fechaDeExcelANumero(b);
+                            var fechaA = moment(a, "DD/MM/YYYY");
+                            var fechaB = moment(b, "DD/MM/YYYY");
+                            if(sort_get == "desc"){
+                                return fechaB.diff(fechaA); // Orden descendente
+                            }else if(sort_get == "asc"){
+                                return fechaA.diff(fechaB); // Orden ascentende
+                            }else{
+                                return fechaB.diff(fechaA); // Orden descendente
+                            }
+                        });
+                }
 
                 var urlBibliotetaBusqueda="";
                 var busqueda="";
-                if(titulo_get=="" && autor_get=="" && resumen_get=="" && categoria_get=="" && codigo_get=="" && tipo_doc_get=="" && estado_get=="" && asignatura_get==""){
+                if(titulo_get=="" && autor_get=="" && resumen_get=="" && categoria_get=="" && codigo_get=="" && tipo_doc_get=="" && estado_get=="" && asignatura_get=="" && publicacion_get=="" && sort_get==""){
                     urlBibliotetaBusqueda = "";
                 }else{
-                    busqueda = {titulo:titulo_get,autor:autor_get,resumen:resumen_get,categoria:categoria_get,codigo:codigo_get,doc:tipo_doc_get,estado:estado_get,asignatura:asignatura_get};
+                    busqueda = {titulo:titulo_get,autor:autor_get,resumen:resumen_get,categoria:categoria_get,codigo:codigo_get,doc:tipo_doc_get,estado:estado_get,asignatura:asignatura_get,publicacion:publicacion_get,orden:sort_get};
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBibliotetaBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
@@ -944,8 +1156,12 @@
 
                 datosJSON = librosFiltrados;
                 contYearBook(datosJSON);
+                //numero de resultados
+                $("#contBook").html(`<p>Resultados: ${datosJSON.length}</p>`);
                 numPage = Math.ceil((datosJSON.length)/20);
-                if(numPage == 1){
+                if(numPage == 0){
+                    $(".ow-pagination").css("display","none");
+                }else if(numPage == 1){
                     $("#page-one").addClass("active-page")
                     $("#page-one").attr("href","biblioteca.html?page="+numPage+urlBibliotetaBusqueda);
                     $("#page-two-li").addClass("display-page")
@@ -1194,7 +1410,29 @@
         
 ////////////////////////////////////////////////////////
 
-function fechaDeExcelANumero(fechaExcel) {
+            function validarFormatoRangoFecha(dato) {
+                // Expresión regular para validar el formato del rango de fecha
+                var formatoRangoFecha = /^\d{2}\/\d{2}\/\d{4}-\d{2}\/\d{2}\/\d{4}$/;
+
+                // Comprobar si el dato cumple con el formato
+                if (formatoRangoFecha.test(dato)) {
+                    // Dividir el rango en fechas individuales
+                    var fechas = dato.split('-');
+                    
+                    // Validar cada fecha individualmente
+                    var fechaInicio = moment(fechas[0], 'DD/MM/YYYY', true);
+                    var fechaFin = moment(fechas[1], 'DD/MM/YYYY', true);
+                    
+                    // Comprobar si ambas fechas son válidas y la fecha final es posterior a la fecha inicial
+                    if (fechaInicio.isValid() && fechaFin.isValid() && fechaFin.isAfter(fechaInicio)) {
+                        return true; // El dato cumple con el formato y las fechas son válidas
+                    }
+                }
+                
+                return false; // El dato no cumple con el formato o las fechas no son válidas
+            }
+
+            function fechaDeExcelANumero(fechaExcel) {
                 const MS_PER_DAY = 24 * 60 * 60 * 1000;
                 const epoch = new Date(1900, 0, 1).getTime();
                 const fecha = new Date(Math.round((fechaExcel - 1) * MS_PER_DAY) + epoch);
@@ -1241,8 +1479,58 @@ function fechaDeExcelANumero(fechaExcel) {
                         elementosPorDecadaYSiglo[siglo][decada].push({ año: parseInt(año), cantidad: datos[año] });
                     }
                 }
-                console.log(elementosPorDecadaYSiglo);
+                listaFechasLibros = elementosPorDecadaYSiglo;
             }
+
+            
+
+
+            function calcularRango(periodo, valor) {
+                let fechaInicio, fechaFin;
+                valor = parseInt(valor);
+
+                if (periodo === "siglo") {
+                    // Calcular el siglo
+                    let siglo = Math.floor((valor - 1) / 100) + 1;
+                    siglo +=1
+
+                    // Calcular la fecha de inicio del siglo
+                    fechaInicio = moment({ year: (siglo - 1) * 100 + 1, month: 0, day: 1 }).format("DD/MM/YYYY");
+
+                    // Calcular la fecha de fin del siglo
+                    fechaFin = moment({ year: siglo * 100, month: 11, day: 31 }).format("DD/MM/YYYY");
+                } else if (periodo === "decada") {
+                    // Calcular la fecha de inicio de la década
+                    fechaInicio = moment({ year: valor, month: 0, day: 1 }).format("DD/MM/YYYY");
+
+                    // Calcular la fecha de fin de la década
+                    fechaFin = moment({ year: valor + 9, month: 11, day: 31 }).format("DD/MM/YYYY");
+                } else if (periodo === "year") {
+                    // Calcular la fecha de inicio del año
+                    fechaInicio = moment({ year: valor, month: 0, day: 1 }).format("DD/MM/YYYY");
+
+                    // Calcular la fecha de fin del año
+                    fechaFin = moment({ year: valor, month: 11, day: 31 }).format("DD/MM/YYYY");
+                } else {
+                    return "Tipo de periodo no válido.";
+                }
+
+                return fechaInicio + "-" + fechaFin;
+            }
+
+
+
+
+            $("#btn-find-date").click(function(){
+                $("#fechas").css("display","none");
+                $("#calendario").attr("data-toggle-button","true");
+                var fechaSelect = $(".btn-fecha-select").attr("data-fecha");
+                var periodo = $(".btn-fecha-select").data("periodo");
+                var rangoFecha = calcularRango(periodo,fechaSelect);
+                var fechaInicio = rangoFecha.split("-")[0];
+                var fechaFinal = rangoFecha.split("-")[1];
+                $("#reservation").val(rangoFecha);
+            });
 
 ////////////////////////////////////////////////////////
 
@@ -1299,7 +1587,6 @@ function fechaDeExcelANumero(fechaExcel) {
 		
             $(".btn-find-avanced i").click(function(){
                 claseIcono = $(this).attr("class");
-                console.log("Es : "+claseIcono);
                 if(claseIcono == "fa fa-caret-down"){
                     $(this).removeClass("fa fa-caret-down");
                     $(this).addClass("fa fa-caret-up");
@@ -1391,6 +1678,36 @@ function fechaDeExcelANumero(fechaExcel) {
 		}
 		};
 		logosSponsor();
+
+        $("#ordenar").click(function(){
+            var sort = $("#ordenar").attr("data-sort");
+            if(sort =="desc"){
+                $("#ordenar").attr("data-sort","asc");
+            }else if(sort=="asc"){
+                $("#ordenar").attr("data-sort","desc");
+            }
+            buscar();
+        })
+
+        $(document).on("click", function(event) {
+            // Verificar si el clic no se hizo en el elemento excluido o en uno de sus descendientes
+            if (!$(event.target).closest("#fechas,#calendario").length) {
+                // Aquí pones el código que deseas ejecutar cuando se hace clic en cualquier lugar de la pantalla excepto en el elemento excluido
+                if($("#fechas").css("display")=="block"){
+                    $("#fechas").css("display","none");
+                    $("#calendario").attr("data-toggle-button","true");
+                }
+            }
+        });
+
+        window.addEventListener('resize', function(event) {
+            // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
+            if($("#fechas").css("display")=="block"){
+                $("#fechas").css("display","none");
+                $("#calendario").attr("data-toggle-button","true");
+            }
+        });
+
         });    
     </script>
 </body>
