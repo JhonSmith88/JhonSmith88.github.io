@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,30 +12,30 @@
     <meta name="author" content="">
     <title>Blog - 8 de Noviembre</title>
 
-	<!-- Standard Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/favicon.png" />
-	
-	<!-- For iPhone 4 Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images//apple-touch-icon-114x114-precomposed.png">
-	
-	<!-- For iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images//apple-touch-icon-72x72-precomposed.png">
-	
-	<!-- For iPhone: -->
-	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">	
-	
-	<!-- Library - Google Font Familys -->	
-	
-	<!-- Library - Bootstrap v3.3.5 -->
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images//apple-touch-icon-114x114-precomposed.png">
+
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images//apple-touch-icon-72x72-precomposed.png">
+
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">
+
+    <!-- Library - Google Font Familys -->
+
+    <!-- Library - Bootstrap v3.3.5 -->
     <link rel="stylesheet" type="text/css" href="libraries/lib.css">
-	
-	<!-- Custom - Common CSS -->
-	<link rel="stylesheet" type="text/css" href="css/plugins.css">
-	<link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
-	
-	<!-- Custom - Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="css/shortcodes.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
+
+    <!-- Custom - Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/shortcodes.css">
     <link rel="stylesheet" type="text/css" href="css/shortcodes1.css">
 
     <!-- Lightbox -->
@@ -46,133 +47,162 @@
 
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="libraries/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-		
-	<!--[if lt IE 9]>
+
+    <!--[if lt IE 9]>
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
-	<style>
-        .daterangepicker{
-            color:black !important;
+    <style>
+        .daterangepicker {
+            color: black !important;
         }
-		.social-icons {
-		  position: fixed;
-		  top: 90px;
-		  right: 0;
-		}
-		.social-icons a {
-		  display: inline-block;
-		  margin-left: 10px;
-		}
-        .p-find{
+
+        .social-icons {
+            position: fixed;
+            top: 90px;
+            right: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .p-find {
             padding-left: 2px;
             padding-right: 2px;
         }
-        .article-book{
+
+        .article-book {
             position: static !important;
             padding: 10px !important;
             width: 100% !important;
         }
-        .type-post-book{
-            padding: 0 !important; 
-            margin-bottom:10px !important;
+
+        .type-post-book {
+            padding: 0 !important;
+            margin-bottom: 10px !important;
         }
-        .descripcion-book{
+
+        .descripcion-book {
             height: 160px;
             text-overflow: ellipsis;
             white-space: pre-wrap;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 6; /* Número de líneas que deseas mostrar */
+            -webkit-line-clamp: 6;
+            /* Número de líneas que deseas mostrar */
             -webkit-box-orient: vertical;
         }
-        .display-none-div{
+
+        .display-none-div {
             display: none;
         }
-        .load-parcial{
+
+        .load-parcial {
             position: relative !important;
-            display: none ;
+            display: none;
             width: 100% !important;
             height: 250px !important;
-        }.btn-find{
+        }
+
+        .btn-find {
             height: 100% !important;
             padding: 12px 22px !important;
         }
-        .calendario{
-            background-color: white; /* Color de fondo predeterminado */
-            transition: background-color 0.5s ease; /* Transición suave del color de fondo */
+
+        .calendario {
+            background-color: white;
+            /* Color de fondo predeterminado */
+            transition: background-color 0.5s ease;
+            /* Transición suave del color de fondo */
         }
-        .calendario-parpadeo{
-            background-color: white; /* Color de fondo predeterminado */
-            transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo */
+
+        .calendario-parpadeo {
+            background-color: white;
+            /* Color de fondo predeterminado */
+            transition: background-color 0.3s ease-in-out;
+            /* Transición suave del color de fondo */
             animation: parpadeoAnimacion 1s infinite alternate;
         }
+
         .calendario:hover {
-            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
-            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+            background-color: #ddd;
+            /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer;
+            /* Cambia el cursor cuando el mouse está sobre el div */
         }
 
         @keyframes parpadeoAnimacion {
             0% {
                 background-color: #ddd;
             }
+
             100% {
                 background-color: white;
             }
         }
 
         @media only screen and (max-width: 768px) {
-        .widget {
-                margin-bottom: 15px; /* Altura reducida para pantallas pequeñas */
+            .widget {
+                margin-bottom: 15px;
+                /* Altura reducida para pantallas pequeñas */
             }
         }
+
         @media only screen and (max-width: 992px) {
-        .widget {
-                margin-bottom: 15px; /* Altura reducida para pantallas pequeñas */
+            .widget {
+                margin-bottom: 15px;
+                /* Altura reducida para pantallas pequeñas */
             }
         }
-        .page-banner{
-			background-position: center;
-			background-size: contain !important;
-			background-image: url(images/about-banner.jpg) !important;
-			background-repeat: no-repeat;
-			position: relative;
-			text-align: center;
-			min-height: 278px;
-			align-content: center;
-			width: 100%;
-			min-height: unset;
-		}
-		.page-banner h2 {
-			padding: 0px;
-			font-size: 2.4em;
-			line-height: 50px;
-		}
-		@media screen and (max-width: 700px) {
-			.page-banner h2 {
-				padding: 0px;
-				font-size: 2.5em;
-				line-height: 50px;
-			}
-			.page-banner{
-			background-size: cover !important;
-			background-position: left;
-			background-image: url(images/about-banner.jpg) !important;
-			background-repeat: no-repeat;
-			position: relative;
-			text-align: center;
-			align-content: center;
-			width: 100%;
-			height: 100%;    
-		}
-    }
-    
-    @media screen and (max-width: 992px) {
-        .button-post{
-            text-align: end;
+
+        .page-banner {
+            background-position: center;
+            background-size: contain !important;
+            background-image: url(images/about-banner.jpg) !important;
+            background-repeat: no-repeat;
+            position: relative;
+            text-align: center;
+            min-height: 278px;
+            align-content: center;
+            width: 100%;
+            min-height: unset;
         }
-        
+
+        .page-banner h2 {
+            padding: 0px;
+            font-size: 2.4em;
+            line-height: 50px;
         }
-        .descripcion-blog{
+
+        @media screen and (max-width: 700px) {
+            .page-banner h2 {
+                padding: 0px;
+                font-size: 2.5em;
+                line-height: 50px;
+            }
+
+            .page-banner {
+                background-size: cover !important;
+                background-position: left;
+                background-image: url(images/about-banner.jpg) !important;
+                background-repeat: no-repeat;
+                position: relative;
+                text-align: center;
+                align-content: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .button-post {
+                text-align: end;
+            }
+
+        }
+
+        .descripcion-blog {
             height: 120px;
             text-overflow: ellipsis;
             white-space: pre-wrap;
@@ -181,149 +211,172 @@
             -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
         }
-	  </style>
+    </style>
 </head>
+
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 
-	<!-- Loader -->
-	<div id="site-loader" class="load-complete">
-		<div class="loader">
-			<div class="loader-inner ball-clip-rotate">
-				<div></div>
-			</div>
-		</div>
-	</div><!-- Loader /- -->
+    <!-- Loader -->
+    <div id="site-loader" class="load-complete">
+        <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+                <div></div>
+            </div>
+        </div>
+    </div><!-- Loader /- -->
 
-	<a id="top"></a>
+    <a id="top"></a>
 
-	<!-- Header Section -->
-	<header id="header" class="header-section container-fluid no-padding">
-		<!-- SidePanel -->
-		<div id="slidepanel">
-			<!-- Top Header -->
-			<div class="top-header container-fluid no-padding">
-				<!-- Container -->
-				<div class="container">
-					<div class="row">
-						<div class="col-md-7 col-sm-12">
-							<p>Bienvenido a la renovación en la Educación</p>
-						</div>
-						<div class="col-md-5 col-sm-12">
-							<a href="mailto:info@ourdomain.com" title="Info@ourdomain.com"><i class="fa fa-envelope"></i>admin@col8nov.com</a>
-							<a href="tel:+011234567896" title="+011234567896"><i class="fa fa-phone"></i> (+593) 07 2976 015</a>
-						</div>
-					</div>
-				</div><!-- Container -->
-			</div><!-- Top Header /- -->
-			<!-- Middel Header /- -->
-			<div class="middle-header container-fluid no-padding">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="index.html" title="8 de Noviembre"><img src="images/logo.png" alt="Logo" /></a>
-						</div>
-						<div class="col-md-7 col-sm-12 header-content">
-							<div class="header-cnt-box">
-								<i class="fas fa-graduation-cap"></i>
-								<button style="background-color: #d20f26; color: #fff; border-radius: 4px; padding: 10px 20px; font-size: 16px;" onclick="window.open('https://8noviembre.sharepoint.com/sites/8nov', '_blank')">PLATAFORMA</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- SidePanel /- -->
-		<!-- Container -->
-		<div class="container">
-			<!-- nav -->
+    <!-- Header Section -->
+    <header id="header" class="header-section container-fluid no-padding">
+        <!-- SidePanel -->
+        <div id="slidepanel">
+            <!-- Top Header -->
+            <div class="top-header container-fluid no-padding">
+                <!-- Container -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12">
+                            <p>Bienvenido a la renovación en la Educación</p>
+                        </div>
+                        <div class="col-md-5 col-sm-12">
+                            <a href="mailto:info@ourdomain.com" title="Info@ourdomain.com"><i
+                                    class="fa fa-envelope"></i>admin@col8nov.com</a>
+                            <a href="tel:+011234567896" title="+011234567896"><i class="fa fa-phone"></i> (+593) 07 2976
+                                015</a>
+                        </div>
+                    </div>
+                </div><!-- Container -->
+            </div><!-- Top Header /- -->
+            <!-- Middel Header /- -->
+            <div class="middle-header container-fluid no-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="index.html" title="8 de Noviembre"><img src="images/logo.png" alt="Logo" /></a>
+                        </div>
+                        <div class="col-md-7 col-sm-12 header-content">
+                            <div class="header-cnt-box">
+                                <i class="fas fa-graduation-cap"></i>
+                                <button
+                                    style="background-color: #d20f26; color: #fff; border-radius: 4px; padding: 10px 20px; font-size: 16px;"
+                                    onclick="window.open('https://8noviembre.sharepoint.com/sites/8nov', '_blank')">PLATAFORMA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- SidePanel /- -->
+        <!-- Container -->
+        <div class="container">
+            <!-- nav -->
             <nav class="navbar navbar-default ow-navigation" id="menu-Navbar">
-				<div id="loginpanel" class="desktop-hide">
-					<div class="right" id="toggle">
-						<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
-						<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
-					</div>
-				</div>
-				<div class="navbar-header">
-					<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="index.html" title="8 de Noviembre" class="navbar-brand">8 de Noviembre</a>
-				</div>
-				<div class="navbar-collapse collapse" id="navbar">
-					<ul class="nav navbar-nav">
-						<li><a href="index.html" title="INICIO">INICIO</a></li>
-						<li class="dropdown">
-							<a href="about.html" title="¿Quienes Somos?" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">¿QUIÉNES SOMOS?</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="about.html#propositoMisional">Propósito Misional</a></li>
-								<li><a href="about.html#comunidad">Nuestra Historia</a></li>
-								<li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
+                <div id="loginpanel" class="desktop-hide">
+                    <div class="right" id="toggle">
+                        <a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+                        <a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                        class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" title="8 de Noviembre" class="navbar-brand">8 de Noviembre</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html" title="INICIO">INICIO</a></li>
+                        <li class="dropdown">
+                            <a href="about.html" title="¿Quienes Somos?" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">¿QUIÉNES SOMOS?</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html#propositoMisional">Propósito Misional</a></li>
+                                <li><a href="about.html#comunidad">Nuestra Historia</a></li>
+                                <li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
                                 <li><a href="about.html#uniformeInstitucional">Uniforme Institucional</a></li>
                                 <li><a href="about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="OFERTA EDUCATIVA" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">OFERTA EDUCATIVA</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="egbs.html" title="EGBS">Educación General Básica Superior </a></li>
-								<hr>
-								<li><a href="agro.html" title="Produccion Agropecuaria">Producción Agropecuaria</a></li>
-								<li><a href="mecanica.html" title="Mecanizado">Mecanizado y Construcciones Metálicas</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="OFERTA EDUCATIVA" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">OFERTA EDUCATIVA</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="egbs.html" title="EGBS">Educación General Básica Superior </a></li>
+                                <hr>
+                                <li><a href="agro.html" title="Produccion Agropecuaria">Producción Agropecuaria</a></li>
+                                <li><a href="mecanica.html" title="Mecanizado">Mecanizado y Construcciones Metálicas</a>
+                                </li>
                                 <li><a href="ciencias.html" title="Ciencias">Bachillerato en Ciencias</a></li>
 
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="DIRECTIVOS Y DOCENTES" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">DIRECTIVOS Y DOCENTES</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="docentes.html" title="EGBS">Directivos Institucionales</a></li>
-								<li><a href="docentes.html?cargo=docentes" title="Produccion Agropecuaria">Personal Docente</a></li>
-								<li><a href="docentes.html?cargo=dece" title="Mecanizado">Departamento de Consejería Estudiantil</a></li>
-                                <li><a href="administrativo.html" title="Administrativo y de Apoyo">Administrativo y de Apoyo</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="PROYECTOS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Proyectos</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="proyectos.html?proyecto=ex-alumnos" title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
-								<li><a href="proyectos.html?proyecto=productivos" title="Proyectos Productivos">Productivos</a></li>
-								<li><a href="proyectos.html?proyecto=ambientales" title="Proyectos Ambientales">Ambientales</a></li>
-								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Culturales">Culturales</a></li>
-                                <li><a href="proyectos.html?proyecto=deportivos" title="Proyectos Deportivos">Deportivos</a></li>
-                                <li><a href="proyectos.html?proyecto=educativos" title="Proyectos Educativos">Educativos</a></li>
-                                <li><a href="proyectos.html?proyecto=participacion" title="Proyectos Participación Estudiantil">Programas de Participación Estudiantil</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="RECURSOS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="biblioteca.html" title="Biblioteca" class="activeList">Biblioteca</a></li>
-								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
-							</ul>
-						</li>
-						<li class="active"><a href="blog.html" title="Blog">Blog</a></li>
-						<li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</nav><!-- nav /- -->
-		</div><!-- Container /- -->
-	</header><!-- Header Section /- -->
-	
-	<main class="site-main page-spacing">
-	
-		<!-- Page Banner Section -->
-		<div class="page-banner container-fluid no-padding" id="page-banner">
-			<h2>"La lectura es a la mente lo que el ejercicio es al cuerpo". - Joseph Addison</h2>
-		</div><!-- Banner Section /- -->
-		
-		<div class="section-padding"></div>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="DIRECTIVOS Y DOCENTES" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">DIRECTIVOS Y DOCENTES</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="docentes.html" title="EGBS">Directivos Institucionales</a></li>
+                                <li><a href="docentes.html?cargo=docentes" title="Produccion Agropecuaria">Personal
+                                        Docente</a></li>
+                                <li><a href="docentes.html?cargo=dece" title="Mecanizado">Departamento de Consejería
+                                        Estudiantil</a></li>
+                                <li><a href="administrativo.html" title="Administrativo y de Apoyo">Administrativo y de
+                                        Apoyo</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="PROYECTOS" class="dropdown-toggle" role="button" aria-haspopup="true"
+                                aria-expanded="false">Proyectos</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="proyectos.html?proyecto=ex-alumnos"
+                                        title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
+                                <li><a href="proyectos.html?proyecto=productivos"
+                                        title="Proyectos Productivos">Productivos</a></li>
+                                <li><a href="proyectos.html?proyecto=ambientales"
+                                        title="Proyectos Ambientales">Ambientales</a></li>
+                                <li><a href="proyectos.html?proyecto=culturales"
+                                        title="Proyectos Culturales">Culturales</a></li>
+                                <li><a href="proyectos.html?proyecto=deportivos"
+                                        title="Proyectos Deportivos">Deportivos</a></li>
+                                <li><a href="proyectos.html?proyecto=educativos"
+                                        title="Proyectos Educativos">Educativos</a></li>
+                                <li><a href="proyectos.html?proyecto=participacion"
+                                        title="Proyectos Participación Estudiantil">Programas de Participación
+                                        Estudiantil</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="RECURSOS" class="dropdown-toggle" role="button" aria-haspopup="true"
+                                aria-expanded="false">Recursos</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="biblioteca.html" title="Biblioteca" class="activeList">Biblioteca</a></li>
+                                <li><a href="#" title="Proyectos Culturales">Documentos</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="blog.html" title="Blog">Blog</a></li>
+                        <li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </nav><!-- nav /- -->
+        </div><!-- Container /- -->
+    </header><!-- Header Section /- -->
+
+    <main class="site-main page-spacing">
+
+        <!-- Page Banner Section -->
+        <div class="page-banner container-fluid no-padding" id="page-banner">
+            <h2>"La lectura es a la mente lo que el ejercicio es al cuerpo". - Joseph Addison</h2>
+        </div><!-- Banner Section /- -->
+
+        <div class="section-padding"></div>
         <div class="section-header">
             <h3>Blogs</h3>
         </div>
@@ -347,10 +400,13 @@
                     <aside id="categoria-menu" class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <!-- Input de texto -->
-                            <input type="text" id="inputCategoria" class="form-control" placeholder="Categoría" aria-label="Text input with dropdown button" readonly>
+                            <input type="text" id="inputCategoria" class="form-control" placeholder="Categoría"
+                                aria-label="Text input with dropdown button" readonly>
                             <!-- Botón desplegable -->
                             <div class="input-group-btn">
-                                <button id="buton-menu-dropdown" type="button" class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                <button id="buton-menu-dropdown" type="button"
+                                    class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
                                 <!-- Menú desplegable -->
                                 <ul id="listaCategorias" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                     <li><a class="option-categoria">Todos</a></li>
@@ -364,62 +420,45 @@
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <!-- Input de texto -->
                             <!-- Botón desplegable -->
-                            
+
                             <div class="input-group-btn calendario-parpadeo" id="calendario">
-                                <a class="btn btn-default btn-find"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
+                                <a class="btn btn-default btn-find" aria-haspopup="true" aria-expanded="false"
+                                    style="padding: 10px 23px 10px 23px !important;">
                                     <span style="font-size: 16px;">
                                         <i class="far fa-calendar-alt"></i>
                                     </span>
                                 </a>
                                 <!-- Menú desplegable -->
                             </div>
-                            <input type="text" class="form-control float-right" id="reservation" style="padding: 10px 2px">
+                            <input type="text" class="form-control float-right" id="reservation"
+                                style="padding: 10px 2px">
                         </div>
                     </aside>
                     <!-- /.input group -->
-                    
+
                 </div>
                 <div class=" p-find col-md-1 col-sm-1 col-xs-2 text-center">
                     <aside class="widget widget_search">
                         <div class="input-group col-md-1 col-sm-1 col-sx-12">
                             <span class="input-group-btn" style="height: 50px;">
-                                <button id="btnBuscarLibro" type="button" class="btn btn-default btn-find"><i class="icon icon-Search"></i></button>
+                                <button id="btnBuscarLibro" type="button" class="btn btn-default btn-find"><i
+                                        class="icon icon-Search"></i></button>
                             </span>
                         </div>
                     </aside>
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="row" id="listBlog">
-                <div class="col-sm-6 col-md-4">
-                  <div class="thumbnail">
-                    <img src="images/blogs/Dracula_1.jpeg" alt="..." style="max-height: 300px;">
-                    <div class="caption">
-                      <h3>Thumbnail label</h3>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="thumbnail">
-                    <img src="images/blogs/Dracula.jpg" alt="..." style="
-                  max-height: 300px;
-              ">
-                    <div class="caption">
-                      <h3>Thumbnail label</h3>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
+                
+            </div>
+
             <nav class="ow-pagination">
                 <ul class="pagination">
-                    <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i
+                                class="fa fa-angle-double-left"></i></a></li>
                     <li><a id="page-one" href="blog.html?page=1">1</a></li>
                     <li id="left-page" class="display-page"><a>...</a></li>
                     <li id="page-two-li"><a id="page-two" href="blog.html?page=2">2</a></li>
@@ -427,150 +466,154 @@
                     <li id="page-four-li" class="display-page"><a id="page-four" href="blog.html?page=4">4</a></li>
                     <li id="right-page"><a>...</a></li>
                     <li id="page-last-li"><a id="page-last" href="#"></a></li>
-                    <li id="page-next-li"><a id="page-next" href="#" aria-label="Next"><i class="fa fa-angle-double-right"></i></a></li>
+                    <li id="page-next-li"><a id="page-next" href="#" aria-label="Next"><i
+                                class="fa fa-angle-double-right"></i></a></li>
                 </ul>
             </nav>
         </div>
-		<div class="section-padding"></div>
-		<!-- Call Out Section -->
-		<div class="call-out-section2 container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<h3>"Formar profesionales es sembrar las semillas del futuro, asegurando una cosecha de éxito; y prosperidad para nuestra sociedad."</h3>
-				
-				<a href="contact-us.html" class="contact-btn" title="contact us">CONTÁCTENOS</a>
-			</div><!-- Container /- -->
-		</div><!-- Call Out Section /- -->
-		
-		<div class="section-padding"></div>
-		
-		<!-- Client Section -->
-		<div class="client-section container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<div class="client-carousel">
-					
-				</div>
-			</div><!-- Container /- -->
-		</div><!-- Client Section /- -->
-	</main>
-	
-</div><!-- Container /- -->
-<div class="footer-bottom container-fluid no-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <p>&copy; 2024 8 DE Noviembre</p>
-            </div>
-            <div class="col-md-10 col-sm-12 col-xs-12">
-                <!-- nav -->
-                <nav class="navbar navbar-default ow-navigation">
-                    <div class="navbar-header">
-                        <button aria-controls="navbar" aria-expanded="false" data-target="#ftr-navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse navbar-right" id="ftr-navbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html" title="home">INICIO</a></li>
-                            <li><a href="contact-us.html" title="Contact Us">CONTÁCTENOS</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </nav><!-- nav /- -->
-                
+        <div class="section-padding"></div>
+        <!-- Call Out Section -->
+        <div class="call-out-section2 container-fluid no-padding">
+            <!-- Container -->
+            <div class="container">
+                <h3>"Formar profesionales es sembrar las semillas del futuro, asegurando una cosecha de éxito; y
+                    prosperidad para nuestra sociedad."</h3>
+
+                <a href="contact-us.html" class="contact-btn" title="contact us">CONTÁCTENOS</a>
+            </div><!-- Container /- -->
+        </div><!-- Call Out Section /- -->
+
+        <div class="section-padding"></div>
+
+        <!-- Client Section -->
+        <div class="client-section container-fluid no-padding">
+            <!-- Container -->
+            <div class="container">
+                <div class="client-carousel">
+
+                </div>
+            </div><!-- Container /- -->
+        </div><!-- Client Section /- -->
+    </main>
+
+    </div><!-- Container /- -->
+    <div class="footer-bottom container-fluid no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <p>&copy; 2024 8 DE Noviembre</p>
+                </div>
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <!-- nav -->
+                    <nav class="navbar navbar-default ow-navigation">
+                        <div class="navbar-header">
+                            <button aria-controls="navbar" aria-expanded="false" data-target="#ftr-navbar"
+                                data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse navbar-right" id="ftr-navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html" title="home">INICIO</a></li>
+                                <li><a href="contact-us.html" title="Contact Us">CONTÁCTENOS</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </nav><!-- nav /- -->
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div><!-- Footer Section /- -->
+    </div><!-- Footer Section /- -->
 
     <!-- JQuery v1.11.3 -->
     <script src="js/jquery.min.js"></script>
-        
+
     <!-- Library JS -->
     <script src="libraries/lib.js"></script>
 
-    <!-- Library - Theme JS -->	
+    <!-- Library - Theme JS -->
     <script src="js/functions.js"></script>
 
     <script src="libraries/moment/moment.min.js"></script>
     <script src="libraries/daterangepicker/daterangepicker.js"></script>
-    
+
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="libraries/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> 
-    
+    <script src="libraries/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
     <div class="social-icons">
-		<a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img src="images/Facebook.png" alt="Facebook"></a>
-	</div>
+        <a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img
+                src="images/Facebook.png" alt="Facebook"></a>
+    </div>
 
     <script>
-        
+
         // Variable global para almacenar los datos del JSON
-        
-        $(document).ready(function() {
+
+        $(document).ready(function () {
             // Número de elementos por página
             var elementosPorPagina = 20;
             var listCategorias = ['Literatura', 'Historia', ''];
 
-            listCategorias.map(function(categoria){
-                $("#listaCategorias").append("<li><a class='option-categoria'>"+ categoria +"</a></li>")
+            listCategorias.map(function (categoria) {
+                $("#listaCategorias").append("<li><a class='option-categoria'>" + categoria + "</a></li>")
             });
 
-            $("#buton-menu-dropdown").click(function(){
+            $("#buton-menu-dropdown").click(function () {
                 // Obtener el ancho del contenedor principal
                 var widthCategoria = $('#categoria-menu').outerWidth();
-                
+
                 // Aplicar el mismo ancho al menú desplegable
                 $('.dropdown-menu').css('width', widthCategoria);
             });
-        
-            $('.option-categoria').click(function() {
+
+            $('.option-categoria').click(function () {
                 var textoOpcion = $(this).text();
                 $("#inputCategoria").focus();
-                if(textoOpcion=="Todos"){
+                if (textoOpcion == "Todos") {
                     $('#inputCategoria').val("");
                 }
-                else{
+                else {
                     $('#inputCategoria').val(textoOpcion);
                 }
             });
 
-            $('#btnBuscarLibro').click(function() {
+            $('#btnBuscarLibro').click(function () {
                 buscar();
             });
 
-            $(".row input").keypress(function(event) {
+            $(".row input").keypress(function (event) {
                 if (event.which === 13) { // 13 es el código de la tecla Enter
                     // Aquí puedes activar el evento que desees
                     buscar();
                     // Por ejemplo, puedes hacer algo como submit de un formulario o ejecutar una función
                 }
             });
-    
 
-            function buscar(){
+
+            function buscar() {
                 titulo = $("#inputTitulo").val();
                 resumen = $("#inputResumen").val();
                 categoria = $("#inputCategoria").val();
 
-                var urlBusqueda="";
-                var busqueda="";
-                if(titulo=="" && resumen=="" && categoria==""){
+                var urlBusqueda = "";
+                var busqueda = "";
+                if (titulo == "" && resumen == "" && categoria == "") {
                     urlBusqueda = "";
-                }else{
-                    busqueda = {titulo:titulo,descripcion:resumen,categoria:categoria};
+                } else {
+                    busqueda = { titulo: titulo, descripcion: resumen, categoria: categoria };
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
                         }
                     }
-                    urlBusqueda ="&" + urlBusqueda.slice(0, -1);
+                    urlBusqueda = "&" + urlBusqueda.slice(0, -1);
                 }
 
-                window.location.href = "blog.html?page=1"+ urlBusqueda;
+                window.location.href = "blog.html?page=1" + urlBusqueda;
             }
 
             // Función para hacer la consulta del archivo JSON
@@ -579,37 +622,37 @@
                 var archivoJSON = 'static/blogs.json';
                 var datosJSON;
                 fetch('static/blogs.json')
-                .then(response =>{
-                    if (!response.ok) {
-                        throw new Error('La solicitud no fue exitosa');
-                    }
-                    return response.json();
-                })
-                .then(datos =>{
-                    datosJSON = datos;
-                    filtrarDatos(datosJSON);
-                }).then(datos =>{
-                    $("#listBlog").removeClass("display-none-div");
-                }).catch(error => {
-                    console.error('Ocurrió un error:', error);
-                });
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('La solicitud no fue exitosa');
+                        }
+                        return response.json();
+                    })
+                    .then(datos => {
+                        datosJSON = datos;
+                        filtrarDatos(datosJSON);
+                    }).then(datos => {
+                        $("#listBlog").removeClass("display-none-div");
+                    }).catch(error => {
+                        console.error('Ocurrió un error:', error);
+                    });
 
             }
-    
-    
+
+
             // Función para obtener el número de página de la URL
             function obtenerNumeroPagina() {
                 var urlParams = new URLSearchParams(window.location.search);
                 var pagina = urlParams.get('page');
                 return pagina ? parseInt(pagina) : 1; // Si no se especifica la página, se asume la página 1
             }
-    
+
             function filtrarPorListaEtiquetas(json, palabras) {
                 return json.filter(elemento =>
                     palabras.every(palabra =>
-                    elemento.etiquetas.some(etiqueta =>
-                        normalizarTexto(etiqueta).includes(normalizarTexto(palabra))
-                    )
+                        elemento.etiquetas.some(etiqueta =>
+                            normalizarTexto(etiqueta).includes(normalizarTexto(palabra))
+                        )
                     )
                 );
             }
@@ -617,19 +660,19 @@
             function normalizarTexto(texto) {
                 return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
             }
-            
-            function filtrarDatos(datosJSON){
+
+            function filtrarDatos(datosJSON) {
                 var urlParams = new URLSearchParams(window.location.search);
                 var titulo_get = urlParams.get('titulo');
                 var descripcion_get = urlParams.get('descripcion');
                 var categoria_get = urlParams.get('categoria');
                 var etiquetas_get = urlParams.get('etiquetas');
-                
 
 
-                titulo_get = isNaN(titulo_get) ? titulo_get: "" ;
-                descripcion_get = isNaN(descripcion_get) ? descripcion_get: "" ;
-                categoria_get = isNaN(categoria_get) ? categoria_get: "" ;
+
+                titulo_get = isNaN(titulo_get) ? titulo_get : "";
+                descripcion_get = isNaN(descripcion_get) ? descripcion_get : "";
+                categoria_get = isNaN(categoria_get) ? categoria_get : "";
 
                 titulo_get = titulo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 descripcion_get = descripcion_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -639,7 +682,7 @@
                 $("#inputResumen").val(descripcion_get);
                 $("#inputCategoria").val(categoria_get);
 
-                librosFiltrados = datosJSON.filter(function(blog){
+                librosFiltrados = datosJSON.filter(function (blog) {
                     var titulo = blog["titulo"].toLowerCase();
                     titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
@@ -653,34 +696,34 @@
 
                 });
 
-                if(isNaN(urlParams.get('etiquetas'))){
+                if (isNaN(urlParams.get('etiquetas'))) {
                     etiquetas_get = etiquetas_get.split("-");
                     librosFiltrados = filtrarPorListaEtiquetas(librosFiltrados, etiquetas_get);
                     etiquetas_get = etiquetas_get.join("-");
                 }
 
-                var urlBibliotetaBusqueda="";
-                var busqueda="";
+                var urlBibliotetaBusqueda = "";
+                var busqueda = "";
 
-                if(titulo_get=="" && descripcion_get=="" && categoria_get=="" && etiquetas_get==""){
+                if (titulo_get == "" && descripcion_get == "" && categoria_get == "" && etiquetas_get == "") {
                     urlBibliotetaBusqueda = "";
-                }else{
-                    busqueda = {titulo:titulo_get,descripcion:descripcion_get,categoria:categoria_get, etiquetas:etiquetas_get};
-                    
+                } else {
+                    busqueda = { titulo: titulo_get, descripcion: descripcion_get, categoria: categoria_get, etiquetas: etiquetas_get };
+
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBibliotetaBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
                         }
                     }
-                    urlBibliotetaBusqueda ="&" + urlBibliotetaBusqueda.slice(0, -1);
-                    
+                    urlBibliotetaBusqueda = "&" + urlBibliotetaBusqueda.slice(0, -1);
+
                 }
 
                 datosJSON = librosFiltrados;
-                numPage = Math.ceil((datosJSON.length)/6);
-                if(numPage == 1){
+                numPage = Math.ceil((datosJSON.length) / 6);
+                if (numPage == 1) {
                     $("#page-one").addClass("active-page")
-                    $("#page-one").attr("href","blog.html?page="+numPage+urlBibliotetaBusqueda);
+                    $("#page-one").attr("href", "blog.html?page=" + numPage + urlBibliotetaBusqueda);
                     $("#page-two-li").addClass("display-page")
                     $("#page-three-li").addClass("display-page")
                     $("#page-last-li").addClass("display-page")
@@ -688,10 +731,10 @@
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
                 }
-                else if(numPage == 2){
-                    if(numeroPagina==1){
+                else if (numPage == 2) {
+                    if (numeroPagina == 1) {
                         $("#page-one").addClass("active-page")
-                    }else{
+                    } else {
                         $("#page-two").addClass("active-page")
                     }
                     $("#page-two-li").removeClass("display-page")
@@ -700,36 +743,36 @@
                     $("#page-four-li").addClass("display-page")
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
-                    $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                    $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                    $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                    $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                    $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                    $("#page-after").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                    $("#page-next").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
                 }
-                else if(numPage == 3){
-                    if(numeroPagina==1){
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                else if (numPage == 3) {
+                    if (numeroPagina == 1) {
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-one").addClass("active-page")
                         $("#page-three").removeClass("active-page")
-                        $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
                     }
-                    else if (numeroPagina==2){
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                    else if (numeroPagina == 2) {
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-two").addClass("active-page")
-                        $("#page-after").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
-                    } 
-                    else{
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
+                    }
+                    else {
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page")
-                        $("#page-after").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
                     $("#page-two-li").removeClass("display-page");
                     $("#page-three-li").removeClass("display-page");
@@ -738,95 +781,95 @@
                     $("#right-page").addClass("display-page");
                     $("#page-after-li").removeClass("display-page");
                 }
-                else{
-                    
+                else {
+
                     $("#page-last").text(numPage);
-                    $("#page-last").attr("href","blog.html?page="+numPage+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
-                    if(numeroPagina==1){
+                    $("#page-last").attr("href", "blog.html?page=" + numPage + urlBibliotetaBusqueda);
+                    $("#page-next").attr("href", "blog.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
+                    if (numeroPagina == 1) {
                         $("#page-one").addClass("active-page")
                         $("#left-page").addClass("display-page")
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina==2){
+                    if (numeroPagina == 2) {
                         $("#page-two").addClass("active-page");
                         $("#left-page").addClass("display-page");
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina==3){
+                    if (numeroPagina == 3) {
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-four-li").removeClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","blog.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","blog.html?page="+(4)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-four").attr("href", "blog.html?page=" + (4) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina>3 && numeroPagina < (numPage-2)){
+                    if (numeroPagina > 3 && numeroPagina < (numPage - 2)) {
                         $("#page-three").text(numeroPagina);
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-four").text((numeroPagina+1));
-                        
-                        $("#page-three").attr("href","blog.html?page="+numeroPagina+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-four").text((numeroPagina + 1));
 
-                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + numeroPagina + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-four").attr("href", "blog.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
+
+                        $("#page-after").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
 
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-four-li").removeClass("display-page");
                         $("#page-after-li").removeClass("display-page");
                     }
-                    if(numeroPagina==numPage){
+                    if (numeroPagina == numPage) {
                         $("#page-last").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
                         $("#page-four-li").removeClass("display-page");
-                        $("#page-four").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-four").text((numeroPagina-1));
-                        $("#page-three").attr("href","blog.html?page="+(numeroPagina-2)+urlBibliotetaBusqueda);
-                        $("#page-three").text((numeroPagina-2));
+                        $("#page-four").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-four").text((numeroPagina - 1));
+                        $("#page-three").attr("href", "blog.html?page=" + (numeroPagina - 2) + urlBibliotetaBusqueda);
+                        $("#page-three").text((numeroPagina - 2));
                         $("#page-two-li").addClass("display-page");
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina == (numPage-1) && numPage != 4){
+                    if (numeroPagina == (numPage - 1) && numPage != 4) {
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","blog.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + (numeroPagina) + urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
-                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina == (numPage-2) && numPage != 4){
+                    if (numeroPagina == (numPage - 2) && numPage != 4) {
                         $("#left-page").removeClass("display-page")
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","blog.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "blog.html?page=" + (numeroPagina) + urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page");
                         $("#page-four-li").removeClass("display-page");
-                        $("#page-four").text((numeroPagina+1));
-                        $("#page-four").attr("href","blog.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-four").text((numeroPagina + 1));
+                        $("#page-four").attr("href", "blog.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-two").attr("href","blog.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-two").attr("href", "blog.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").removeClass("display-page");
-                        $("#page-one").attr("href","blog.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "blog.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
 
                 }
@@ -843,15 +886,15 @@
                 // Calculamos el índice de inicio y fin para la página actual
                 var inicio = (numeroPagina - 1) * elementosPorPagina;
                 var fin = inicio + elementosPorPagina;
-    
+
                 // Filtramos los datos para obtener solo los elementos de la página actual
                 var datosPagina = datos.slice(inicio, fin);
                 datosPagina.reverse();
                 var datosArticleBook = "";
                 // Hacemos algo con los datos, por ejemplo, imprimirlos en la consola
                 var portada = "";
-                
-                datosPagina.map(function(libro){
+
+                datosPagina.map(function (libro) {
                     let titulo = libro["titulo"];
                     let resumen = libro["resumen"];
                     let categoria = libro["categoria"];
@@ -872,78 +915,78 @@
                             </div>
                             </div>
                         </div>`;
-                    
+
                 });
-                
+
                 $("#listBlog").html(datosArticleBook);
-    
-    
+
+
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
             }
-    
-            function animateArticle(){
+
+            function animateArticle() {
                 $("#listBlog div").addClass("animated fadeInLeft");
             }
             // Suponiendo que tienes un array de objetos JSON llamado 'libros'
 
             // Obtener el número de página actual
             var numeroPagina = obtenerNumeroPagina();
-            
-            function loaderAnimate(){
-                if ( !$("html").is(" .ie6, .ie7, .ie8 ") ) {
+
+            function loaderAnimate() {
+                if (!$("html").is(" .ie6, .ie7, .ie8 ")) {
                     $("#site-loader-article").delay(1000).fadeOut("slow");
                 }
                 else {
-                    $("#site-loader-article").css("display","none");
+                    $("#site-loader-article").css("display", "none");
                 }
             }
 
-			function escogerFrase(){
-				var archivoFrases = 'static/frases.json';
-				var frasesJson;
-	
-				if(!localStorage.getItem('datosFrases')){
-					fetch(archivoFrases)
-					.then(response =>{
-						if(!response.ok){
-							throw new Error('La solicitud no fue exitosa');
-						}
-						return response.json();
-					})
-					.then(datos=>{
-						frasesJson = datos;
-						localStorage.setItem('datosFrases',JSON.stringify(datos));
-						fraseAleatoria(frasesJson);
-					}).catch(error => {
-						console.error('Ocurrió un error:', error);
-					});
-				}else{
-					frasesJson = JSON.parse(localStorage.getItem('datosFrases'));
-					fraseAleatoria(frasesJson);
-				}
-			}
-			function fraseAleatoria(datosJSON){
-				var tipo = "educacion";
-				var listaFiltro;
-				var frase;
-				listaFiltro = datosJSON.filter(function(libro){
-					return libro["Tipo"].includes(tipo);
-				});
-	
-				var indice = Math.floor(Math.random() * listaFiltro.length);
-				frase = listaFiltro[indice];
-	
-				$("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
-			}
-		
+            function escogerFrase() {
+                var archivoFrases = 'static/frases.json';
+                var frasesJson;
+
+                if (!localStorage.getItem('datosFrases')) {
+                    fetch(archivoFrases)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('La solicitud no fue exitosa');
+                            }
+                            return response.json();
+                        })
+                        .then(datos => {
+                            frasesJson = datos;
+                            localStorage.setItem('datosFrases', JSON.stringify(datos));
+                            fraseAleatoria(frasesJson);
+                        }).catch(error => {
+                            console.error('Ocurrió un error:', error);
+                        });
+                } else {
+                    frasesJson = JSON.parse(localStorage.getItem('datosFrases'));
+                    fraseAleatoria(frasesJson);
+                }
+            }
+            function fraseAleatoria(datosJSON) {
+                var tipo = "educacion";
+                var listaFiltro;
+                var frase;
+                listaFiltro = datosJSON.filter(function (libro) {
+                    return libro["Tipo"].includes(tipo);
+                });
+
+                var indice = Math.floor(Math.random() * listaFiltro.length);
+                frase = listaFiltro[indice];
+
+                $("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
+            }
+
             escogerFrase();
             // Llamar a la función cuando se cargue la página
             window.onload = function () {
                 consultarJSON();
             };
             // Mostrar los datos para la página actual
-    
+
             //Date range picker
             $('#reservation').daterangepicker({
                 autoUpdateInput: false,
@@ -952,90 +995,91 @@
                 }
             });
 
-            $('#reservation').on('apply.daterangepicker', function(ev, picker) {
+            $('#reservation').on('apply.daterangepicker', function (ev, picker) {
                 $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
             });
 
-            $('#reservation').on('cancel.daterangepicker', function(ev, picker) {
+            $('#reservation').on('cancel.daterangepicker', function (ev, picker) {
                 $(this).val('');
             });
 
-            $("#calendario").click(function(){
+            $("#calendario").click(function () {
                 $("#calendario").removeClass("calendario-parpadeo");
                 $("#calendario").addClass("calendario");
             });
 
             var imagen = new Image();
-			imagen.src = "images/about-banner.jpg";
-			imagen.onload = function() {
-				var imagenAncho = this.width;
-				var imagenAlto = this.height;
-				var aspectoImagen =  imagenAncho / imagenAlto;
-				aspectoImagen = ""+aspectoImagen+"";
-				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				// Establecer la altura del div
-				$('#page-banner').css("aspect-ratio",aspectoImagen);
-			}
+            imagen.src = "images/about-banner.jpg";
+            imagen.onload = function () {
+                var imagenAncho = this.width;
+                var imagenAlto = this.height;
+                var aspectoImagen = imagenAncho / imagenAlto;
+                aspectoImagen = "" + aspectoImagen + "";
+                // Calcular la altura del div en función del ancho de la pantalla y el tamaño
+                // Establecer la altura del div
+                $('#page-banner').css("aspect-ratio", aspectoImagen);
+            }
 
-            function logosSponsor(){
-			fetch("static/aprocinadores.json")
-			.then(response =>{
-				if (!response.ok) {
-					throw new Error('La solicitud no fue exitosa');
-				}
-				return response.json();
-			})
-			.then(data =>{
-				data.map(function(sponsor){
-					let nombre = sponsor.nombre;
-					let logo = sponsor.logo;
-					let link = sponsor.link;
+            function logosSponsor() {
+                fetch("static/aprocinadores.json")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('La solicitud no fue exitosa');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        data.map(function (sponsor) {
+                            let nombre = sponsor.nombre;
+                            let logo = sponsor.logo;
+                            let link = sponsor.link;
 
-					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
-				});
-			}).then(data =>{
-				carrusel();
-			})
-			
-			
-		}
-		
-		function carrusel(){
-			if( $(".client-section").length ) {
-			$(".client-carousel").owlCarousel({
-				loop: true,
-				nav: true,
-				dots: false,
-				margin: 0,
-				smartSpeed: 200,				
-				autoplay: true,
-				responsive:{
-					0:{
-						items: 2
-					},
-					480:{
-						items: 3
-					},
-					640:{
-						items: 3
-					},
-					992:{
-						items: 6
-					}
-				}
-			})
-			
-			$(".client-section").each(function () {
-				var $this = $(this);
-				var myVal = $(this).data("value");
-				$this.appear(function() {
-					$(".client-section").addClass( "animated bounceInLeft");
-				});
-			});
-		}
-		};
-		logosSponsor();
+                            $(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+                        });
+                    }).then(data => {
+                        carrusel();
+                    })
+
+
+            }
+
+            function carrusel() {
+                if ($(".client-section").length) {
+                    $(".client-carousel").owlCarousel({
+                        loop: true,
+                        nav: true,
+                        dots: false,
+                        margin: 0,
+                        smartSpeed: 200,
+                        autoplay: true,
+                        responsive: {
+                            0: {
+                                items: 2
+                            },
+                            480: {
+                                items: 3
+                            },
+                            640: {
+                                items: 3
+                            },
+                            992: {
+                                items: 6
+                            }
+                        }
+                    })
+
+                    $(".client-section").each(function () {
+                        var $this = $(this);
+                        var myVal = $(this).data("value");
+                        $this.appear(function () {
+                            $(".client-section").addClass("animated bounceInLeft");
+                        });
+                    });
+                }
+            };
+            logosSponsor();
         });    
     </script>
 </body>
+
 </html>
