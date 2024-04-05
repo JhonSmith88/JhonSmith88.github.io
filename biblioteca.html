@@ -55,6 +55,7 @@
     <![endif]-->
     <style>
         .shadow-image{
+            width: max-content;
             position: relative;
             border-radius: 2px 5px 5px 2px;
         }
@@ -88,6 +89,7 @@
             object-fit: contain;
             border: 1px solid #ccc;
             border-radius: 0 4px 4px 0;
+            max-height: 210px;
         }
 
         .daterangepicker {
@@ -137,10 +139,13 @@
         }
 
         .load-parcial {
-            position: relative !important;
+            position: absolute !important;
             display: none;
+            top: unset;
+            bottom: unset;
             width: 100% !important;
             height: 250px !important;
+            z-index: 20px;
         }
 
         .btn-find {
@@ -1189,30 +1194,37 @@
 
             // Función para hacer la consulta del archivo JSON
             function consultarJSON() {
-                // Ruta del archivo JSON local
-                var archivoJSON = 'static/biblioteca.json';
-                var librosFiltrados;
-                var datosJSON;
-                fetch(archivoJSON)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('La solicitud no fue exitosa');
-                        }
-                        return response.json();
-                    })
-                    .then(datos => {
-                        loaderAnimate();
-                        datosJSON = datos;
-                        filtrarDatos(datosJSON);
-                    })
-                    .then(animate => {
-                        $("#articleBook").removeClass("display-none-div");
-                        setTimeout(animateArticle, 500);
-                        ajustarAltura();
-                    })
-                    .catch(error => {
-                        console.error('Ocurrió un error:', error);
-                    });
+                return new Promise(function(resolve, reject) {
+
+                    // Ruta del archivo JSON local
+                    var archivoJSON = 'static/biblioteca.json';
+                    var librosFiltrados;
+                    var datosJSON;
+                    fetch(archivoJSON)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('La solicitud no fue exitosa');
+                            }
+                            return response.json();
+                        })
+                        .then(datos => {
+                            loaderAnimate();
+                            datosJSON = datos;
+                            filtrarDatos(datosJSON);
+                            return datos;
+                        })
+                        .then(animate => {
+                            $("#articleBook").removeClass("display-none-div");
+                            setTimeout(animateArticle, 500);
+                            
+                            resolve();
+                        })
+                        .catch(error => {
+                            console.error('Ocurrió un error:', error);
+                        });
+                });
+
+                    
             }
 
 
@@ -1289,7 +1301,6 @@
                     $("#ordenar").attr("data-sort", "desc");
                     $("#ordenar a").html(`<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>`);
                 }
-                console.log(formato_get);
 
                 librosFiltrados = datosJSON.filter(function(libro){
                     if(formato_get != ""){
@@ -1301,7 +1312,6 @@
                         return libro;
                     }
                 });
-                console.log(librosFiltrados.length);
                 librosFiltrados = librosFiltrados.filter(function (libro) {
                     var autor = libro["AUTORES"].toLowerCase();
                     autor = autor.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -1587,7 +1597,10 @@
 
 
                 $("#articleBook").addClass("display-none-div");
+                
                 mostrarDatosPorPagina(datosJSON, numeroPagina, elementosPorPagina);
+                
+                
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
             }
@@ -1674,10 +1687,10 @@
                         }
                         $("#thumbnails").addClass("btn-display-galery-select");
                         $("#list").removeClass("btn-display-galery-select");
-                        datosArticleBook += `<div class="col-sm-6 col-md-3 col-xs-6">
+                        datosArticleBook += `<div class="col-sm-6 col-md-3 col-xs-12">
                             <div class="thumbnail ">
                                 ${logoAfiliacion}
-                                <div class="book-content">
+                                <div class="book-content" style="align-items: end;display: grid;justify-content: center;">
                                     <a href="images/libros/${imagen.replace(/\s/g, "")}" data-imagen="${imagen.replace(/\s/g, "")}" data-lightbox="image-1" style="position: relative;z-index: 2;">
                                         <div style="" class="book-cover">
                                             <div class="shadow-image">
@@ -1712,7 +1725,6 @@
                         </div>`;
                     }
 
-
                     verificarExistenciaImagen("images/libros/" + imagen.replace(/\s/g, ""), function (existe) {
                         if (existe) {
                             $(".portada[data-imagen='" + imagen.replace(/\s/g, "") + "']").attr("data-lightbox", "image-1");
@@ -1724,7 +1736,7 @@
                 });
 
                 $("#articleBook").html(datosArticleBook);
-
+                
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
             }
@@ -1943,9 +1955,42 @@
 
             escogerFrase();
             // Llamar a la función cuando se cargue la página
-            window.onload = function () {
-                consultarJSON();
-            };
+            consultarJSON().then(function(){
+                ajustarAltura();
+                setTimeout(function(){
+                    var portada = $(".book-content");
+                    var alturaMaximaPortada = 0;
+                    portada.each(function() {
+                        var altura = $(this).height(); 
+                        console.log(altura);
+                        if (altura > alturaMaximaPortada) {
+                            alturaMaximaPortada = altura;
+                        }
+                    });
+                    portada.height(alturaMaximaPortada);
+                }, 1000);
+
+                setTimeout(function(){
+                    
+
+                    var anchoThumbnail = $(".thumbnail").width();
+                    var portadaAncho = $(".shadow-image img");
+                    var anchoMaximaPortada = 0;
+                    portadaAncho.each(function() {
+                        var ancho = $(this).width(); 
+                        if (ancho > anchoMaximaPortada) {
+                            anchoMaximaPortada = ancho;
+                        }
+                    });
+                    if((anchoThumbnail - anchoMaximaPortada) < 0){
+                        console.log("No cabe");
+                        portadaAncho.width(anchoThumbnail - 20);
+                        console.log(anchoMaximaPortada);
+                    }
+
+                },1000);
+
+            });
             // Mostrar los datos para la página actual
 
 
@@ -2022,7 +2067,6 @@
 
             function ajustarAltura(){
                 var elementos = $(".entry-meta");
-
                 // Inicializar la variable para almacenar la altura máxima
                 var alturaMaxima = 0;
 
@@ -2036,6 +2080,8 @@
 
                 // Establecer la misma altura para todos los elementos
                 elementos.height(alturaMaxima);
+                
+                
             }
 
             logosSponsor();
@@ -2066,6 +2112,34 @@
                 if ($("#fechas").css("display") == "block") {
                     $("#fechas").css("display", "none");
                     $("#calendario").attr("data-toggle-button", "true");
+                }
+                $(".book-content").css("height","auto");
+                var portada = $(".book-content");
+                var alturaMaximaPortada = 0;
+                portada.each(function() {
+                    var altura = $(this).height(); 
+                    console.log(altura);
+                    if (altura > alturaMaximaPortada) {
+                        alturaMaximaPortada = altura;
+                    }
+                });
+                console.log(alturaMaximaPortada);
+                portada.height(alturaMaximaPortada);
+
+                $(".shadow-image img").css("width","auto");
+                var anchoThumbnail = $(".thumbnail").width();
+                var portadaAncho = $(".shadow-image img");
+                var anchoMaximaPortada = 0;
+                portadaAncho.each(function() {
+                    var ancho = $(this).width(); 
+                    if (ancho > anchoMaximaPortada) {
+                        anchoMaximaPortada = ancho;
+                    }
+                });
+                if((anchoThumbnail - anchoMaximaPortada) < 0){
+                    console.log("No cabe");
+                    portadaAncho.width(anchoThumbnail - 20);
+                    console.log(anchoMaximaPortada);
                 }
             });
 
