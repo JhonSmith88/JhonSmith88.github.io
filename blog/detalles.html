@@ -58,6 +58,7 @@
       <script src="js/html5/respond.min.js"></script>
     <![endif]-->
   <style>
+    
     .social-icons {
       position: fixed;
       top: 90px;
@@ -595,7 +596,7 @@
           for (i = 0; i < proyectoPost["descripcion"].length; i++) {
             if (proyectoPost["descripcion"][i]["tipo"] == "parrafo") {
               contenido += `<h3 style="margin-top:20px">${proyectoPost["descripcion"][i]["subtitulo"]}</h3>
-                      <p>${proyectoPost["descripcion"][i]["contenido"].replace(/\n/g, "<br><br>")}</p>`;
+                      <p>${proyectoPost["descripcion"][i]["contenido"].replace(/\n/g, "<br>")}</p>`;
             }
             else if (proyectoPost["descripcion"][i]["tipo"] == "imagen") {
               contenido += `<div style="text-align: center;width: auto">
@@ -612,7 +613,7 @@
               for (j = 0; j < proyectoPost["descripcion"][i]["contenido"].length; j++) {
                 lista += `<li><p style="margin-bottom:10px !important">${proyectoPost["descripcion"][i]["contenido"][j]}</p></li>`;
               }
-              if (formato = "ordenada") {
+              if (formato == "ordenada") {
                 contenido += `<ol style="color: black;">${lista}</ol>`;
               } else {
                 contenido += `<ul style="color: black;">${lista}</ul>`;
@@ -621,15 +622,16 @@
             }
             else if (proyectoPost["descripcion"][i]["tipo"] == "cita") {
               var urlCita = proyectoPost["descripcion"][i]["contenido"][0]["ruta"];
+              var displayOption = (urlCita == "") ? "none" : "";
               urlCita = (urlCita == "") ? "" : `href="${urlCita}" target="_blank"`;
               contenido += `<div class=" col-md-12 col-sm-12">
                         <article class="type-post" style="padding: 0px 15px 0px 0px;margin: 0px 12px 25px 12px !important;">
                           <div class="entry-content" style="padding: 0px;">
                             <blockquote style="margin: 10px 10px 20px 10px;padding: 20px 25px 10px 20px;">
-                              <p style="line-height: 25px;font-size: 16px !important;margin-bottom: 10px !important;">
-                                <i style="font-size: 69px;left: -8px;">“</i>${proyectoPost["descripcion"][i]["contenido"][0]["texto"]}
+                              <p style="text-align:center;line-height: 25px;font-size: 16px !important;margin-bottom: 10px !important;">
+                                <i style="font-size: 69px;left: -8px;">“</i>${proyectoPost["descripcion"][i]["contenido"][0]["texto"].replace(/\n/g, "<br>")}
                               </p>
-                              <a ${urlCita}" style="font-style: italic;font-family: 'Lora', serif;font-weight: bold;font-size: 16px;float: right;">
+                              <a ${urlCita}" style="display:${displayOption};font-style: italic;font-family: 'Lora', serif;font-weight: bold;font-size: 16px;float: right;">
                                 Ver
                                 <i class="fa fa-long-arrow-right" style="position: unset;float: right;font-size: 26px;margin-left: 6px;"></i> 
                               </a>
@@ -740,9 +742,24 @@
                     </div>`;
         }
 
+        let autores = proyectoPost["autores"];
+        let listAutores = "";
+        for(i=0;i<autores.length;i++){
+            listAutores += `<a href="#">${autores[i]}</a>` ;
+            if(autores.length == 2 && i < 1){
+                listAutores += " y ";
+            }else if(autores.length > 2 && i < (autores.length -2)){
+                listAutores += " , ";
+            }
+            else if(i == (autores.length-2)){
+                listAutores += " y ";
+            }
+            
+        }
+
         $(".entry-content").html(`<h3 class="entry-title">${proyectoPost["tema"]}</h3>
                 <div class="entry-meta">
-                    <div>${proyectoPost["fecha publicacion"]}</div>
+                    <div>Autores: ${listAutores} | ${proyectoPost["fecha publicacion"]}</div>
                 </div>
                 ${portada}
                 <div class="project-content">

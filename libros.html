@@ -271,6 +271,7 @@
                     </div>
                   </div>
                   <div id="resumen-libro"></div>
+                  <div id="archivo-adjunto"></div>
                 </div>
                 <div class="post-social">
                   <h4>Compartir el post</h4>
@@ -440,30 +441,29 @@
           var librosFiltrados;
           var datosJSON; 
           // Realizar la solicitud para obtener el archivo JSON utilizando fetch
-          if(!localStorage.getItem('datosJSON')){ 
-              fetch(archivoJSON)
-                  .then(response => {
-                      // Verificar si la solicitud fue exitosa
-                      if (!response.ok) {
-                          throw new Error('La solicitud no fue exitosa');
-                      }
-                      // Convertir la respuesta a un objeto JSON
-                      return response.json();
-                  })
-                  .then(datos => {
-                      // Asignar los datos a la variable global
-                      return datosJSON = datos;
-                      localStorage.setItem('datosJSON', JSON.stringify(datos));
-                  })
-                  .catch(error => {
-                      console.error('Ocurrió un error:', error);
-                  });
-          }else{
-              return datosJSON = JSON.parse(localStorage.getItem('datosJSON'));
-          }
+          fetch(archivoJSON)
+              .then(response => {
+                  // Verificar si la solicitud fue exitosa
+                  if (!response.ok) {
+                      throw new Error('La solicitud no fue exitosa');
+                  }
+                  // Convertir la respuesta a un objeto JSON
+                  return response.json();
+              })
+              .then(datos => {
+                  // Asignar los datos a la variable global
+                  mostrarInformacion(datos);
+                  recomendarLibros(datos);
+                  return datosJSON = datos;
+
+                  
+              })
+              .catch(error => {
+                  console.error('Ocurrió un error:', error);
+              });
         }
 
-        function recomendarLibros(){
+        function recomendarLibros(data){
           var librosLista;
           var urlParams = new URLSearchParams(window.location.search);
           var codigo_get = urlParams.get('id'); 
@@ -471,7 +471,7 @@
           var filtroAmbito;
           var filtroAutor;
           var filtroCodigo;
-          librosLista = cargarLibros();
+          librosLista = data;
           libroPost = librosLista.find(function(elemento) {
             return elemento["ID"].replace(/\s/g, "") === codigo_get;
           });
@@ -546,7 +546,8 @@
           }
         }
         
-        function mostrarInformacion(){
+        function mostrarInformacion(data){
+          
           var archivoBlogs = '../static/blogs.json';
           fetch(archivoBlogs)
           .then(response =>{
@@ -561,12 +562,17 @@
             console.error('Ocurrió un error:', error);
           });
 
-          var librosLista = cargarLibros();
+          var librosLista = data;
+          
           var urlParams = new URLSearchParams(window.location.search);
           var codigo_get = urlParams.get('id'); 
           libroPost = librosLista.find(function(elemento) {
             return elemento["ID"].replace(/\s/g, "") === codigo_get;
           });
+          var enlaceDescarga = "";
+          enlaceDescarga = (isNaN(libroPost["LINK"])) ? libroPost["LINK"] : "";
+
+          
           let fechaPublicacion = libroPost["PUBLICACION"];
           fechaPublicacion = fechaFomart(fechaPublicacion);
           $("#tituloLibro").text(libroPost["TITULO LIBRO"]);
@@ -588,7 +594,16 @@
                     <div class="">
                       <a title="Código">${libroPost["CODIGO"]}</a>
                     </div>`);
-          $("#resumen-libro").html(`<p>${libroPost["RESUMEN"]}</p>`)
+          $("#resumen-libro").html(`<p>${libroPost["RESUMEN"].replace(/\n/g, "<br><br>")}</p>`)
+
+          if(enlaceDescarga){
+            $("#archivo-adjunto").html(`
+            <h3 style="color: #222222;font-size: 20px;font-weight: 800;letter-spacing: 1.4px;margin-bottom: 20px;margin-top: 10px;text-transform: uppercase;"">Enlace de descarga</h3>
+            <ul style="color: #777777;letter-spacing: 0.64px;line-height: 26px;margin-bottom: 30px;">
+              <li><a href="${libroPost["LINK"]}" target="_blank">${libroPost["TITULO LIBRO"]}<i class="fa fa-download" aria-hidden="true"></i></a></li>
+            </ul>
+            `);
+          }
         }
 
         // Función para obtener elementos aleatorios
@@ -700,7 +715,6 @@
 				var aspectoImagen =  imagenAncho / imagenAlto;
 				aspectoImagen = ""+aspectoImagen+"";
 				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				console.log(aspectoImagen);
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}
@@ -746,7 +760,6 @@
           // Obtener las palabras únicas del objeto
           var listaPalabras = Object.keys(palabrasUnicas); 
           listaPalabras = seleccionarElementosAleatorios(listaPalabras);
-          console.log(listaPalabras);
           // Mostrar la lista de palabras
           listaPalabras.forEach(function(etiqueta){
             $("#tags").append(`<a href="blog.html?etiquetas=${etiqueta}" title="${etiqueta}">${etiqueta}</a>`)
@@ -812,8 +825,7 @@
 		};
 		logosSponsor();
 
-        recomendarLibros();
-        mostrarInformacion();
+        cargarLibros();
         escogerFrase();
         mostrarProyectosNuevos();
       });

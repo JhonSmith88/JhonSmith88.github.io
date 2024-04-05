@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,92 +12,131 @@
     <meta name="author" content="">
     <title>Biblioteca - 8 de Noviembre</title>
 
-	<!-- Standard Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/favicon.png" />
-	
-	<!-- For iPhone 4 Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images//apple-touch-icon-114x114-precomposed.png">
-	
-	<!-- For iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images//apple-touch-icon-72x72-precomposed.png">
-	
-	<!-- For iPhone: -->
-	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">	
-	
-	<!-- Library - Google Font Familys -->	
-	
-	<!-- Library - Bootstrap v3.3.5 -->
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images//apple-touch-icon-114x114-precomposed.png">
+
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images//apple-touch-icon-72x72-precomposed.png">
+
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">
+
+    <!-- Library - Google Font Familys -->
+
+    <!-- Library - Bootstrap v3.3.5 -->
     <link rel="stylesheet" type="text/css" href="libraries/lib.css">
-	
-	<!-- Custom - Common CSS -->
-	<link rel="stylesheet" type="text/css" href="css/plugins.css">
-	<link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
-	
-	<!-- Custom - Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="css/shortcodes.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
+
+    <!-- Custom - Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/shortcodes.css">
     <link rel="stylesheet" type="text/css" href="css/shortcodes1.css">
 
     <!-- Lightbox -->
     <script src="libraries/lightbox-plus-jquery.js"></script>
     <link href="libraries/lightbox.css" rel="stylesheet" />
-	
+
 
     <!-- daterange picker -->
     <link rel="stylesheet" href="libraries/daterangepicker/daterangepicker.css">
 
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="libraries/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  
 
-	<!--[if lt IE 9]>
+
+    <!--[if lt IE 9]>
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
-	<style>
-        
-        .daterangepicker{
-            color:black !important;
+    <style>
+        .book-content{
+
         }
-		.social-icons {
-		  position: fixed;
-		  top: 90px;
-		  right: 0;
-		}
-		.social-icons a {
-		  display: inline-block;
-		  margin-left: 10px;
-		}
-        .p-find{
+        
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: inherit;
+        }
+        
+        .book-cover{
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px 5px 5px 2px;
+        }
+        .book-cover img{
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+            height: 250px;object-fit: contain;
+            border: 1px solid #ccc;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .daterangepicker {
+            color: black !important;
+        }
+
+        .social-icons {
+            position: fixed;
+            top: 90px;
+            right: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .p-find {
             padding-left: 2px;
             padding-right: 2px;
         }
-        .article-book{
+
+        .article-book {
             position: static !important;
             padding: 10px !important;
             width: 100% !important;
         }
-        .type-post-book{
-            padding: 0 !important; 
-            margin-bottom:10px !important;
+
+        .type-post-book {
+            padding: 0 !important;
+            margin-bottom: 20px !important;
         }
-        .descripcion-book{
+
+        .descripcion-book {
             height: 160px;
             text-overflow: ellipsis;
             white-space: pre-wrap;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 6; /* Número de líneas que deseas mostrar */
+            -webkit-line-clamp: 6;
+            /* Número de líneas que deseas mostrar */
             -webkit-box-orient: vertical;
         }
-        .display-none-div{
+
+        .display-none-div {
             display: none;
         }
-        .load-parcial{
+
+        .load-parcial {
             position: relative !important;
-            display: none ;
+            display: none;
             width: 100% !important;
             height: 250px !important;
-        }.btn-find{
+        }
+
+        .btn-find {
             height: 100% !important;
             padding: 12px 22px !important;
         }
@@ -105,66 +145,91 @@
             height: 100% !important;
             padding: 2px 2px !important;
             color: #333 !important;
-            text-decoration: none !important; /* Eliminar la subrayado del enlace */
+            text-decoration: none !important;
+            /* Eliminar la subrayado del enlace */
         }
-        .btn-find-avanced i{
+
+        .btn-find-avanced i {
             cursor: pointer;
         }
-    
-        .find-avanced{
+
+        .find-avanced {
             border: 1px solid #ddd;
         }
-        .find-avanced span{
+
+        .find-avanced span {
             color: #777777;
             font-size: 12px;
             font-family: 'Lora', serif;
             font-style: italic;
             font-weight: bold;
         }
-        .panel-heading{
+
+        .panel-heading {
             padding: 4px 15px;
         }
+
         .panel-body {
-            display: none; /* Ocultar inicialmente el panel */
+            display: none;
+            /* Ocultar inicialmente el panel */
             overflow: visible !important;
-            transition: height 0.2s linear; /* Ajustar la velocidad y el tipo de transición */
-            overflow: hidden; /* Ocultar el contenido que se desborda */
-            animation: bounce; /* referring directly to the animation's @keyframe declaration */
-            animation-duration: 2s; /* don't forget to set a duration! */
+            transition: height 0.2s linear;
+            /* Ajustar la velocidad y el tipo de transición */
+            overflow: hidden;
+            /* Ocultar el contenido que se desborda */
+            animation: bounce;
+            /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s;
+            /* don't forget to set a duration! */
         }
 
-        .calendario{
-            background-color: white; /* Color de fondo predeterminado */
-            transition: background-color 0.5s ease; /* Transición suave del color de fondo */
+        .calendario {
+            background-color: white;
+            /* Color de fondo predeterminado */
+            transition: background-color 0.5s ease;
+            /* Transición suave del color de fondo */
         }
-        .calendario-parpadeo{
-            background-color: white; /* Color de fondo predeterminado */
-            transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo */
+
+        .calendario-parpadeo {
+            background-color: white;
+            /* Color de fondo predeterminado */
+            transition: background-color 0.3s ease-in-out;
+            /* Transición suave del color de fondo */
             animation: parpadeoAnimacion 1s infinite alternate;
         }
+
         .calendario:hover {
-            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
-            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+            background-color: #ddd;
+            /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer;
+            /* Cambia el cursor cuando el mouse está sobre el div */
         }
+
         .ordenar:hover {
-            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
-            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+            background-color: #ddd;
+            /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer;
+            /* Cambia el cursor cuando el mouse está sobre el div */
         }
-        .btn-fecha-select{
+
+        .btn-fecha-select {
             background-color: #d5d5d5;
             border: #ffffff solid 0px;
         }
+
         .ventana {
             font-family: 'Lora', serif;
             font-style: italic;
             color: #888888;
         }
-        .ventana button{
+
+        .ventana button {
             border: none;
             border-radius: 10px;
             padding: 6px 13px;
             margin: 7px;
         }
+
         .ventana {
             position: absolute;
             background-color: #fff;
@@ -172,14 +237,19 @@
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000; /* Asegura que el div esté por encima de otros elementos */
+            z-index: 1000;
+            /* Asegura que el div esté por encima de otros elementos */
             display: none;
         }
-        .btn-find-date:hover{
-            background-color: #ddd; /* Cambia el color de fondo cuando el mouse está sobre el div */
-            cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el div */
+
+        .btn-find-date:hover {
+            background-color: #ddd;
+            /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer;
+            /* Cambia el cursor cuando el mouse está sobre el div */
         }
-        #contBook{
+
+        #contBook {
             margin-bottom: 3px;
             font-family: "Raleway", sans-serif;
             font-weight: 600;
@@ -190,216 +260,300 @@
             color: #000000
         }
 
-        
+
 
         @keyframes parpadeoAnimacion {
             0% {
                 background-color: #ddd;
             }
+
             100% {
                 background-color: white;
             }
         }
 
         @media only screen and (max-width: 768px) {
-        .menu-principal{
-            margin: 0px 1px 0px 1px;
-        }
-        .widget {
-                margin-bottom: 4px; /* Altura reducida para pantallas pequeñas */
+            .menu-principal {
+                margin: 0px 1px 0px 1px;
+            }
+
+            .widget {
+                margin-bottom: 4px;
+                /* Altura reducida para pantallas pequeñas */
             }
         }
+
         @media only screen and (max-width: 992px) {
-        .widget {
-                margin-bottom: 4px; /* Altura reducida para pantallas pequeñas */
+            .widget {
+                margin-bottom: 4px;
+                /* Altura reducida para pantallas pequeñas */
             }
         }
+
         @media only screen and (min-width: 993px) {
-        .widget {
-                margin-bottom: 2px !important; /* Altura reducida para pantallas pequeñas */
+            .widget {
+                margin-bottom: 2px !important;
+                /* Altura reducida para pantallas pequeñas */
             }
         }
 
-        .page-banner{
-			background-position: center;
-			background-size: contain !important;
-			background-image: url(images/about-banner.jpg) !important;
-			background-repeat: no-repeat;
-			position: relative;
-			text-align: center;
-			min-height: 278px;
-			align-content: center;
-			width: 100%;
-			min-height: unset;
-		}
-		.page-banner h2 {
-			padding: 0px;
-			font-size: 2.4em;
-			line-height: 50px;
-		}
-        
-		@media screen and (max-width: 700px) {
-			.page-banner h2 {
-				padding: 0px;
-				font-size: 2.5em;
-				line-height: 50px;
-			}
-			.page-banner{
-			background-size: cover !important;
-			background-position: left;
-			background-image: url(images/about-banner.jpg) !important;
-			background-repeat: no-repeat;
-			position: relative;
-			text-align: center;
-			align-content: center;
-			width: 100%;
-			height: 100%;
-		    }
+        .page-banner {
+            background-position: center;
+            background-size: contain !important;
+            background-image: url(images/about-banner.jpg) !important;
+            background-repeat: no-repeat;
+            position: relative;
+            text-align: center;
+            min-height: 278px;
+            align-content: center;
+            width: 100%;
+            min-height: unset;
+        }
+
+        .page-banner h2 {
+            padding: 0px;
+            font-size: 2.4em;
+            line-height: 50px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .page-banner h2 {
+                padding: 0px;
+                font-size: 2.5em;
+                line-height: 50px;
+            }
+
+            .page-banner {
+                background-size: cover !important;
+                background-position: left;
+                background-image: url(images/about-banner.jpg) !important;
+                background-repeat: no-repeat;
+                position: relative;
+                text-align: center;
+                align-content: center;
+                width: 100%;
+                height: 100%;
+            }
 
         }
-	  </style>
+        @media screen and (max-width: 992px) {
+            .button-post {
+                text-align: end;
+            }
+
+        }
+
+        .btn-display-galery {
+            border: #ddd solid 1px;
+            border-radius: 4px;
+            margin-left: 4px;
+            margin-top: -6px;
+            cursor: pointer;
+            float: right;
+            padding: 9px 10px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-display-galery:hover {
+            background-color: #ddd;
+            /* Cambia el color de fondo cuando el mouse está sobre el div */
+            cursor: pointer;
+            /* Cambia el cursor cuando el mouse está sobre el div */
+        }
+
+        .btn-display-galery-select {
+            background-color: #ddd;
+        }
+
+        .descripcion-libro {
+            height: 120px;
+            text-overflow: ellipsis;
+            white-space: pre-wrap;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+
+        .titulo-libro {
+            margin-top: 10px;
+            height: 40px !important;
+            text-overflow: ellipsis;
+            white-space: pre-wrap;
+            overflow: hidden !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        p img{
+            display: none;
+        }
+    </style>
 </head>
+
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 
-	<!-- Loader -->
-	<div id="site-loader" class="load-complete">
-		<div class="loader">
-			<div class="loader-inner ball-clip-rotate">
-				<div></div>
-			</div>
-		</div>
-	</div><!-- Loader /- -->
+    <!-- Loader -->
+    <div id="site-loader" class="load-complete">
+        <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+                <div></div>
+            </div>
+        </div>
+    </div><!-- Loader /- -->
 
-	<a id="top"></a>
+    <a id="top"></a>
 
-	<!-- Header Section -->
-	<header id="header" class="header-section container-fluid no-padding">
-		<!-- SidePanel -->
-		<div id="slidepanel">
-			<!-- Top Header -->
-			<div class="top-header container-fluid no-padding">
-				<!-- Container -->
-				<div class="container">
-					<div class="row">
-						<div class="col-md-7 col-sm-12">
-							<p>Bienvenido a la renovación en la Educación</p>
-						</div>
-						<div class="col-md-5 col-sm-12">
-							<a href="mailto:info@ourdomain.com" title="Info@ourdomain.com"><i class="fa fa-envelope"></i>admin@col8nov.com</a>
-							<a href="tel:+011234567896" title="+011234567896"><i class="fa fa-phone"></i> (+593) 07 2976 015</a>
-						</div>
-					</div>
-				</div><!-- Container -->
-			</div><!-- Top Header /- -->
-			<!-- Middel Header /- -->
-			<div class="middle-header container-fluid no-padding">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="index.html" title="8 de Noviembre"><img src="images/logo.png" alt="Logo" /></a>
-						</div>
-						<div class="col-md-7 col-sm-12 header-content">
-							<div class="header-cnt-box">
-								<i class="fas fa-graduation-cap"></i>
-								<button style="background-color: #d20f26; color: #fff; border-radius: 4px; padding: 10px 20px; font-size: 16px;" onclick="window.open('https://8noviembre.sharepoint.com/sites/8nov', '_blank')">PLATAFORMA</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- SidePanel /- -->
-		<!-- Container -->
-		<div class="container">
-			<!-- nav -->
+    <!-- Header Section -->
+    <header id="header" class="header-section container-fluid no-padding">
+        <!-- SidePanel -->
+        <div id="slidepanel">
+            <!-- Top Header -->
+            <div class="top-header container-fluid no-padding">
+                <!-- Container -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12">
+                            <p>Bienvenido a la renovación en la Educación</p>
+                        </div>
+                        <div class="col-md-5 col-sm-12">
+                            <a href="mailto:info@ourdomain.com" title="Info@ourdomain.com"><i
+                                    class="fa fa-envelope"></i>admin@col8nov.com</a>
+                            <a href="tel:+011234567896" title="+011234567896"><i class="fa fa-phone"></i> (+593) 07 2976
+                                015</a>
+                        </div>
+                    </div>
+                </div><!-- Container -->
+            </div><!-- Top Header /- -->
+            <!-- Middel Header /- -->
+            <div class="middle-header container-fluid no-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="index.html" title="8 de Noviembre"><img src="images/logo.png" alt="Logo" /></a>
+                        </div>
+                        <div class="col-md-7 col-sm-12 header-content">
+                            <div class="header-cnt-box">
+                                <i class="fas fa-graduation-cap"></i>
+                                <button
+                                    style="background-color: #d20f26; color: #fff; border-radius: 4px; padding: 10px 20px; font-size: 16px;"
+                                    onclick="window.open('https://8noviembre.sharepoint.com/sites/8nov', '_blank')">PLATAFORMA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- SidePanel /- -->
+        <!-- Container -->
+        <div class="container">
+            <!-- nav -->
             <nav class="navbar navbar-default ow-navigation" id="menu-Navbar">
-				<div id="loginpanel" class="desktop-hide">
-					<div class="right" id="toggle">
-						<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
-						<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
-					</div>
-				</div>
-				<div class="navbar-header">
-					<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="index.html" title="8 de Noviembre" class="navbar-brand">8 de Noviembre</a>
-				</div>
-				<div class="navbar-collapse collapse" id="navbar">
-					<ul class="nav navbar-nav">
-						<li><a href="index.html" title="INICIO">INICIO</a></li>
-						<li class="dropdown">
-							<a href="about.html" title="¿Quienes Somos?" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">¿QUIÉNES SOMOS?</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="about.html#propositoMisional">Propósito Misional</a></li>
-								<li><a href="about.html#comunidad">Nuestra Historia</a></li>
-								<li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
+                <div id="loginpanel" class="desktop-hide">
+                    <div class="right" id="toggle">
+                        <a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+                        <a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                        class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" title="8 de Noviembre" class="navbar-brand">8 de Noviembre</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html" title="INICIO">INICIO</a></li>
+                        <li class="dropdown">
+                            <a href="about.html" title="¿Quienes Somos?" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">¿QUIÉNES SOMOS?</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html#propositoMisional">Propósito Misional</a></li>
+                                <li><a href="about.html#comunidad">Nuestra Historia</a></li>
+                                <li><a href="about.html#instrumentosGestion">Instrumentos de Gestión Escolar</a></li>
                                 <li><a href="about.html#uniformeInstitucional">Uniforme Institucional</a></li>
                                 <li><a href="about.html#simbolosInstitucionales">Simbolos Institucionales</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="OFERTA EDUCATIVA" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">OFERTA EDUCATIVA</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="egbs.html" title="EGBS">Educación General Básica Superior </a></li>
-								<hr>
-								<li><a href="agro.html" title="Produccion Agropecuaria">Producción Agropecuaria</a></li>
-								<li><a href="mecanica.html" title="Mecanizado">Mecanizado y Construcciones Metálicas</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="OFERTA EDUCATIVA" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">OFERTA EDUCATIVA</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="egbs.html" title="EGBS">Educación General Básica Superior </a></li>
+                                <hr>
+                                <li><a href="agro.html" title="Produccion Agropecuaria">Producción Agropecuaria</a></li>
+                                <li><a href="mecanica.html" title="Mecanizado">Mecanizado y Construcciones Metálicas</a>
+                                </li>
                                 <li><a href="ciencias.html" title="Ciencias">Bachillerato en Ciencias</a></li>
 
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="DIRECTIVOS Y DOCENTES" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">DIRECTIVOS Y DOCENTES</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="docentes.html" title="EGBS">Directivos Institucionales</a></li>
-								<li><a href="docentes.html?cargo=docentes" title="Produccion Agropecuaria">Personal Docente</a></li>
-								<li><a href="docentes.html?cargo=dece" title="Mecanizado">Departamento de Consejería Estudiantil</a></li>
-                                <li><a href="administrativo.html" title="Administrativo y de Apoyo">Administrativo y de Apoyo</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" title="PROYECTOS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Proyectos</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="proyectos.html?proyecto=ex-alumnos" title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
-								<li><a href="proyectos.html?proyecto=productivos" title="Proyectos Productivos">Productivos</a></li>
-								<li><a href="proyectos.html?proyecto=ambientales" title="Proyectos Ambientales">Ambientales</a></li>
-								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Culturales">Culturales</a></li>
-                                <li><a href="proyectos.html?proyecto=deportivos" title="Proyectos Deportivos">Deportivos</a></li>
-                                <li><a href="proyectos.html?proyecto=educativos" title="Proyectos Educativos">Educativos</a></li>
-                                <li><a href="proyectos.html?proyecto=participacion" title="Proyectos Participación Estudiantil">Programas de Participación Estudiantil</a></li>
-							</ul>
-						</li>
-						<li class="dropdown active">
-							<a href="#" title="RECURSOS" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="biblioteca.html" title="Biblioteca" class="activeList">Biblioteca</a></li>
-								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
-							</ul>
-						</li>
-						<li><a href="blog.html" title="Blog">Blog</a></li>
-						<li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</nav><!-- nav /- -->
-		</div><!-- Container /- -->
-	</header><!-- Header Section /- -->
-	
-	<main class="site-main page-spacing">
-	
-		<!-- Page Banner Section -->
-		<div class="page-banner container-fluid no-padding" id="page-banner">
-			<h2>"La lectura es a la mente lo que el ejercicio es al cuerpo". - Joseph Addison</h2>
-		</div><!-- Banner Section /- -->
-		
-		<div class="section-padding"></div>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="DIRECTIVOS Y DOCENTES" class="dropdown-toggle" role="button"
+                                aria-haspopup="true" aria-expanded="false">DIRECTIVOS Y DOCENTES</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="docentes.html" title="EGBS">Directivos Institucionales</a></li>
+                                <li><a href="docentes.html?cargo=docentes" title="Produccion Agropecuaria">Personal
+                                        Docente</a></li>
+                                <li><a href="docentes.html?cargo=dece" title="Mecanizado">Departamento de Consejería
+                                        Estudiantil</a></li>
+                                <li><a href="administrativo.html" title="Administrativo y de Apoyo">Administrativo y de
+                                        Apoyo</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="PROYECTOS" class="dropdown-toggle" role="button" aria-haspopup="true"
+                                aria-expanded="false">Proyectos</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="proyectos.html?proyecto=ex-alumnos"
+                                        title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
+                                <li><a href="proyectos.html?proyecto=productivos"
+                                        title="Proyectos Productivos">Productivos</a></li>
+                                <li><a href="proyectos.html?proyecto=ambientales"
+                                        title="Proyectos Ambientales">Ambientales</a></li>
+                                <li><a href="proyectos.html?proyecto=culturales"
+                                        title="Proyectos Culturales">Culturales</a></li>
+                                <li><a href="proyectos.html?proyecto=deportivos"
+                                        title="Proyectos Deportivos">Deportivos</a></li>
+                                <li><a href="proyectos.html?proyecto=educativos"
+                                        title="Proyectos Educativos">Educativos</a></li>
+                                <li><a href="proyectos.html?proyecto=participacion"
+                                        title="Proyectos Participación Estudiantil">Programas de Participación
+                                        Estudiantil</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a href="#" title="RECURSOS" class="dropdown-toggle" role="button" aria-haspopup="true"
+                                aria-expanded="false">Recursos</a>
+                            <i class="ddl-switch fa fa-angle-down"></i>
+                            <ul class="dropdown-menu">
+                                <li><a href="biblioteca.html" title="Biblioteca" class="activeList">Biblioteca</a></li>
+                                <li><a href="#" title="Proyectos Culturales">Documentos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html" title="Blog">Blog</a></li>
+                        <li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </nav><!-- nav /- -->
+        </div><!-- Container /- -->
+    </header><!-- Header Section /- -->
+
+    <main class="site-main page-spacing">
+
+        <!-- Page Banner Section -->
+        <div class="page-banner container-fluid no-padding" id="page-banner">
+            <h2>"La lectura es a la mente lo que el ejercicio es al cuerpo". - Joseph Addison</h2>
+        </div><!-- Banner Section /- -->
+
+        <div class="section-padding"></div>
         <div class="section-header">
             <h3>Biblioteca</h3>
             <p>nuestra biblioteca cuenta con más de 5000 libros</p>
@@ -431,10 +585,13 @@
                     <aside id="categoria-menu" class="widget widget_search">
                         <div class="input-group col-md-12 col-sm-12 col-xs-12">
                             <!-- Input de texto -->
-                            <input type="text" id="inputCategoria" class="form-control" placeholder="Categoría" aria-label="Text input with dropdown button" readonly>
+                            <input type="text" id="inputCategoria" class="form-control" placeholder="Categoría"
+                                aria-label="Text input with dropdown button" readonly>
                             <!-- Botón desplegable -->
                             <div class="input-group-btn">
-                                <button id="buton-menu-dropdown" type="button" class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                <button id="buton-menu-dropdown" type="button"
+                                    class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
                                 <!-- Menú desplegable -->
                                 <ul id="listaCategorias" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                     <li><a class="option-categoria">Todos</a></li>
@@ -455,7 +612,8 @@
                     <aside class="widget widget_search">
                         <div class="input-group col-md-1 col-sm-1 col-sx-12">
                             <span class="input-group-btn" style="height: 50px;">
-                                <button id="btnBuscarLibro" type="button" class="btn btn-default btn-find"><i class="icon icon-Search"></i></button>
+                                <button id="btnBuscarLibro" type="button" class="btn btn-default btn-find"><i
+                                        class="icon icon-Search"></i></button>
                             </span>
                         </div>
                     </aside>
@@ -464,33 +622,71 @@
             <div class="row">
                 <div class=" p-find panel-default find-avanced">
                     <div class="panel-heading" style="text-align: end;">
-                        <a id="buton-menu-dropdown-avanzado" class=" btn-find-avanced" aria-haspopup="true" aria-expanded="false">
+                        <a id="buton-menu-dropdown-avanzado" class=" btn-find-avanced" aria-haspopup="true"
+                            aria-expanded="false">
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
                         <span>Busqueda Avanzada</span>
                     </div>
                     <div class="panel-body">
+
+                        <div class="p-find col-md-2 col-sm-6 col-xs-6">
+                            <aside id="categoria-menu-formato" class="widget widget_search">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <!-- Input de texto -->
+                                    <input type="text" id="inputTipoFormato" data-tipo-doc-input="" class="form-control"
+                                        placeholder="Formato" aria-label="Text input with dropdown button"
+                                        readonly>
+                                    <!-- Botón desplegable -->
+                                    <div class="input-group-btn">
+                                        <button id="buton-menu-dropdown-formato" type="button"
+                                            class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"><span
+                                                class="caret"></span></button>
+                                        <!-- Menú desplegable -->
+                                        <ul id="listaTipoFormato"
+                                            class="dropdown-menu dropdown-menu-right menu-dropdown-option">
+                                            <li><a class="option-tipo-formato" data-asignatura-doc="">Todos</a></li>
+                                            <li><a class="option-tipo-formato" data-asignatura-doc="Anexos">Impreso</a></li>
+                                            <li><a class="option-tipo-formato" data-asignatura-doc="Anuarios">Digital</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
                         
-                        <div class="p-find col-md-3 col-sm-6 col-xs-6">
+                        <div class="p-find col-md-2 col-sm-6 col-xs-6">
                             <aside id="categoria-menu-doc" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
-                                    <input type="text" id="inputTipoDoc" data-tipo-doc-input="" class="form-control" placeholder="Tipo de Documento" aria-label="Text input with dropdown button" readonly>
+                                    <input type="text" id="inputTipoDoc" data-tipo-doc-input="" class="form-control"
+                                        placeholder="Tipo Documento" aria-label="Text input with dropdown button"
+                                        readonly>
                                     <!-- Botón desplegable -->
                                     <div class="input-group-btn">
-                                        <button id="buton-menu-dropdown-doc" type="button" class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                        <button id="buton-menu-dropdown-doc" type="button"
+                                            class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"><span
+                                                class="caret"></span></button>
                                         <!-- Menú desplegable -->
-                                        <ul id="listaTipoDoc" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
+                                        <ul id="listaTipoDoc"
+                                            class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                             <li><a class="option-tipo-doc" data-asignatura-doc="">Todos</a></li>
                                             <li><a class="option-tipo-doc" data-asignatura-doc="Anexos">Anexos</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="Anuarios">Anuarios</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="Bibliografía">Bibliografía</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="catálogos">Catálogos</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="Colecciones">Colecciones</a></li>
+                                            <li><a class="option-tipo-doc" data-asignatura-doc="Anuarios">Anuarios</a>
+                                            </li>
+                                            <li><a class="option-tipo-doc"
+                                                    data-asignatura-doc="Bibliografía">Bibliografía</a></li>
+                                            <li><a class="option-tipo-doc" data-asignatura-doc="catálogos">Catálogos</a>
+                                            </li>
+                                            <li><a class="option-tipo-doc"
+                                                    data-asignatura-doc="Colecciones">Colecciones</a></li>
                                             <li><a class="option-tipo-doc" data-asignatura-doc="Guías">Guías</a></li>
                                             <li><a class="option-tipo-doc" data-asignatura-doc="libro">Libro</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="Memorias y reseñas">Memorias y reseñas</a></li>
-                                            <li><a class="option-tipo-doc" data-asignatura-doc="Vacías">Sin definir</a></li>
+                                            <li><a class="option-tipo-doc"
+                                                    data-asignatura-doc="Memorias y reseñas">Memorias y reseñas</a></li>
+                                            <li><a class="option-tipo-doc" data-asignatura-doc="Vacías">Sin definir</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -500,12 +696,17 @@
                             <aside id="categoria-menu-estado" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
-                                    <input type="text" id="inputEstado" class="form-control" data-estado-input="" placeholder="Estado" aria-label="Text input with dropdown button" readonly>
+                                    <input type="text" id="inputEstado" class="form-control" data-estado-input=""
+                                        placeholder="Estado" aria-label="Text input with dropdown button" readonly>
                                     <!-- Botón desplegable -->
                                     <div class="input-group-btn">
-                                        <button id="buton-menu-dropdown-estado" type="button" class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                        <button id="buton-menu-dropdown-estado" type="button"
+                                            class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"><span
+                                                class="caret"></span></button>
                                         <!-- Menú desplegable -->
-                                        <ul id="listaEstadoLibro" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
+                                        <ul id="listaEstadoLibro"
+                                            class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                             <li><a class="option-estado" data-estado="">Todos</a></li>
                                             <li><a class="option-estado" data-estado="conservado">Conservado</a></li>
                                             <li><a class="option-estado" data-estado="mal estado">Mal estado</a></li>
@@ -522,51 +723,72 @@
                             <aside id="categoria-menu-asignatura" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
-                                    <input type="text" id="inputAsignatura" class="form-control" data-asignatura-input="" placeholder="Asignaturas" aria-label="Text input with dropdown button" readonly>
+                                    <input type="text" id="inputAsignatura" class="form-control"
+                                        data-asignatura-input="" placeholder="Asignaturas"
+                                        aria-label="Text input with dropdown button" readonly>
                                     <!-- Botón desplegable -->
                                     <div class="input-group-btn">
-                                        <button id="buton-menu-dropdown-asignatura" type="button" class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                        <button id="buton-menu-dropdown-asignatura" type="button"
+                                            class="btn btn-default dropdown-toggle btn-find" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"><span
+                                                class="caret"></span></button>
                                         <!-- Menú desplegable -->
-                                        <ul id="listaAsignatura" class="dropdown-menu dropdown-menu-right menu-dropdown-option">
+                                        <ul id="listaAsignatura"
+                                            class="dropdown-menu dropdown-menu-right menu-dropdown-option">
                                             <li><a class="option-asignatura" data-asignatura="">Todos</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Autoayuda superacion personal">Autoayuda superacion personal</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Biologia">Biologia</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Educacion Cultural y Artistica">Educacion Cultural y Artistica</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Educacion Fìsica">Educacion Fìsica</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Emprendimiento y Gestion">Emprendimiento y Gestion</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Autoayuda superacion personal">Autoayuda superacion y personal</a></li>
+                                            <li><a class="option-asignatura" data-asignatura="Biologia">Biologia</a>
+                                            </li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Educacion Cultural y Artistica">Educacion Cultural y Artistica</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Educacion Fìsica">Educacion Fìsica</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Emprendimiento y Gestion">Emprendimiento y Gestion</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Fisica">Fisica</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Historia">Historia</a></li>
+                                            <li><a class="option-asignatura" data-asignatura="Historia">Historia</a>
+                                            </li>
                                             <li><a class="option-asignatura" data-asignatura="Idioma Extranjero">Idioma Extranjero</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Informatica">Informatica</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Lengua y Literatura">Lengua y Literatura</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Matematicas">Matematicas</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Mecanica Industrial">Mecanica Industrial</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Informatica">Informatica</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Lengua y Literatura">Lengua y Literatura</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Matematicas">Matematicas</a></li>
+                                            <li><a class="option-asignatura"
+                                                    data-asignatura="Mecanica Industrial">Mecanica Industrial</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Quimica">Quimica</a></li>
                                             <li><a class="option-asignatura" data-asignatura="Temas Variados">Temas Variados</a></li>
-                                            <li><a class="option-asignatura" data-asignatura="Vacías">Sin Definir</a></li>
+                                            <li><a class="option-asignatura" data-asignatura="Vacías">Sin Definir</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </aside>
                         </div>
-                        <div class="form-group p-find col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group p-find col-md-3 col-sm-6 col-xs-12">
                             <aside class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
                                     <!-- Botón desplegable -->
-                                    
-                                    <div class="input-group-btn calendario-parpadeo" id="calendario" data-toggle-button="true">
-                                        <a class="btn btn-default btn-find"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
+
+                                    <div class="input-group-btn calendario-parpadeo" id="calendario"
+                                        data-toggle-button="true">
+                                        <a class="btn btn-default btn-find" aria-haspopup="true" aria-expanded="false"
+                                            style="padding: 10px 23px 10px 23px !important;">
                                             <span style="font-size: 16px;">
                                                 <i class="far fa-calendar-alt"></i>
                                             </span>
                                         </a>
                                         <!-- Menú desplegable -->
                                     </div>
-                                    <input autocomplete="off" type="text" class="form-control float-right" id="reservation" style="padding: 10px 2px">
+                                    <input autocomplete="off" type="text" class="form-control float-right"
+                                        id="reservation" style="padding: 10px 2px">
                                     <!-- Botón Ordenar -->
                                     <div class="input-group-btn ordenar" id="ordenar" data-sort="desc">
-                                        <a class="btn btn-default btn-find" title="Descendente"  aria-haspopup="true" aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
+                                        <a class="btn btn-default btn-find" title="Descendente" aria-haspopup="true"
+                                            aria-expanded="false" style="padding: 10px 23px 10px 23px !important;">
                                             <span style="font-size: 16px;">
                                                 <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
                                             </span>
@@ -576,10 +798,10 @@
                                 </div>
                             </aside>
                             <!-- /.input group -->
-                            
+
                         </div>
                     </div>
-                  </div>
+                </div>
             </div>
             <div id="fechas" class="ventana" class="conjunto-fechas">
                 <div id="conjuntoFecha"></div>
@@ -609,147 +831,160 @@
                     </div><!-- Loader /- -->
                 </div>
                 <div id="articleBook" class="col-md-12 col-sm-12 display-none-div" style="padding: 0;">
-                    
+
                 </div>
-                
+
             </div>
             <nav class="ow-pagination">
                 <ul class="pagination">
-                    <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li id="page-after-li" class="display-page"><a id="page-after" href="#" aria-label="Next"><i
+                                class="fa fa-angle-double-left"></i></a></li>
                     <li><a id="page-one" href="biblioteca.html?page=1">1</a></li>
                     <li id="left-page" class="display-page"><a>...</a></li>
                     <li id="page-two-li"><a id="page-two" href="biblioteca.html?page=2">2</a></li>
                     <li id="page-three-li"><a id="page-three" href="biblioteca.html?page=3">3</a></li>
-                    <li id="page-four-li" class="display-page"><a id="page-four" href="biblioteca.html?page=4">4</a></li>
+                    <li id="page-four-li" class="display-page"><a id="page-four" href="biblioteca.html?page=4">4</a>
+                    </li>
                     <li id="right-page"><a>...</a></li>
                     <li id="page-last-li"><a id="page-last" href="#"></a></li>
-                    <li id="page-next-li"><a id="page-next" href="#" aria-label="Next"><i class="fa fa-angle-double-right"></i></a></li>
+                    <li id="page-next-li"><a id="page-next" href="#" aria-label="Next"><i
+                                class="fa fa-angle-double-right"></i></a></li>
                 </ul>
             </nav>
         </div>
-		<div class="section-padding"></div>
-		<!-- Call Out Section -->
-		<div class="call-out-section2 container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<h3>"Formar profesionales es sembrar las semillas del futuro, asegurando una cosecha de éxito; y prosperidad para nuestra sociedad."</h3>
-				
-				<a href="contact-us.html" class="contact-btn" title="contact us">CONTÁCTENOS</a>
-			</div><!-- Container /- -->
-		</div><!-- Call Out Section /- -->
-		
-		<div class="section-padding"></div>
-		
+        <div class="section-padding"></div>
+        <!-- Call Out Section -->
+        <div class="call-out-section2 container-fluid no-padding">
+            <!-- Container -->
+            <div class="container">
+                <h3>"Formar profesionales es sembrar las semillas del futuro, asegurando una cosecha de éxito; y
+                    prosperidad para nuestra sociedad."</h3>
+
+                <a href="contact-us.html" class="contact-btn" title="contact us">CONTÁCTENOS</a>
+            </div><!-- Container /- -->
+        </div><!-- Call Out Section /- -->
+
+        <div class="section-padding"></div>
+
         <!-- Client Section -->
-		<div class="client-section container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<div class="client-carousel">
-					
-				</div>
-			</div><!-- Container /- -->
-		</div><!-- Client Section /- -->
-		
-	</main>
-	
-</div><!-- Container /- -->
-<div class="footer-bottom container-fluid no-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <p>&copy; 2024 8 DE Noviembre</p>
-            </div>
-            <div class="col-md-10 col-sm-12 col-xs-12">
-                <!-- nav -->
-                <nav class="navbar navbar-default ow-navigation">
-                    <div class="navbar-header">
-                        <button aria-controls="navbar" aria-expanded="false" data-target="#ftr-navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse navbar-right" id="ftr-navbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html" title="home">INICIO</a></li>
-                            <li><a href="contact-us.html" title="Contact Us">CONTÁCTENOS</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </nav><!-- nav /- -->
-                
+        <div class="client-section container-fluid no-padding">
+            <!-- Container -->
+            <div class="container">
+                <div class="client-carousel">
+
+                </div>
+            </div><!-- Container /- -->
+        </div><!-- Client Section /- -->
+
+    </main>
+
+    </div><!-- Container /- -->
+    <div class="footer-bottom container-fluid no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <p>&copy; 2024 8 DE Noviembre</p>
+                </div>
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <!-- nav -->
+                    <nav class="navbar navbar-default ow-navigation">
+                        <div class="navbar-header">
+                            <button aria-controls="navbar" aria-expanded="false" data-target="#ftr-navbar"
+                                data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse navbar-right" id="ftr-navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html" title="home">INICIO</a></li>
+                                <li><a href="contact-us.html" title="Contact Us">CONTÁCTENOS</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </nav><!-- nav /- -->
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-</div><!-- Footer Section /- -->
+    </div><!-- Footer Section /- -->
 
     <!-- JQuery v1.11.3 -->
     <script src="js/jquery.min.js"></script>
-        
+
     <!-- Library JS -->
     <script src="libraries/lib.js"></script>
 
-    <!-- Library - Theme JS -->	
+    <!-- Library - Theme JS -->
     <script src="js/functions.js"></script>
 
     <script src="libraries/moment/moment.min.js"></script>
     <script src="libraries/daterangepicker/daterangepicker.js"></script>
-    
+
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="libraries/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> 
-    
+    <script src="libraries/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
     <div class="social-icons">
-		<a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img src="images/Facebook.png" alt="Facebook"></a>
-	</div>
+        <a href="https://www.facebook.com/Col8deNoviembre?mibextid=ZbWKwL" target="_blank"><img
+                src="images/Facebook.png" alt="Facebook"></a>
+    </div>
 
     <script>
-        
+
         // Variable global para almacenar los datos del JSON
         var listaFechasLibros;
         var sigloIndex;
-        $(document).ready(function() {
-            
+        $(document).ready(function () {
+
             // Número de elementos por página
             var elementosPorPagina = 20;
-            var listCategorias = ['Agropecuaria','Arte', 'Artes visuales:','Ciencias Naturales', 'Ciencias sociales', 'cocina','Derecho', 'economia', 'Educación cívica','Emprendimiento','Filosofía', 'fisica', 'Informática', 'Lengua extranjera','Literatura', 'Matemática',  'Mecánica', 'Pedagogía', 'Psicología', 'Religión', 'Salud y bienestar', ''];
+            var listCategorias = ['Agropecuaria', 'Arte', 'Artes visuales:', 'Ciencias Naturales', 'Ciencias sociales', 'cocina', 'Derecho', 'economia', 'Educación cívica', 'Emprendimiento', 'Filosofía', 'fisica', 'Informática', 'Lengua extranjera', 'Literatura', 'Matemática', 'Mecánica', 'Pedagogía', 'Psicología', 'Religión', 'Salud y bienestar', ''];
 
-            listCategorias.map(function(categoria){
-                $("#listaCategorias").append("<li><a class='option-categoria'>"+ categoria +"</a></li>")
+            listCategorias.map(function (categoria) {
+                $("#listaCategorias").append("<li><a class='option-categoria'>" + categoria + "</a></li>")
             });
 
-            $("#buton-menu-dropdown").click(function(){
+            $("#buton-menu-dropdown").click(function () {
                 // Obtener el ancho del contenedor principal
                 var widthCategoria = $('#categoria-menu').outerWidth();
-                
+
                 // Aplicar el mismo ancho al menú desplegable
                 $('.dropdown-menu').css('width', widthCategoria);
             });
-            $("#buton-menu-dropdown-doc").click(function(){
+            $("#buton-menu-dropdown-doc").click(function () {
                 // Obtener el ancho del contenedor principal
                 var widthCategoria = $('#categoria-menu-doc').outerWidth();
-                
+
                 // Aplicar el mismo ancho al menú desplegable
                 $('.dropdown-menu').css('width', widthCategoria);
             });
-            $("#buton-menu-dropdown-estado").click(function(){
+            $("#buton-menu-dropdown-formato").click(function () {
+                // Obtener el ancho del contenedor principal
+                var widthCategoria = $('#categoria-menu-formato').outerWidth();
+
+                // Aplicar el mismo ancho al menú desplegable
+                $('.dropdown-menu').css('width', widthCategoria);
+            });
+            $("#buton-menu-dropdown-estado").click(function () {
                 // Obtener el ancho del contenedor principal
                 var widthCategoria = $('#categoria-menu-estado').outerWidth();
-                
+
                 // Aplicar el mismo ancho al menú desplegable
                 $('.dropdown-menu').css('width', widthCategoria);
             });
-            $("#buton-menu-dropdown-asignatura").click(function(){
+            $("#buton-menu-dropdown-asignatura").click(function () {
                 // Obtener el ancho del contenedor principal
                 var widthCategoria = $('#categoria-menu-asignatura').outerWidth();
-                
+
                 // Aplicar el mismo ancho al menú desplegable
                 $('.dropdown-menu').css('width', widthCategoria);
             });
-        
 
-            
+
+
             //Date range picker
             $('#reservation').daterangepicker({
                 autoUpdateInput: false,
@@ -758,69 +993,82 @@
                 }
             });
 
-            $('#reservation').on('apply.daterangepicker', function(ev, picker) {
+            $('#reservation').on('apply.daterangepicker', function (ev, picker) {
                 $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
             });
 
-            $('#reservation').on('cancel.daterangepicker', function(ev, picker) {
+            $('#reservation').on('cancel.daterangepicker', function (ev, picker) {
                 $(this).val('');
             });
 
 
-            $('.option-categoria').click(function() {
+            $('.option-categoria').click(function () {
                 var textoOpcion = $(this).text();
                 $("#inputCategoria").focus();
-                if(textoOpcion=="Todos"){
+                if (textoOpcion == "Todos") {
                     $('#inputCategoria').val("");
                 }
-                else{
+                else {
                     $('#inputCategoria').val(textoOpcion);
                 }
             });
 
-            $('.option-estado').click(function() {
+            $('.option-estado').click(function () {
                 var textoOpcion = $(this).text();
                 var valorOption = $(this).attr("data-estado");
-                $('#inputEstado').attr("data-estado-input",valorOption);
+                $('#inputEstado').attr("data-estado-input", valorOption);
                 $("#inputEstado").focus();
-                if(textoOpcion=="Todos"){
+                if (textoOpcion == "Todos") {
                     $('#inputEstado').val("");
                 }
-                else{
+                else {
                     $('#inputEstado').val(textoOpcion);
                 }
             });
-            
-            $('.option-tipo-doc').click(function() {
+
+            $('.option-tipo-doc').click(function () {
                 var textoOpcion = $(this).text();
                 var valorOption = $(this).attr("data-tipo-doc");
-                $('#inputTipoDoc').attr("data-tipo-doc-input",valorOption);
+                $('#inputTipoDoc').attr("data-tipo-doc-input", valorOption);
                 $("#inputTipoDoc").focus();
-                if(textoOpcion=="Todos"){
+                if (textoOpcion == "Todos") {
                     $('#inputTipoDoc').val("");
                 }
-                else{
+                else {
                     $('#inputTipoDoc').val(textoOpcion);
                 }
             });
             
-            $('.option-asignatura').click(function() {
+            $('.option-tipo-formato').click(function () {
+                var textoOpcion = $(this).text();
+                var valorOption = $(this).attr("data-tipo-formato");
+                $('#inputTipoFormato').attr("data-tipo-formato-input", valorOption);
+                $("#inputTipoFormato").focus();
+                if (textoOpcion == "Todos") {
+                    $('#inputTipoFormato').val("");
+                }
+                else {
+                    $('#inputTipoFormato').val(textoOpcion);
+                }
+            });
+
+            $('.option-asignatura').click(function () {
                 var textoOpcion = $(this).text();
                 var valorOption = $(this).attr("data-asignatura");
-                $('#inputAsignatura').attr("data-asignatura-input",valorOption);
+                $('#inputAsignatura').attr("data-asignatura-input", valorOption);
                 $("#inputAsignatura").focus();
-                if(textoOpcion=="Todos"){
+                if (textoOpcion == "Todos") {
                     $('#inputAsignatura').val("");
                 }
-                else{
+                else {
                     $('#inputAsignatura').val(textoOpcion);
                 }
             });
 
-            $("#calendario").click(function(){
+            $("#calendario").click(function () {
                 var posicionBoton = $(this).offset();
                 var desplazamientoX = 0;
-                if(window.innerWidth>768){
+                if (window.innerWidth > 768) {
                     desplazamientoX = 60;
                 }
 
@@ -828,12 +1076,12 @@
                     top: posicionBoton.top + $(this).outerHeight(),
                     left: posicionBoton.left - desplazamientoX
                 });
-                if($(this).attr("data-toggle-button")=="true"){
-                    $("#fechas").css("display","block");
-                    $(this).attr("data-toggle-button","false")
-                }else{
-                    $("#fechas").css("display","none");
-                    $(this).attr("data-toggle-button","true")
+                if ($(this).attr("data-toggle-button") == "true") {
+                    $("#fechas").css("display", "block");
+                    $(this).attr("data-toggle-button", "false")
+                } else {
+                    $("#fechas").css("display", "none");
+                    $(this).attr("data-toggle-button", "true")
                 }
                 $("#calendario").removeClass("calendario-parpadeo");
                 $("#calendario").addClass("calendario");
@@ -841,66 +1089,66 @@
                 $("#conjuntoFecha").html("Examinar por siglo</br>");
                 $("#conjuntoYear").html("");
                 $("#conjuntoFechaSiglo").html("");
-                siglo.map(function(siglo){
+                siglo.map(function (siglo) {
                     $("#conjuntoFecha").append(`<button class="btn-siglo btn-fecha" data-periodo="siglo" data-fecha="${siglo}">${siglo}</button>`);
                 })
-                
+
             });
 
-            $("#fechas").on("click", ".btn-siglo", function() {
+            $("#fechas").on("click", ".btn-siglo", function () {
                 siglo = Object.keys(listaFechasLibros);
                 var listSiglo = Object.keys(listaFechasLibros);
                 var indexSiglo = listSiglo.indexOf($(this).text());
                 sigloIndex = indexSiglo;
                 // Acción que deseas realizar cuando se hace clic en los nuevos botones
                 decada = Object.keys(listaFechasLibros[siglo[indexSiglo]])
-                
+
                 $("#conjuntoYear").html("");
                 $("#conjuntoFechaSiglo").html("Examinar por decada<br>");
-                
-                decada.map(function(decada){
+
+                decada.map(function (decada) {
                     $("#conjuntoFechaSiglo").append(`<button class="btn-decada btn-fecha" data-periodo="decada" data-fecha="${decada}">${decada}</button>`)
                 });
             });
-            
-            $("#fechas").on("click", ".btn-decada", function() {
+
+            $("#fechas").on("click", ".btn-decada", function () {
                 $("#conjuntoYear").html("Examinar por año<br>");
                 siglo = Object.keys(listaFechasLibros);
                 var listDecadas = listaFechasLibros[siglo[sigloIndex]]
                 var decadas = Object.keys(listDecadas);
                 var decada = $(this).text();
-                decada = parseInt(decada); 
-                listDecadas[decada].map(function(fecha){
+                decada = parseInt(decada);
+                listDecadas[decada].map(function (fecha) {
                     $("#conjuntoYear").append(`<button class="btn-year btn-fecha" data-periodo="year" data-fecha="${fecha["año"]}">${fecha["año"]} (${fecha["cantidad"]})</button>`);
                 });
             });
 
-            $("#fechas").on("click", ".btn-fecha", function() {
+            $("#fechas").on("click", ".btn-fecha", function () {
                 $(".btn-fecha").removeClass("btn-fecha-select");
                 $(this).addClass("btn-fecha-select");
             });
 
-            $('#btnBuscarLibro').click(function() {
+            $('#btnBuscarLibro').click(function () {
                 buscar();
             });
 
-            $(".row input").keypress(function(event) {
+            $(".row input").keypress(function (event) {
                 if (event.which === 13) { // 13 es el código de la tecla Enter
                     buscar();
                 }
             });
-    
-            function buscar(){
+
+            function buscar() {
                 var publicacion = $("#reservation").val();
                 publicacion = publicacion.replace(/\s+/g, '');
-                validarFecha= validarFormatoRangoFecha(publicacion);
+                validarFecha = validarFormatoRangoFecha(publicacion);
                 var sort = $("#ordenar").attr("data-sort");
 
-                if(!validarFecha){
+                if (!validarFecha) {
                     publicacion = "";
                 }
-                
-                
+
+
                 ////////////////////////////////////////////////////
                 titulo = $("#inputTitulo").val();
                 autor = $("#inputAutor").val();
@@ -910,22 +1158,23 @@
                 tipo_doc = $("#inputTipoDoc").val();
                 estado = $("#inputEstado").val();
                 asignatura = $("#inputAsignatura").val();
+                formato = $("#inputTipoFormato").val();
 
-                var urlBusqueda="";
-                var busqueda="";
-                if(titulo=="" && autor=="" && resumen=="" && categoria=="" && codigo=="" && tipo_doc=="" && estado=="" && asignatura=="" && publicacion ==""){
+                var urlBusqueda = "";
+                var busqueda = "";
+                if (titulo == "" && autor == "" && resumen == "" && categoria == "" && codigo == "" && tipo_doc == "" && estado == "" && asignatura == "" && publicacion == "" && formato == "") {
                     urlBusqueda = `&orden=${sort}`;
-                }else{
-                    busqueda = {titulo:titulo,autor:autor,resumen:resumen,categoria:categoria,codigo:codigo,doc:tipo_doc,estado:estado,asignatura:asignatura,publicacion:publicacion,orden:sort};
+                } else {
+                    busqueda = { titulo: titulo, autor: autor, resumen: resumen, categoria: categoria, codigo: codigo, doc: tipo_doc, estado: estado, asignatura: asignatura, publicacion: publicacion, orden: sort, formato:formato };
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
                         }
                     }
-                    urlBusqueda ="&" + urlBusqueda.slice(0, -1);
+                    urlBusqueda = "&" + urlBusqueda.slice(0, -1);
                 }
 
-                window.location.href = "biblioteca.html?page=1"+ urlBusqueda;
+                window.location.href = "biblioteca.html?page=1" + urlBusqueda;
             }
 
             // Función para hacer la consulta del archivo JSON
@@ -933,64 +1182,38 @@
                 // Ruta del archivo JSON local
                 var archivoJSON = 'static/biblioteca.json';
                 var librosFiltrados;
-                var datosJSON; 
-                fetch('static/versionBiblioteca.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('La solicitud no fue exitosa');
-                    }
-                    return response.json();
-                })
-                .then(versionData => {
-                    const versionActual = versionData.version;
-
-                    // Comparar la versión almacenada con la versión actual
-                    if (!localStorage.getItem('datosJSON') || parseInt(localStorage.getItem('versionJSON')) !== versionActual) {
-                        fetch(archivoJSON)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('La solicitud no fue exitosa');
-                                }
-                                return response.json();
-                            })
-                            .then(datos => {
-                                loaderAnimate();
-                                datosJSON = datos;
-                                localStorage.setItem('datosJSON', JSON.stringify(datos));
-                                localStorage.setItem('versionJSON', versionActual);
-                                filtrarDatos(datosJSON);
-                            })
-                            .then(animate => {
-                                $("#articleBook").removeClass("display-none-div");
-                                setTimeout(animateArticle, 500);
-                            })
-                            .catch(error => {
-                                console.error('Ocurrió un error:', error);
-                            });
-                    } else {
-                        
+                var datosJSON;
+                fetch(archivoJSON)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('La solicitud no fue exitosa');
+                        }
+                        return response.json();
+                    })
+                    .then(datos => {
                         loaderAnimate();
-                        datosJSON = JSON.parse(localStorage.getItem('datosJSON'));
+                        datosJSON = datos;
                         filtrarDatos(datosJSON);
+                    })
+                    .then(animate => {
                         $("#articleBook").removeClass("display-none-div");
                         setTimeout(animateArticle, 500);
-                    }
-                })
-                .catch(error => {
-                    console.error('Ocurrió un error al cargar la versión:', error);
-                });
-
+                        ajustarAltura();
+                    })
+                    .catch(error => {
+                        console.error('Ocurrió un error:', error);
+                    });
             }
-    
-    
+
+
             // Función para obtener el número de página de la URL
             function obtenerNumeroPagina() {
                 var urlParams = new URLSearchParams(window.location.search);
                 var pagina = urlParams.get('page');
                 return pagina ? parseInt(pagina) : 1; // Si no se especifica la página, se asume la página 1
             }
-    
-            function filtrarDatos(datosJSON){
+
+            function filtrarDatos(datosJSON) {
                 var urlParams = new URLSearchParams(window.location.search);
                 var titulo_get = urlParams.get('titulo');
                 var autor_get = urlParams.get('autor');
@@ -1002,19 +1225,23 @@
                 var asignatura_get = urlParams.get('asignatura');
                 var publicacion_get = urlParams.get('publicacion');
                 var sort_get = urlParams.get('orden');
-                
-                titulo_get = isNaN(titulo_get) ? titulo_get: "" ;
-                autor_get = isNaN(autor_get) ? autor_get: "" ;
-                categoria_get = isNaN(categoria_get) ? categoria_get: "" ;
-                resumen_get = isNaN(resumen_get) ? resumen_get: "" ;
-                codigo_get = isNaN(codigo_get) ? codigo_get: "" ;
-                tipo_doc_get = isNaN(tipo_doc_get) ? tipo_doc_get: "" ;
-                estado_get = isNaN(estado_get) ? estado_get: "" ;
-                asignatura_get =isNaN(asignatura_get) ? asignatura_get: "" ;
-                publicacion_get =isNaN(publicacion_get) ? publicacion_get: "" ;
-                sort_get =isNaN(sort_get) ? sort_get: "" ;
-                
-                
+                var view_get = urlParams.get('view');
+                var formato_get = urlParams.get('formato');
+
+                titulo_get = isNaN(titulo_get) ? titulo_get : "";
+                autor_get = isNaN(autor_get) ? autor_get : "";
+                categoria_get = isNaN(categoria_get) ? categoria_get : "";
+                resumen_get = isNaN(resumen_get) ? resumen_get : "";
+                codigo_get = isNaN(codigo_get) ? codigo_get : "";
+                tipo_doc_get = isNaN(tipo_doc_get) ? tipo_doc_get : "";
+                estado_get = isNaN(estado_get) ? estado_get : "";
+                asignatura_get = isNaN(asignatura_get) ? asignatura_get : "";
+                publicacion_get = isNaN(publicacion_get) ? publicacion_get : "";
+                sort_get = isNaN(sort_get) ? sort_get : "";
+                view_get = isNaN(view_get) ? view_get : "";
+                formato_get = isNaN(formato_get) ? formato_get : "";
+
+
                 titulo_get = titulo_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 autor_get = autor_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 categoria_get = categoria_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -1025,8 +1252,9 @@
                 asignatura_get = asignatura_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 publicacion_get = publicacion_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 sort_get = sort_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                
-                
+                formato_get = formato_get.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+
                 $("#inputTitulo").val(titulo_get);
                 $("#inputAutor").val(autor_get);
                 $("#inputCategoria").val(categoria_get);
@@ -1036,36 +1264,48 @@
                 $("#inputEstado").val(estado_get);
                 $("#inputAsignatura").val(asignatura_get);
                 $("#reservation").val(publicacion_get);
-                
-                if(sort_get == "desc"){
-                    $("#ordenar a").attr("title","Descendente");
-                    $("#ordenar").attr("data-sort","desc");
+                $("#inputTipoFormato").val(formato_get);
+
+                if (sort_get == "desc") {
+                    $("#ordenar a").attr("title", "Descendente");
+                    $("#ordenar").attr("data-sort", "desc");
                     $("#ordenar a").html(`<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>`);
-                }else if(sort_get =="asc"){
-                    $("#ordenar a").attr("title","Ascendente");
-                    $("#ordenar").attr("data-sort","asc");
+                } else if (sort_get == "asc") {
+                    $("#ordenar a").attr("title", "Ascendente");
+                    $("#ordenar").attr("data-sort", "asc");
                     $("#ordenar a").html(`<i class="fa fa-sort-amount-asc" aria-hidden="true"></i>`);
-                }else{
-                    $("#ordenar a").attr("title","Descendente");
-                    $("#ordenar").attr("data-sort","desc");
+                } else {
+                    $("#ordenar a").attr("title", "Descendente");
+                    $("#ordenar").attr("data-sort", "desc");
                     $("#ordenar a").html(`<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>`);
                 }
-                
+                console.log(formato_get);
+
                 librosFiltrados = datosJSON.filter(function(libro){
+                    if(formato_get != ""){
+                        var formato = libro["FORMATO"].toLocaleLowerCase();
+                        formato = formato.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    
+                        return formato == formato_get.toLocaleLowerCase();
+                    }else{
+                        return libro;
+                    }
+                });
+                console.log(librosFiltrados.length);
+                librosFiltrados = librosFiltrados.filter(function (libro) {
                     var autor = libro["AUTORES"].toLowerCase();
                     autor = autor.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-                    if(autor_get=="Desconocido"){
-                        return autor === autor_get;
-                    }else{
-                        return autor.includes(autor_get.toLocaleLowerCase()) ;
+                    if (autor_get == "Desconocido") {
+                        return autor === autor_get.toLowerCase();
+                    } else {
+                        return autor.includes(autor_get.toLocaleLowerCase());
                     }
 
                 });
-                
-                
-                librosFiltrados = librosFiltrados.filter(function(libro){
-                    
+
+                librosFiltrados = librosFiltrados.filter(function (libro) {
+
                     var titulo = libro["TITULO LIBRO"].toLowerCase();
                     titulo = titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
@@ -1074,7 +1314,7 @@
 
                     var codigo = libro["CODIGO"].toLowerCase();
                     codigo = codigo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
+
                     var tipo_doc = libro["TIPO_DOC"].toLowerCase();
                     tipo_doc = tipo_doc.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
@@ -1083,37 +1323,37 @@
 
                     var estado = libro["ESTADO"].toLowerCase();
                     estado = estado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
-                    if(categoria_get=="Ninguno" && estado_get=="Sin definir"){ 
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria === "" && estado === "";    
-                    }else if(categoria_get=="Ninguno"){ 
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && categoria === "";    
-                    }else if(estado_get=="Sin definir"){ 
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado === "";    
-                    }else{
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase());    
+
+                    if (categoria_get == "Ninguno" && estado_get == "Sin definir") {
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria === "" && estado === "";
+                    } else if (categoria_get == "Ninguno") {
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && categoria === "";
+                    } else if (estado_get == "Sin definir") {
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado === "";
+                    } else {
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase());
                     }
                 })
 
-                librosFiltrados = librosFiltrados.filter(function(libro){
+                librosFiltrados = librosFiltrados.filter(function (libro) {
                     var asignatura = libro["ASIGNATURA"].toLowerCase();
                     asignatura = asignatura.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
-                    if(asignatura_get=="Sin Definir"){
-                        return asignatura ==="";
-                    }else{
+
+                    if (asignatura_get == "Sin Definir") {
+                        return asignatura === "";
+                    } else {
                         return asignatura.includes(asignatura_get.toLocaleLowerCase());
                     }
-                    
-                })
-                
-                
-                if(validarFormatoRangoFecha(publicacion_get)){
 
-                    fechaInicio = moment(publicacion_get.split("-")[0],'DD/MM/YYYY', true);
-                    fechaFin = moment(publicacion_get.split("-")[1],'DD/MM/YYYY', true);
-    
-                    librosFiltrados = librosFiltrados.filter(function(libro){
+                })
+
+
+                if (validarFormatoRangoFecha(publicacion_get)) {
+
+                    fechaInicio = moment(publicacion_get.split("-")[0], 'DD/MM/YYYY', true);
+                    fechaFin = moment(publicacion_get.split("-")[1], 'DD/MM/YYYY', true);
+
+                    librosFiltrados = librosFiltrados.filter(function (libro) {
                         var fechaExcel = parseFloat(libro.PUBLICACION);
                         var fecha = fechaDeExcelANumero(fechaExcel);
                         fecha = moment(fecha);
@@ -1122,48 +1362,71 @@
 
                 }
 
-                if(sort_get){
-                    librosFiltrados.sort(function(a, b) {
-                            var a = parseFloat(a.PUBLICACION);
-                            var a = fechaDeExcelANumero(a);
-                            var b = parseFloat(b.PUBLICACION);
-                            var b = fechaDeExcelANumero(b);
-                            var fechaA = moment(a, "DD/MM/YYYY");
-                            var fechaB = moment(b, "DD/MM/YYYY");
-                            if(sort_get == "desc"){
-                                return fechaB.diff(fechaA); // Orden descendente
-                            }else if(sort_get == "asc"){
-                                return fechaA.diff(fechaB); // Orden ascentende
-                            }else{
-                                return fechaB.diff(fechaA); // Orden descendente
-                            }
-                        });
+                if (sort_get) {
+                    librosFiltrados.sort(function (a, b) {
+                        var a = parseFloat(a.PUBLICACION);
+                        var a = fechaDeExcelANumero(a);
+                        var b = parseFloat(b.PUBLICACION);
+                        var b = fechaDeExcelANumero(b);
+                        var fechaA = moment(a, "DD/MM/YYYY");
+                        var fechaB = moment(b, "DD/MM/YYYY");
+                        if (sort_get == "desc") {
+                            return fechaB.diff(fechaA); // Orden descendente
+                        } else if (sort_get == "asc") {
+                            return fechaA.diff(fechaB); // Orden ascentende
+                        } else {
+                            return fechaB.diff(fechaA); // Orden descendente
+                        }
+                    });
                 }
 
-                var urlBibliotetaBusqueda="";
-                var busqueda="";
-                if(titulo_get=="" && autor_get=="" && resumen_get=="" && categoria_get=="" && codigo_get=="" && tipo_doc_get=="" && estado_get=="" && asignatura_get=="" && publicacion_get=="" && sort_get==""){
+                var urlBibliotetaBusqueda = "";
+                var busqueda = "";
+                if (titulo_get == "" && autor_get == "" && resumen_get == "" && categoria_get == "" && codigo_get == "" && tipo_doc_get == "" && estado_get == "" && asignatura_get == "" && publicacion_get == "" && sort_get == "" && formato_get == "" &&  view_get == "") {
                     urlBibliotetaBusqueda = "";
-                }else{
-                    busqueda = {titulo:titulo_get,autor:autor_get,resumen:resumen_get,categoria:categoria_get,codigo:codigo_get,doc:tipo_doc_get,estado:estado_get,asignatura:asignatura_get,publicacion:publicacion_get,orden:sort_get};
+                } else {
+                    busqueda = { titulo: titulo_get, autor: autor_get, resumen: resumen_get, categoria: categoria_get, codigo: codigo_get, doc: tipo_doc_get, estado: estado_get, asignatura: asignatura_get, publicacion: publicacion_get, orden: sort_get, formato:formato_get , view:view_get};
                     for (var key in busqueda) {
                         if (busqueda.hasOwnProperty(key) && busqueda[key] !== "") {
                             urlBibliotetaBusqueda += key + "=" + encodeURIComponent(busqueda[key]) + "&";
                         }
                     }
-                    urlBibliotetaBusqueda ="&" + urlBibliotetaBusqueda.slice(0, -1);
+                    urlBibliotetaBusqueda = "&" + urlBibliotetaBusqueda.slice(0, -1);
                 }
 
+                var url = window.location.href;
+                var params = new URLSearchParams(url);
+                var parametrosUrl = "";
+                params.forEach(function (value, key) {
+                    if (key != "view" && value !="") {
+                        parametrosUrl += (key + '=' + value + '&');
+                    }
+                }); 
+                parametrosUrl = parametrosUrl.split("?"); 
+                if(parametrosUrl.length > 1){
+                    if(parametrosUrl[1].includes("view")){
+                        parametrosUrl = "";
+                    }else{
+                        parametrosUrl = parametrosUrl[1];
+                    }
+                }
+                // Eliminar el parámetro "parametro"
                 datosJSON = librosFiltrados;
                 contYearBook(datosJSON);
                 //numero de resultados
-                $("#contBook").html(`<p>Resultados: ${datosJSON.length}</p>`);
-                numPage = Math.ceil((datosJSON.length)/20);
-                if(numPage == 0){
-                    $(".ow-pagination").css("display","none");
-                }else if(numPage == 1){
+                $("#contBook").html(`
+                <p style="padding: 0px 13px 13px 0px;border-bottom: black solid 1px;">
+                    Resultados: ${datosJSON.length} 
+                        <a title="Vista en miniaturas" href="biblioteca.html?${parametrosUrl}view=thumbnails" style="color:black"><i id="thumbnails" class="fa fa-th btn-display-galery" aria-hidden="true"></i></a>
+                        <a title="Vista en lista" href="biblioteca.html?${parametrosUrl}view=list" style="color:black"><i id="list" class="fa fa-th-list btn-display-galery btn-display-galery-select" aria-hidden="true"></i></a>
+                </p>
+                `);
+                numPage = Math.ceil((datosJSON.length) / 20);
+                if (numPage == 0) {
+                    $(".ow-pagination").css("display", "none");
+                } else if (numPage == 1) {
                     $("#page-one").addClass("active-page")
-                    $("#page-one").attr("href","biblioteca.html?page="+numPage+urlBibliotetaBusqueda);
+                    $("#page-one").attr("href", "biblioteca.html?page=" + numPage + urlBibliotetaBusqueda);
                     $("#page-two-li").addClass("display-page")
                     $("#page-three-li").addClass("display-page")
                     $("#page-last-li").addClass("display-page")
@@ -1171,10 +1434,10 @@
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
                 }
-                else if(numPage == 2){
-                    if(numeroPagina==1){
+                else if (numPage == 2) {
+                    if (numeroPagina == 1) {
                         $("#page-one").addClass("active-page")
-                    }else{
+                    } else {
                         $("#page-two").addClass("active-page")
                     }
                     $("#page-two-li").removeClass("display-page")
@@ -1183,34 +1446,34 @@
                     $("#page-four-li").addClass("display-page")
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
-                    $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
+                    $("#page-after").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                    $("#page-next").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
                 }
-                else if(numPage == 3){
-                    if(numeroPagina==1){
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                else if (numPage == 3) {
+                    if (numeroPagina == 1) {
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-one").addClass("active-page")
                         $("#page-three").removeClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
                     }
-                    else if (numeroPagina==2){
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                    else if (numeroPagina == 2) {
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-two").addClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                    } 
-                    else{
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
+                    }
+                    else {
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page")
-                        $("#page-after").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-next").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-next").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
                     $("#page-two-li").removeClass("display-page");
                     $("#page-three-li").removeClass("display-page");
@@ -1219,95 +1482,95 @@
                     $("#right-page").addClass("display-page");
                     $("#page-after-li").removeClass("display-page");
                 }
-                else{
-                    
+                else {
+
                     $("#page-last").text(numPage);
-                    $("#page-last").attr("href","biblioteca.html?page="+numPage+urlBibliotetaBusqueda);
-                    $("#page-next").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
-                    if(numeroPagina==1){
+                    $("#page-last").attr("href", "biblioteca.html?page=" + numPage + urlBibliotetaBusqueda);
+                    $("#page-next").attr("href", "biblioteca.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
+                    if (numeroPagina == 1) {
                         $("#page-one").addClass("active-page")
                         $("#left-page").addClass("display-page")
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina==2){
+                    if (numeroPagina == 2) {
                         $("#page-two").addClass("active-page");
                         $("#left-page").addClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina==3){
+                    if (numeroPagina == 3) {
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-four-li").removeClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(2)+urlBibliotetaBusqueda);
-                        $("#page-three").attr("href","biblioteca.html?page="+(3)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","biblioteca.html?page="+(4)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (3) + urlBibliotetaBusqueda);
+                        $("#page-four").attr("href", "biblioteca.html?page=" + (4) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina>3 && numeroPagina < (numPage-2)){
+                    if (numeroPagina > 3 && numeroPagina < (numPage - 2)) {
                         $("#page-three").text(numeroPagina);
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-four").text((numeroPagina+1));
-                        
-                        $("#page-three").attr("href","biblioteca.html?page="+numeroPagina+urlBibliotetaBusqueda);
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-four").text((numeroPagina + 1));
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + numeroPagina + urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-four").attr("href", "biblioteca.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
 
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
 
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-four-li").removeClass("display-page");
                         $("#page-after-li").removeClass("display-page");
                     }
-                    if(numeroPagina==numPage){
+                    if (numeroPagina == numPage) {
                         $("#page-last").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
                         $("#page-four-li").removeClass("display-page");
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-four").text((numeroPagina-1));
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina-2)+urlBibliotetaBusqueda);
-                        $("#page-three").text((numeroPagina-2));
+                        $("#page-four").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-four").text((numeroPagina - 1));
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (numeroPagina - 2) + urlBibliotetaBusqueda);
+                        $("#page-three").text((numeroPagina - 2));
                         $("#page-two-li").addClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina == (numPage-1) && numPage != 4){
+                    if (numeroPagina == (numPage - 1) && numPage != 4) {
                         $("#page-three").addClass("active-page");
                         $("#left-page").removeClass("display-page")
                         $("#page-next").addClass("display-page");
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (numeroPagina) + urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
-                    if(numeroPagina == (numPage-2) && numPage != 4){
+                    if (numeroPagina == (numPage - 2) && numPage != 4) {
                         $("#left-page").removeClass("display-page")
                         $("#page-after-li").removeClass("display-page");
-                        $("#page-after").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-after").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").addClass("display-page");
-                        $("#page-three").attr("href","biblioteca.html?page="+(numeroPagina)+urlBibliotetaBusqueda);
+                        $("#page-three").attr("href", "biblioteca.html?page=" + (numeroPagina) + urlBibliotetaBusqueda);
                         $("#page-three").addClass("active-page");
                         $("#page-four-li").removeClass("display-page");
-                        $("#page-four").text((numeroPagina+1));
-                        $("#page-four").attr("href","biblioteca.html?page="+(numeroPagina+1)+urlBibliotetaBusqueda);
+                        $("#page-four").text((numeroPagina + 1));
+                        $("#page-four").attr("href", "biblioteca.html?page=" + (numeroPagina + 1) + urlBibliotetaBusqueda);
                         $("#page-three").text((numeroPagina));
-                        $("#page-two").text((numeroPagina-1));
-                        $("#page-two").attr("href","biblioteca.html?page="+(numeroPagina-1)+urlBibliotetaBusqueda);
+                        $("#page-two").text((numeroPagina - 1));
+                        $("#page-two").attr("href", "biblioteca.html?page=" + (numeroPagina - 1) + urlBibliotetaBusqueda);
                         $("#right-page").removeClass("display-page");
-                        $("#page-one").attr("href","biblioteca.html?page="+(1)+urlBibliotetaBusqueda);
+                        $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                     }
 
                 }
@@ -1320,13 +1583,13 @@
             }
 
             function verificarExistenciaImagen(url, callback) {
-                
+
                 try {
                     var img = new Image();
-                    img.onload = function() {
+                    img.onload = function () {
                         callback(true);
                     };
-                    img.onerror = function() {
+                    img.onerror = function () {
                         callback(false);
                     };
                     img.src = url;
@@ -1338,77 +1601,144 @@
 
             // Función para mostrar los datos basados en el número de página
             function mostrarDatosPorPagina(datos, numeroPagina, elementosPorPagina) {
+                var viewParams = new URLSearchParams(window.location.search);
+                var viewDisplay = viewParams.get("view");
+ 
                 // Calculamos el índice de inicio y fin para la página actual
                 var inicio = (numeroPagina - 1) * elementosPorPagina;
                 var fin = inicio + elementosPorPagina;
-    
+
                 // Filtramos los datos para obtener solo los elementos de la página actual
                 var datosPagina = datos.slice(inicio, fin);
                 var datosArticleBook = "";
                 // Hacemos algo con los datos, por ejemplo, imprimirlos en la consola
                 var portada = "";
-                
-                datosPagina.map(function(libro){
+
+                datosPagina.map(function (libro) {
                     let titulo = libro["TITULO LIBRO"];
                     let resumen = libro["RESUMEN"];
                     let codigo = libro["CODIGO"];
                     let autor = libro["AUTORES"];
                     let ambito = libro["AMBITO"];
                     let imagen = libro["IMAGEN"];
+                    let afiliacion = libro["AFILIACION"]
                     let id = libro["ID"];
 
                     let fechaPublicacion = libro["PUBLICACION"];
                     fechaPublicacion = fechaFomart(fechaPublicacion);
 
-                    datosArticleBook += `<article class='type-post col-md-12 type-post-book'>
-                        <div class='entry-content article-book'><h3 class='entry-title'>
-                            <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Título del libro'>${titulo}</a>
-                            </h3><div class='entry-meta'><div class='byline'>Autor: <a href='biblioteca.html?autor=${(autor=="") ? "Desconocido" : autor}' title='autor'>${(autor=="") ? "Desconocido" : autor}</a></div><div class='post-comment'>
-                                <a href='biblioteca.html?categoria=${(ambito=="") ? "Ninguno" : ambito}' title='categoria'> ${(ambito=="") ? "Ninguno" : ambito}</a></div>
-                                <div class='post-comment'><a title=' Fecha de publicación'>Publicación: ${fechaPublicacion}</a></div><div class='post-comment'><a title='código'> ${codigo.replace(/\s/g, "")}</a></div>
-                                </div><p class='descripcion-book'>${resumen}</p>
-                                <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Leer Más'>Leer Más<i class='fa fa-long-arrow-right'></i></a> 
-                                <a class="portada" data-imagen="${imagen.replace(/\s/g, "")}"></a></div></article>`;
-                    
-                    verificarExistenciaImagen("images/libros/"+imagen.replace(/\s/g, ""), function(existe) {
+                    if (!isNaN(viewDisplay) || viewDisplay == "list") {
+                        var logoAfiliacion = "";
+                        var linkDescarga = "";
+                        if(afiliacion == "casa de la cultura de El Oro"){
+                            logoAfiliacion = `<img src="images/libros/cce-elOro-logo.jpg" style="position: absolute;z-index: 3;width: 68px;top: -11px;right: 17px;">`
+                        }
+                        if(isNaN(libro["LINK"])){
+                            linkDescarga = `<a href="${libro["LINK"]}" target="_blank" style="margin-left: 30px;text-align: center;"><i class="fa fa-download" aria-hidden="true" style="border-radius: 10px;background: #ddd;width: 84px;margin-left: 0px;padding-top: 4px;height: 20px;"></i></a>`;
+                        }
+                        datosArticleBook += `<article class='type-post col-md-12 type-post-book'>
+                            <div class='entry-content article-book'>
+                                ${logoAfiliacion}
+                                <h3 class='entry-title'>
+                                    <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Título del libro'>${titulo}</a>
+                                </h3>
+                                <div class='entry-meta'><div class='byline'>Autor: <a href='biblioteca.html?autor=${(autor == "") ? "Desconocido" : autor}' title='autor'>${(autor == "") ? "Desconocido" : autor}</a></div><div class='post-comment'>
+                                    <a href='biblioteca.html?categoria=${(ambito == "") ? "Ninguno" : ambito}' title='categoria'> ${(ambito == "") ? "Ninguno" : ambito}</a></div>
+                                    <div class='post-comment'><a title=' Fecha de publicación'>Publicación: ${fechaPublicacion}</a></div><div class='post-comment'><a title='código'> ${codigo.replace(/\s/g, "")}</a></div>
+                                    </div><p class='descripcion-book'>${resumen}</p>
+                                    <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Leer Más'>Leer Más<i class='fa fa-long-arrow-right'></i></a> 
+                                    <a class="portada" data-imagen="${imagen.replace(/\s/g, "")}"></a>
+                                    ${linkDescarga}
+                                    </div>
+                                    </article>`;
+                                    
+                    } else if (viewDisplay == "thumbnails") {
+                        var logoAfiliacion = "";
+                        var linkDescarga = "";
+                        if(afiliacion == "casa de la cultura de El Oro"){
+                            logoAfiliacion = `<img src="images/libros/cce-elOro-logo.jpg" style="position: absolute;z-index: 3;width: 68px;top: -11px;left: 0px;">`
+                        }
+
+                        if(isNaN(libro["LINK"])){
+                            linkDescarga = `<a href='${libro["LINK"]}' target="_blank" style="border-radius: 10px;background: #ddd;"><i class="fa fa-download" aria-hidden="true" style="width: 100%;"></i></a>`;
+                        }
+                        $("#thumbnails").addClass("btn-display-galery-select");
+                        $("#list").removeClass("btn-display-galery-select");
+                        datosArticleBook += `<div class="col-sm-6 col-md-3 col-xs-6">
+                            <div class="thumbnail ">
+                                ${logoAfiliacion}
+                                <div class="book-content" style="margin: 7px 0px 22px 0px;text-align: center;position:relative;">
+                                    <a href="images/libros/${imagen.replace(/\s/g, "")}" data-imagen="${imagen.replace(/\s/g, "")}" data-lightbox="image-1" style="position: relative;z-index: 2;">
+                                        <div style="" class="book-cover">
+                                            <img onerror="this.src='images/libros/imagen_por_defecto.jpg';" src="images/libros/${imagen.replace(/\s/g, "")}" >
+                                        </div>
+                                    </a>
+                                    <img src="images/libros/estanteria_de_pared.png" style="    position: absolute;top: 96%;left: 0px;">
+                                </div>
+                                <div style="text-align: center;height:23px">${linkDescarga}</div>
+                                <div class="caption">
+                                    
+                                    <h4 title="${titulo}" class="titulo-libro">${titulo}</h4>
+                                    <div class='entry-meta' style="display:grid;">
+                                        <div class='byline'>Autor: 
+                                            <a href='biblioteca.html?autor=${(autor == "") ? "Desconocido" : autor}' title='autor'>${(autor == "") ? "Desconocido" : autor}</a>
+                                        </div>
+                                        <div class='post-comment'>
+                                            <a href='biblioteca.html?categoria=${(ambito == "") ? "Ninguno" : ambito}' title='categoria'> ${(ambito == "") ? "Ninguno" : ambito}</a>
+                                        </div>
+                                        <div class='post-comment'>
+                                            <a title=' Fecha de publicación'>Publicación: ${fechaPublicacion}</a>
+                                        </div>
+                                        <div class='post-comment'>
+                                            <a title='código'> ${codigo.replace(/\s/g, "")}</a>
+                                        </div>
+                                    </div>
+                                    <p class="descripcion-libro">${resumen}</p>
+                                    <p class="button-post"><a href="libros.html?id=${id.replace(/\s/g, "")}" class="btn btn-primary" role="button">Ver más</a></p>
+                                </div>
+                            </div>
+                        </div>`;
+                    }
+
+
+                    verificarExistenciaImagen("images/libros/" + imagen.replace(/\s/g, ""), function (existe) {
                         if (existe) {
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").attr("data-lightbox","image-1");
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").attr("href","images/libros/"+ imagen.replace(/\s/g, "") );
-                            $(".portada[data-imagen='"+ imagen.replace(/\s/g, "") +"']").html("<i class='fa fa-eye'></i>");
-                            
+                            $(".portada[data-imagen='" + imagen.replace(/\s/g, "") + "']").attr("data-lightbox", "image-1");
+                            $(".portada[data-imagen='" + imagen.replace(/\s/g, "") + "']").attr("href", "images/libros/" + imagen.replace(/\s/g, ""));
+                            $(".portada[data-imagen='" + imagen.replace(/\s/g, "") + "']").html("<i class='fa fa-eye'></i>");
+
                         }
                     });
                 });
-                
+
                 $("#articleBook").html(datosArticleBook);
-    
-    
+
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
             }
-    
-            function animateArticle(){
+
+            function animateArticle() {
                 $("#articleBook article").addClass("animated fadeInLeft");
             }
             // Suponiendo que tienes un array de objetos JSON llamado 'libros'
-            
-            function fechaFomart(numeroExcel){
-                if(numeroExcel == ""){
+
+            function fechaFomart(numeroExcel) {
+                if (numeroExcel == "") {
                     return "";
                 }
                 // Convierte el formato de fecha de excel a javascript
                 // Diferencia de días entre la fecha de referencia de Excel y la de JavaScript
                 numeroExcel = parseInt(numeroExcel);
                 var diasDiferencia = 25568; // Esta es la cantidad de días entre el 1 de enero de 1900 y el 1 de enero de 1970
-            
+
                 // Calcular la fecha
                 var fecha = new Date((numeroExcel - diasDiferencia) * 86400000); // 86400000 = cantidad de milisegundos en un día
-                fecha = `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`; 
+                fecha = `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}`;
                 return fecha;
             }
 
-        
-////////////////////////////////////////////////////////
+
+            ////////////////////////////////////////////////////////
 
             function validarFormatoRangoFecha(dato) {
                 // Expresión regular para validar el formato del rango de fecha
@@ -1418,17 +1748,17 @@
                 if (formatoRangoFecha.test(dato)) {
                     // Dividir el rango en fechas individuales
                     var fechas = dato.split('-');
-                    
+
                     // Validar cada fecha individualmente
                     var fechaInicio = moment(fechas[0], 'DD/MM/YYYY', true);
                     var fechaFin = moment(fechas[1], 'DD/MM/YYYY', true);
-                    
+
                     // Comprobar si ambas fechas son válidas y la fecha final es posterior a la fecha inicial
                     if (fechaInicio.isValid() && fechaFin.isValid() && fechaFin.isAfter(fechaInicio)) {
                         return true; // El dato cumple con el formato y las fechas son válidas
                     }
                 }
-                
+
                 return false; // El dato no cumple con el formato o las fechas no son válidas
             }
 
@@ -1456,8 +1786,8 @@
 
                 return librosPorAnio;
             }
-            
-            function contYearBook(datos){
+
+            function contYearBook(datos) {
                 const elementosPorDecadaYSiglo = {};
                 datos = contarLibrosPorAnio(datos);
                 for (const año in datos) {
@@ -1482,7 +1812,7 @@
                 listaFechasLibros = elementosPorDecadaYSiglo;
             }
 
-            
+
 
 
             function calcularRango(periodo, valor) {
@@ -1492,7 +1822,7 @@
                 if (periodo === "siglo") {
                     // Calcular el siglo
                     let siglo = Math.floor((valor - 1) / 100) + 1;
-                    siglo +=1
+                    siglo += 1
 
                     // Calcular la fecha de inicio del siglo
                     fechaInicio = moment({ year: (siglo - 1) * 100 + 1, month: 0, day: 1 }).format("DD/MM/YYYY");
@@ -1521,76 +1851,76 @@
 
 
 
-            $("#btn-find-date").click(function(){
-                $("#fechas").css("display","none");
-                $("#calendario").attr("data-toggle-button","true");
+            $("#btn-find-date").click(function () {
+                $("#fechas").css("display", "none");
+                $("#calendario").attr("data-toggle-button", "true");
                 var fechaSelect = $(".btn-fecha-select").attr("data-fecha");
                 var periodo = $(".btn-fecha-select").data("periodo");
-                var rangoFecha = calcularRango(periodo,fechaSelect);
+                var rangoFecha = calcularRango(periodo, fechaSelect);
                 var fechaInicio = rangoFecha.split("-")[0];
                 var fechaFinal = rangoFecha.split("-")[1];
                 $("#reservation").val(rangoFecha);
             });
 
-////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////
 
-    
+
             // Obtener el número de página actual
             var numeroPagina = obtenerNumeroPagina();
-            
-            function loaderAnimate(){
-                if ( !$("html").is(" .ie6, .ie7, .ie8 ") ) {
+
+            function loaderAnimate() {
+                if (!$("html").is(" .ie6, .ie7, .ie8 ")) {
                     $("#site-loader-article").delay(1000).fadeOut("slow");
                 }
                 else {
-                    $("#site-loader-article").css("display","none");
+                    $("#site-loader-article").css("display", "none");
                 }
             }
 
-			function escogerFrase(){
-				var archivoFrases = 'static/frases.json';
-				var frasesJson;
-	
-				if(!localStorage.getItem('datosFrases')){
-					fetch(archivoFrases)
-					.then(response =>{
-						if(!response.ok){
-							throw new Error('La solicitud no fue exitosa');
-						}
-						return response.json();
-					})
-					.then(datos=>{
-						frasesJson = datos;
-						localStorage.setItem('datosFrases',JSON.stringify(datos));
-						fraseAleatoria(frasesJson);
-					}).catch(error => {
-						console.error('Ocurrió un error:', error);
-					});
-				}else{
-					frasesJson = JSON.parse(localStorage.getItem('datosFrases'));
-					fraseAleatoria(frasesJson);
-				}
-			}
-			function fraseAleatoria(datosJSON){
-				var tipo = "educacion";
-				var listaFiltro;
-				var frase;
-				listaFiltro = datosJSON.filter(function(libro){
-					return libro["Tipo"].includes(tipo);
-				});
-	
-				var indice = Math.floor(Math.random() * listaFiltro.length);
-				frase = listaFiltro[indice];
-	
-				$("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
-			}
-		
-            $(".btn-find-avanced i").click(function(){
+            function escogerFrase() {
+                var archivoFrases = 'static/frases.json';
+                var frasesJson;
+
+                if (!localStorage.getItem('datosFrases')) {
+                    fetch(archivoFrases)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('La solicitud no fue exitosa');
+                            }
+                            return response.json();
+                        })
+                        .then(datos => {
+                            frasesJson = datos;
+                            localStorage.setItem('datosFrases', JSON.stringify(datos));
+                            fraseAleatoria(frasesJson);
+                        }).catch(error => {
+                            console.error('Ocurrió un error:', error);
+                        });
+                } else {
+                    frasesJson = JSON.parse(localStorage.getItem('datosFrases'));
+                    fraseAleatoria(frasesJson);
+                }
+            }
+            function fraseAleatoria(datosJSON) {
+                var tipo = "educacion";
+                var listaFiltro;
+                var frase;
+                listaFiltro = datosJSON.filter(function (libro) {
+                    return libro["Tipo"].includes(tipo);
+                });
+
+                var indice = Math.floor(Math.random() * listaFiltro.length);
+                frase = listaFiltro[indice];
+
+                $("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
+            }
+
+            $(".btn-find-avanced i").click(function () {
                 claseIcono = $(this).attr("class");
-                if(claseIcono == "fa fa-caret-down"){
+                if (claseIcono == "fa fa-caret-down") {
                     $(this).removeClass("fa fa-caret-down");
                     $(this).addClass("fa fa-caret-up");
-                }else{
+                } else {
                     $(this).removeClass("fa fa-caret-up");
                     $(this).addClass("fa fa-caret-down");
                 }
@@ -1605,110 +1935,130 @@
                 consultarJSON();
             };
             // Mostrar los datos para la página actual
-    
-            
+
+
             var imagen = new Image();
-			imagen.src = "images/about-banner.jpg";
-			imagen.onload = function() {
-				var imagenAncho = this.width;
-				var imagenAlto = this.height;
-				var aspectoImagen =  imagenAncho / imagenAlto;
-				aspectoImagen = ""+aspectoImagen+"";
-				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				// Establecer la altura del div
-				$('#page-banner').css("aspect-ratio",aspectoImagen);
-			}
-
-
-            function logosSponsor(){
-			fetch("static/aprocinadores.json")
-			.then(response =>{
-				if (!response.ok) {
-					throw new Error('La solicitud no fue exitosa');
-				}
-				return response.json();
-			})
-			.then(data =>{
-				data.map(function(sponsor){
-					let nombre = sponsor.nombre;
-					let logo = sponsor.logo;
-					let link = sponsor.link;
-
-					$(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
-				});
-			}).then(data =>{
-				carrusel();
-			})
-			
-			
-		}
-		
-		function carrusel(){
-			if( $(".client-section").length ) {
-			$(".client-carousel").owlCarousel({
-				loop: true,
-				nav: true,
-				dots: false,
-				margin: 0,
-				smartSpeed: 200,				
-				autoplay: true,
-				responsive:{
-					0:{
-						items: 2
-					},
-					480:{
-						items: 3
-					},
-					640:{
-						items: 3
-					},
-					992:{
-						items: 6
-					}
-				}
-			})
-			
-			$(".client-section").each(function () {
-				var $this = $(this);
-				var myVal = $(this).data("value");
-				$this.appear(function() {
-					$(".client-section").addClass( "animated bounceInLeft");
-				});
-			});
-		}
-		};
-		logosSponsor();
-
-        $("#ordenar").click(function(){
-            var sort = $("#ordenar").attr("data-sort");
-            if(sort =="desc"){
-                $("#ordenar").attr("data-sort","asc");
-            }else if(sort=="asc"){
-                $("#ordenar").attr("data-sort","desc");
+            imagen.src = "images/about-banner.jpg";
+            imagen.onload = function () {
+                var imagenAncho = this.width;
+                var imagenAlto = this.height;
+                var aspectoImagen = imagenAncho / imagenAlto;
+                aspectoImagen = "" + aspectoImagen + "";
+                // Calcular la altura del div en función del ancho de la pantalla y el tamaño
+                // Establecer la altura del div
+                $('#page-banner').css("aspect-ratio", aspectoImagen);
             }
-            buscar();
-        })
 
-        $(document).on("click", function(event) {
-            // Verificar si el clic no se hizo en el elemento excluido o en uno de sus descendientes
-            if (!$(event.target).closest("#fechas,#calendario").length) {
-                // Aquí pones el código que deseas ejecutar cuando se hace clic en cualquier lugar de la pantalla excepto en el elemento excluido
-                if($("#fechas").css("display")=="block"){
-                    $("#fechas").css("display","none");
-                    $("#calendario").attr("data-toggle-button","true");
+
+            function logosSponsor() {
+                fetch("static/aprocinadores.json")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('La solicitud no fue exitosa');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        data.map(function (sponsor) {
+                            let nombre = sponsor.nombre;
+                            let logo = sponsor.logo;
+                            let link = sponsor.link;
+
+                            $(".client-carousel").prepend(`<a href="${link}" title="Logo"><img src="images/sponsor/${logo}" height="80" alt="${nombre}" /></a>`);
+                        });
+                    }).then(data => {
+                        carrusel();
+                    })
+
+
+            }
+
+            function carrusel() {
+                if ($(".client-section").length) {
+                    $(".client-carousel").owlCarousel({
+                        loop: true,
+                        nav: true,
+                        dots: false,
+                        margin: 0,
+                        smartSpeed: 200,
+                        autoplay: true,
+                        responsive: {
+                            0: {
+                                items: 2
+                            },
+                            480: {
+                                items: 3
+                            },
+                            640: {
+                                items: 3
+                            },
+                            992: {
+                                items: 6
+                            }
+                        }
+                    })
+
+                    $(".client-section").each(function () {
+                        var $this = $(this);
+                        var myVal = $(this).data("value");
+                        $this.appear(function () {
+                            $(".client-section").addClass("animated bounceInLeft");
+                        });
+                    });
                 }
-            }
-        });
+            };
 
-        window.addEventListener('resize', function(event) {
-            // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
-            if($("#fechas").css("display")=="block"){
-                $("#fechas").css("display","none");
-                $("#calendario").attr("data-toggle-button","true");
+            function ajustarAltura(){
+                var elementos = $(".entry-meta");
+
+                // Inicializar la variable para almacenar la altura máxima
+                var alturaMaxima = 0;
+
+                // Iterar sobre todos los elementos para encontrar la altura máxima
+                elementos.each(function() {
+                    var altura = $(this).height(); 
+                    if (altura > alturaMaxima) {
+                        alturaMaxima = altura;
+                    }
+                });
+
+                // Establecer la misma altura para todos los elementos
+                elementos.height(alturaMaxima);
             }
-        });
+
+            logosSponsor();
+
+            $("#ordenar").click(function () {
+                var sort = $("#ordenar").attr("data-sort");
+                if (sort == "desc") {
+                    $("#ordenar").attr("data-sort", "asc");
+                } else if (sort == "asc") {
+                    $("#ordenar").attr("data-sort", "desc");
+                }
+                buscar();
+            })
+
+            $(document).on("click", function (event) {
+                // Verificar si el clic no se hizo en el elemento excluido o en uno de sus descendientes
+                if (!$(event.target).closest("#fechas,#calendario").length) {
+                    // Aquí pones el código que deseas ejecutar cuando se hace clic en cualquier lugar de la pantalla excepto en el elemento excluido
+                    if ($("#fechas").css("display") == "block") {
+                        $("#fechas").css("display", "none");
+                        $("#calendario").attr("data-toggle-button", "true");
+                    }
+                }
+            });
+
+            window.addEventListener('resize', function (event) {
+                // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
+                if ($("#fechas").css("display") == "block") {
+                    $("#fechas").css("display", "none");
+                    $("#calendario").attr("data-toggle-button", "true");
+                }
+            });
 
         });    
     </script>
 </body>
+
 </html>

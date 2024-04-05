@@ -72,6 +72,21 @@
             padding-right: 2px;
         }
 
+        .autores-article {
+            font-size: 15px;
+            margin-bottom: 6px;
+            font-style: italic;
+            font-family: 'Lora';
+            letter-spacing: 1px;
+            height: 40px !important;
+            text-overflow: ellipsis;
+            white-space: pre-wrap;
+            overflow: hidden !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
         .article-book {
             position: static !important;
             padding: 10px !important;
@@ -200,6 +215,16 @@
                 text-align: end;
             }
 
+        }
+
+        .titulo-blog {
+            height: 40px !important;
+            text-overflow: ellipsis;
+            white-space: pre-wrap;
+            overflow: hidden !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .descripcion-blog {
@@ -357,7 +382,7 @@
                                 aria-expanded="false">Recursos</a>
                             <i class="ddl-switch fa fa-angle-down"></i>
                             <ul class="dropdown-menu">
-                                <li><a href="biblioteca.html" title="Biblioteca" class="activeList">Biblioteca</a></li>
+                                <li><a href="biblioteca.html" title="Biblioteca">Biblioteca</a></li>
                                 <li><a href="#" title="Proyectos Culturales">Documentos</a></li>
                             </ul>
                         </li>
@@ -452,7 +477,7 @@
 
         <div class="container">
             <div class="row" id="listBlog">
-                
+
             </div>
 
             <nav class="ow-pagination">
@@ -700,11 +725,11 @@
                     etiquetas_get = etiquetas_get.split("-");
                     librosFiltrados = filtrarPorListaEtiquetas(librosFiltrados, etiquetas_get);
                     etiquetas_get = etiquetas_get.join("-");
+                } else {
+                    etiquetas_get = "";
                 }
-
                 var urlBibliotetaBusqueda = "";
                 var busqueda = "";
-
                 if (titulo_get == "" && descripcion_get == "" && categoria_get == "" && etiquetas_get == "") {
                     urlBibliotetaBusqueda = "";
                 } else {
@@ -720,7 +745,7 @@
                 }
 
                 datosJSON = librosFiltrados;
-                numPage = Math.ceil((datosJSON.length) / 6);
+                numPage = Math.ceil((datosJSON.length) / 20);
                 if (numPage == 1) {
                     $("#page-one").addClass("active-page")
                     $("#page-one").attr("href", "blog.html?page=" + numPage + urlBibliotetaBusqueda);
@@ -876,7 +901,7 @@
 
 
                 $("#listBlog").addClass("display-none-div");
-                mostrarDatosPorPagina(datosJSON, numeroPagina, 6);
+                mostrarDatosPorPagina(datosJSON, numeroPagina, 20);
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
             }
@@ -900,29 +925,74 @@
                     let categoria = libro["categoria"];
                     let imagen = libro["portada"];
                     let id = libro["id"];
+                    let autores = libro["autores"];
+                    let listAutores = "";
+                    for (i = 0; i < autores.length; i++) {
+                        listAutores += `<a>${autores[i]}</a>`;
+                        if (autores.length == 2 && i < 1) {
+                            listAutores += " y ";
+                        } else if (autores.length > 2 && i < (autores.length - 2)) {
+                            listAutores += " , ";
+                        }
+                        else if (i == (autores.length - 2)) {
+                            listAutores += " y ";
+                        }
+
+                    }
 
                     let fechaPublicacion = libro["fecha publicacion"];
-
                     datosArticleBook += `
                     
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-3 col-xs-6">
                             <div class="thumbnail">
-                            <img src="images/blogs/${imagen}" alt="..." style="height: 250px;object-fit: contain;">
+                                <a href="images/blogs/${imagen}" data-imagen="${imagen}" data-lightbox="image-1">
+										
+                                        <img src="images/blogs/${imagen}" alt="..." style="height: 250px;object-fit: contain;">
+									</a>
                             <div class="caption">
-                                <h3 style="height:50px">${titulo}</h3>
+                                <h4 title="${titulo}" class="titulo-blog">${titulo}</h4>
+                                <div class="autores-article">Por: ${listAutores}</div>
                                 <p class="descripcion-blog">${resumen}</p>
                                 <p class="button-post"><a href="../blog/detalles.html?id=${id}" class="btn btn-primary" role="button">Ver más</a></p>
                             </div>
                             </div>
                         </div>`;
 
+                        verificarExistenciaImagen("images/blogs/" + imagen, function (existe) {
+                            if (existe) {
+                                $(".portada[data-imagen='" + imagen + "']").attr("data-lightbox", "image-1");
+                                $(".portada[data-imagen='" + imagen + "']").attr("href", "images/blogs/" + imagen);
+                                $(".portada[data-imagen='" + imagen + "']").html("<i class='fa fa-eye'></i>");
+        
+                            }
+                        });
                 });
+
+
+
 
                 $("#listBlog").html(datosArticleBook);
 
 
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
+            }
+
+            function verificarExistenciaImagen(url, callback) {
+
+                try {
+                    var img = new Image();
+                    img.onload = function () {
+                        callback(true);
+                    };
+                    img.onerror = function () {
+                        callback(false);
+                    };
+                    img.src = url;
+                } catch (error) {
+                    console.error("Error al verificar la existencia de la imagen:", error);
+                    callback(false);
+                }
             }
 
             function animateArticle() {
