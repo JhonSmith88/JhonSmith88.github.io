@@ -332,12 +332,16 @@
         }
 
         @media screen and (max-width: 700px) {
-            .page-banner h2 {
-                padding: 0px;
-                font-size: 2.5em;
-                line-height: 50px;
-            }
-
+            .section-padding {
+				padding-bottom: 19px !important;
+				padding-top: 34px !important;
+			}
+			
+			.page-banner h2 {
+				padding: 14px;
+				font-size: 26px;
+				line-height: 34px;
+			}
             .page-banner {
                 background-size: cover !important;
                 background-position: left;
@@ -400,7 +404,21 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
         }
+        .titulo-libro a{
+            color: #222222;
+            text-decoration: none;
+            transition: all 1s ease 0s;
+        }
+        .titulo-libro a:hover{
+            color: #0fa804f4;
+        }
         p img{
+            display: none;
+        }
+        .entry-content ol{
+            display: none;
+        }
+        .caption ol{
             display: none;
         }
     </style>
@@ -734,7 +752,7 @@
                                 </div>
                             </aside>
                         </div>
-                        <div class="p-find col-md-3 col-sm-6 col-xs-12">
+                        <div class="p-find col-md-3 col-sm-6 col-xs-6">
                             <aside id="categoria-menu-asignatura" class="widget widget_search">
                                 <div class="input-group col-md-12 col-sm-12 col-xs-12">
                                     <!-- Input de texto -->
@@ -952,6 +970,7 @@
         // Variable global para almacenar los datos del JSON
         var listaFechasLibros;
         var sigloIndex;
+        var debugLibros;
         $(document).ready(function () {
 
             // Número de elementos por página
@@ -1398,6 +1417,8 @@
                             return fechaB.diff(fechaA); // Orden descendente
                         }
                     });
+
+                    librosFiltrados = librosFiltrados.sort(sortByPublicacion);
                 }
 
                 var urlBibliotetaBusqueda = "";
@@ -1432,6 +1453,8 @@
                 }
                 // Eliminar el parámetro "parametro"
                 datosJSON = librosFiltrados;
+                
+                debugLibros = librosFiltrados;
                 contYearBook(datosJSON);
                 //numero de resultados
                 $("#contBook").html(`
@@ -1466,6 +1489,8 @@
                     $("#page-four-li").addClass("display-page")
                     $("#right-page").addClass("display-page")
                     $("#page-after-li").removeClass("display-page")
+                    $("#page-one").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
+                    $("#page-two").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
                     $("#page-after").attr("href", "biblioteca.html?page=" + (1) + urlBibliotetaBusqueda);
                     $("#page-next").attr("href", "biblioteca.html?page=" + (2) + urlBibliotetaBusqueda);
                 }
@@ -1644,24 +1669,24 @@
                     let autor = libro["AUTORES"];
                     let ambito = libro["AMBITO"];
                     let imagen = libro["IMAGEN"];
-                    let afiliacion = libro["AFILIACION"]
+                    let fondo = libro["LOGO_FONDO"]
                     let id = libro["ID"];
 
                     let fechaPublicacion = libro["PUBLICACION"];
                     fechaPublicacion = fechaFomart(fechaPublicacion);
 
                     if (!isNaN(viewDisplay) || viewDisplay == "list") {
-                        var logoAfiliacion = "";
+                        var logoFondo = "";
                         var linkDescarga = "";
-                        if(afiliacion == "casa de la cultura de El Oro"){
-                            logoAfiliacion = `<img src="images/libros/cce-elOro-logo.jpg" style="position: absolute;z-index: 3;width: 68px;top: -11px;right: 17px;">`
+                        if(isNaN(fondo)){
+                            logoFondo = `<img src="images/libros/${fondo}" style="position: absolute;z-index: 3;width: 68px;top: -11px;right: 17px;">`
                         }
                         if(isNaN(libro["LINK"])){
                             linkDescarga = `<a href="${libro["LINK"]}" target="_blank" style="margin-left: 30px;text-align: center;"><i class="fa fa-download" aria-hidden="true" style="border-radius: 10px;background: #ddd;width: 84px;margin-left: 0px;padding-top: 4px;height: 20px;"></i></a>`;
                         }
                         datosArticleBook += `<article class='type-post col-md-12 type-post-book'>
                             <div class='entry-content article-book'>
-                                ${logoAfiliacion}
+                                ${logoFondo}
                                 <h3 class='entry-title'>
                                     <a href='libros.html?id=${id.replace(/\s/g, "")}' title='Título del libro'>${titulo}</a>
                                 </h3>
@@ -1676,10 +1701,10 @@
                                     </article>`;
                                     
                     } else if (viewDisplay == "thumbnails") {
-                        var logoAfiliacion = "";
+                        var logoFondo = "";
                         var linkDescarga = "";
-                        if(afiliacion == "casa de la cultura de El Oro"){
-                            logoAfiliacion = `<img src="images/libros/cce-elOro-logo.jpg" style="position: absolute;z-index: 3;width: 68px;top: -11px;left: 0px;">`
+                        if(isNaN(fondo)){
+                            logoFondo = `<img src="images/libros/${fondo}" style="position: absolute;z-index: 3;width: 68px;top: -11px;left: 0px;">`
                         }
 
                         if(isNaN(libro["LINK"])){
@@ -1689,7 +1714,7 @@
                         $("#list").removeClass("btn-display-galery-select");
                         datosArticleBook += `<div class="col-sm-6 col-md-3 col-xs-12">
                             <div class="thumbnail ">
-                                ${logoAfiliacion}
+                                ${logoFondo}
                                 <div class="book-content" style="align-items: end;display: grid;justify-content: center;">
                                     <a href="images/libros/${imagen.replace(/\s/g, "")}" data-imagen="${imagen.replace(/\s/g, "")}" data-lightbox="image-1" style="position: relative;z-index: 2;">
                                         <div style="" class="book-cover">
@@ -1703,7 +1728,7 @@
                                 <div style="text-align: center;height:23px;margin-top: 26px;">${linkDescarga}</div>
                                 <div class="caption">
                                     
-                                    <h4 title="${titulo}" class="titulo-libro">${titulo}</h4>
+                                    <h4 title="${titulo}" class="titulo-libro"><a href="libros.html?id=${id.replace(/\s/g, "")}">${titulo}</a></h4>
                                     <div class='entry-meta' style="display:grid;">
                                         <div class='byline'>Autor: 
                                             <a href='biblioteca.html?autor=${(autor == "") ? "Desconocido" : autor}' title='autor'>${(autor == "") ? "Desconocido" : autor}</a>
@@ -1957,38 +1982,38 @@
             // Llamar a la función cuando se cargue la página
             consultarJSON().then(function(){
                 ajustarAltura();
+                var urlParams = new URLSearchParams(window.location.search);
+                var vista = urlParams.get('page');
+                
                 setTimeout(function(){
                     var portada = $(".book-content");
                     var alturaMaximaPortada = 0;
                     portada.each(function() {
                         var altura = $(this).height(); 
-                        console.log(altura);
                         if (altura > alturaMaximaPortada) {
                             alturaMaximaPortada = altura;
                         }
                     });
                     portada.height(alturaMaximaPortada);
                 }, 1000);
-
-                setTimeout(function(){
-                    
-
-                    var anchoThumbnail = $(".thumbnail").width();
-                    var portadaAncho = $(".shadow-image img");
-                    var anchoMaximaPortada = 0;
-                    portadaAncho.each(function() {
-                        var ancho = $(this).width(); 
-                        if (ancho > anchoMaximaPortada) {
-                            anchoMaximaPortada = ancho;
+                
+                if(vista == "thumbnails"){
+                    setTimeout(function(){
+                        var anchoThumbnail = $(".thumbnail").width();
+                        var portadaAncho = $(".shadow-image img");
+                        var anchoMaximaPortada = 0;
+                        portadaAncho.each(function() {
+                            var ancho = $(this).width(); 
+                            if (ancho > anchoMaximaPortada) {
+                                anchoMaximaPortada = ancho;
+                            }
+                        });
+                        if((anchoThumbnail - anchoMaximaPortada) < 0){
+                            portadaAncho.width(anchoThumbnail - 20);
                         }
-                    });
-                    if((anchoThumbnail - anchoMaximaPortada) < 0){
-                        console.log("No cabe");
-                        portadaAncho.width(anchoThumbnail - 20);
-                        console.log(anchoMaximaPortada);
-                    }
-
-                },1000);
+    
+                    },1000);
+                }
 
             });
             // Mostrar los datos para la página actual
@@ -2107,6 +2132,17 @@
                 }
             });
 
+            // Ordenar segun el año de publicacion dejando a los libros sin fecha al final
+            function sortByPublicacion(a, b) {
+                if (a.PUBLICACION === "" && b.PUBLICACION !== "") {
+                    return 1; // Si a no tiene información pero b sí, colocar a al final
+                } else if (a.PUBLICACION !== "" && b.PUBLICACION === "") {
+                    return -1; // Si a tiene información pero b no, colocar b al final
+                } else {
+                    return 0; // De lo contrario, mantener el orden actual
+                }
+            }
+
             window.addEventListener('resize', function (event) {
                 // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
                 if ($("#fechas").css("display") == "block") {
@@ -2114,17 +2150,19 @@
                     $("#calendario").attr("data-toggle-button", "true");
                 }
                 $(".book-content").css("height","auto");
-                var portada = $(".book-content");
-                var alturaMaximaPortada = 0;
-                portada.each(function() {
-                    var altura = $(this).height(); 
-                    console.log(altura);
-                    if (altura > alturaMaximaPortada) {
-                        alturaMaximaPortada = altura;
-                    }
-                });
-                console.log(alturaMaximaPortada);
-                portada.height(alturaMaximaPortada);
+                var urlParams = new URLSearchParams(window.location.search);
+                var vista = urlParams.get('view');
+                if(vista == "thumbnails"){
+                    var portada = $(".book-content");
+                    var alturaMaximaPortada = 0;
+                    portada.each(function() {
+                        var altura = $(this).height(); 
+                        if (altura > alturaMaximaPortada) {
+                            alturaMaximaPortada = altura;
+                        }
+                    });
+                    portada.height(alturaMaximaPortada);
+                }
 
                 $(".shadow-image img").css("width","auto");
                 var anchoThumbnail = $(".thumbnail").width();
@@ -2137,9 +2175,7 @@
                     }
                 });
                 if((anchoThumbnail - anchoMaximaPortada) < 0){
-                    console.log("No cabe");
                     portadaAncho.width(anchoThumbnail - 20);
-                    console.log(anchoMaximaPortada);
                 }
             });
 
