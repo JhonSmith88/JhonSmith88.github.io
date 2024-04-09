@@ -1035,6 +1035,7 @@
                 $(this).val('');
             });
 
+            
 
             $('.option-categoria').click(function () {
                 var textoOpcion = $(this).text();
@@ -1128,6 +1129,13 @@
                 })
 
             });
+
+            $("#result").on("click",".logo-fondo",function(){
+                var idBlog = $(this).attr("data-blog-fondo");
+                if(idBlog == 9){
+                    window.location.href = `blog/detalles.html?id=${idBlog}`;
+                }
+            })
 
             $("#fechas").on("click", ".btn-siglo", function () {
                 siglo = Object.keys(listaFechasLibros);
@@ -1669,17 +1677,31 @@
                     let autor = libro["AUTORES"];
                     let ambito = libro["AMBITO"];
                     let imagen = libro["IMAGEN"];
-                    let fondo = libro["LOGO_FONDO"]
+                    let fondo = libro["LOGO_FONDO"];
+                    let fondoNombre = libro["FONDO"];
+                    
                     let id = libro["ID"];
 
                     let fechaPublicacion = libro["PUBLICACION"];
                     fechaPublicacion = fechaFomart(fechaPublicacion);
 
+                    var fondoBlog = "";
+                    if(isNaN(fondoNombre)){
+                        if(fondoNombre == "Mario José Añazco Romero"){
+                            fondoBlog = 9;
+                        }else if(fondoNombre == "casa de la cultura de El Oro"){
+                            fondoBlog = 10;
+                        }else{
+                            fondoBlog = "";
+                        }
+                    }
+                    console.log(fondoBlog);
+
                     if (!isNaN(viewDisplay) || viewDisplay == "list") {
                         var logoFondo = "";
                         var linkDescarga = "";
                         if(isNaN(fondo)){
-                            logoFondo = `<img src="images/libros/${fondo}" style="position: absolute;z-index: 3;width: 68px;top: -11px;right: 17px;">`
+                            logoFondo = `<img class="logo-fondo" data-blog-fondo="${fondoBlog}" src="images/libros/${fondo}" style="cursor: pointer;position: absolute;z-index: 3;width: 68px;top: -11px;right: 17px;">`
                         }
                         if(isNaN(libro["LINK"])){
                             linkDescarga = `<a href="${libro["LINK"]}" target="_blank" style="margin-left: 30px;text-align: center;"><i class="fa fa-download" aria-hidden="true" style="border-radius: 10px;background: #ddd;width: 84px;margin-left: 0px;padding-top: 4px;height: 20px;"></i></a>`;
@@ -1704,7 +1726,7 @@
                         var logoFondo = "";
                         var linkDescarga = "";
                         if(isNaN(fondo)){
-                            logoFondo = `<img src="images/libros/${fondo}" style="position: absolute;z-index: 3;width: 68px;top: -11px;left: 0px;">`
+                            logoFondo = `<img class="logo-fondo" data-blog-fondo="${fondoBlog}" src="images/libros/${fondo}" style="cursor: pointer;position: absolute;z-index: 3;width: 68px;top: -11px;left: 0px;">`
                         }
 
                         if(isNaN(libro["LINK"])){
@@ -2179,7 +2201,9 @@
                 }
             });
 
-        });    
+        });  
+        
+        
     </script>
 </body>
 

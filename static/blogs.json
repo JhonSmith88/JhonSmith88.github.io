@@ -48,7 +48,7 @@
       {
         "subtitulo": "La Historia del Colegio y sus Logros Actuales",
         "tipo":"parrafo",
-        "contenido":"En las páginas de nuestra revista, podrás sumergirte en la fascinante historia de nuestra institución. Desde sus humildes comienzos hasta su posición actual como un bastión de educación de calidad, cada década se relata con detalle, mostrando los hitos y desafíos que han marcado nuestro camino.\nUn aspecto destacado de esta edición es el reconocimiento a nuestros ex alumnos y su impacto en la comunidad. A través de un emotivo artículo de opinión, celebramos los logros y contribuciones de aquellos que una vez llamaron a estas aulas su hogar. Desde destacados profesionales en el ámbito local hasta líderes a nivel nacional, nos enorgullece ver cómo los valores inculcados en el Colegio 8 de Noviembre continúan inspirando el cambio positivo en la sociedad."
+        "contenido":"En las páginas de nuestra revista, podrás sumergirte en la fascinante historia de nuestra institución. Desde sus humildes comienzos hasta su posición actual como un bastión de educación de calidad, cada década se relata con detalle, mostrando los hitos y desafíos que han marcado nuestro camino.\n\nUn aspecto destacado de esta edición es el reconocimiento a nuestros ex alumnos y su impacto en la comunidad. A través de un emotivo artículo de opinión, celebramos los logros y contribuciones de aquellos que una vez llamaron a estas aulas su hogar. Desde destacados profesionales en el ámbito local hasta líderes a nivel nacional, nos enorgullece ver cómo los valores inculcados en el Colegio 8 de Noviembre continúan inspirando el cambio positivo en la sociedad."
       },
       {
         "subtitulo": "El Legado de los Novembrinos y el Arte de la Palabra",
@@ -553,5 +553,54 @@
     "documentos":"",
     "recursos": "",
     "anexos": [{ "titulo": "Blog relatos de Mushinga", "ruta": "https://relatosdemushinga.blogspot.com/2023/11/mi-libro-preferido.html?view=mosaic" }]
+  },
+  {
+    "id": "9",
+    "titulo": "Fondo Bibliotecario Mario José Añazco Romero",
+    "tema": "Fondo Bibliotecario Mario José Añazco Romero",
+    "resumen":"El Colegio de Bachillerato \"8 de Noviembre\" se enorgullece en anunciar la creación del Fondo Bibliotecario Mario José Añazco Romero. Este fondo, nombrado en honor al eminente docente e investigador, el Sr. Mario José Añazco Romero, celebra su destacada trayectoria académica y su incansable dedicación al avance del conocimiento en diversas áreas, particularmente en el ámbito de la silvicultura y la agroforestería.",
+    "categoria": "Personas destacadas",
+    "etiquetas": ["Ex-novembrinos","Biblioteca","Fondo bibliotecario", "Donaciones","Profesionales Piñasienses"],
+    "autores": [""],
+    "fecha inicio": "",
+    "fecha publicacion": "09/04/2024",
+    "descripcion": [
+      {
+        "subtitulo": "Fondo Bibliotecario Mario José Añazco Romero",
+        "tipo": "parrafo",
+        "contenido": "El Colegio de Bachillerato \"8 de Noviembre\" se enorgullece en anunciar la creación del Fondo Bibliotecario Mario José Añazco Romero. Este fondo, nombrado en honor al eminente docente e investigador, el Sr. Mario José Añazco Romero, celebra su destacada trayectoria académica y su incansable dedicación al avance del conocimiento en diversas áreas, particularmente en el ámbito de la silvicultura y la agroforestería. \n\nEl fondo consta de 26 publicación de su autoría y coautoría en formato digital que pueblo consultar en este <a href=”https://jhonsmith88.github.io/biblioteca.html?page=1&codigo=MJAR&orden=desc&view=thmbnails”>enlace</a>."
+      },
+      {
+        "subtitulo":"Un ex-novembrino destacado",
+        "tipo":"parrafo",
+        "contenido":"Nacido en Piñas, Provincia El Oro, Ecuador, el Sr. Añazco Romero es un exalumno distinguido de nuestro colegio. Su formación como Bachiller Agropecuario sentó las bases para una carrera excepcional en el campo de la ingeniería forestal y el desarrollo rural. Su profundo apego por su colegio y la comunidad piñasiense ha sido evidente a lo largo de su carrera, reflejándose en su continua dedicación a la educación y al desarrollo sostenible en Ecuador."
+      },
+      {
+        "subtitulo": "",
+        "tipo": "imagen",
+        "contenido": "Mario Jose Añazco.jpeg"
+      },
+      {
+        "subtitulo":"",
+        "tipo":"parrafo",
+        "contenido":"Logros Académicos y Profesionales: El Sr. Añazco Romero es un referente en el ámbito académico nacional e internacional. Actualmente, ejerce como docente e investigador en la Universidad Técnica del Norte en Ibarra, Ecuador, donde imparte clases en asignaturas fundamentales como Silvicultura, Agroforestería y Economía Forestal. Además, coordina el programa de investigación Juglans, demostrando su compromiso con el desarrollo científico en su país.\n\nSu influencia trasciende las fronteras universitarias, ya que ha sido invitado como docente a programas de maestría en varias universidades del Ecuador, compartiendo su experiencia en áreas clave como Agroecología y elaboración de proyectos. Su vasta experiencia incluye roles como Viceministro de Patrimonio Natural y Cultural, así como Asesor de la Ministra de Ambiente, destacando su compromiso con la conservación y el manejo sostenible de los recursos naturales."
+      },
+      {
+        "subtitulo":"Contribuciones Destacadas",
+        "tipo":"parrafo",
+        "contenido": "Los logros del Sr. Añazco Romero son extraordinarios. Ha desempeñado roles destacados en proyectos de desarrollo forestal a nivel nacional e internacional, colaborando con organizaciones como la FAO y CARE Internacional. Entre sus contribuciones más destacadas se encuentra la introducción de especies forestales beneficiosas para comunidades locales, como el Alnus nepalensis, y la coordinación de inventarios forestales pioneros en Ecuador."
+      },
+      {
+        "subtitulo":"Legado y Reconocimiento",
+        "tipo":"parrafo",
+        "contenido":"El establecimiento del Fondo Bibliotecario Mario José Añazco Romero es un testimonio de su legado y una expresión de gratitud por su contribución. Los libros donados por el Sr. Añazco Romero enriquecerán el acervo de nuestra biblioteca, proporcionando a nuestros estudiantes acceso a conocimientos fundamentales en el campo de la silvicultura y la agroforestería. Agradecemos profundamente su generosidad y dedicación a la educación.\n\nEl Fondo Bibliotecario Mario José Añazco Romero representa más que un simple reconocimiento; es un símbolo del compromiso con la educación y la investigación en la construcción de un futuro sostenible. Agradecemos al Sr. Añazco Romero por su invaluable contribución y esperamos que su legado inspire a las generaciones futuras.\n\nQueremos expresar nuestro agradecimiento por el continuo apoyo y colaboración en este proyecto."
+      }
+    ],
+    "portada": "mjnr-logo.png",
+    "fotografias": "",
+    "videos": "",
+    "documentos":"",
+    "recursos": [{ "titulo": "Hoja de vida", "ruta": "Hoja de Vida MJAR.pdf" }],
+    "anexos": [{ "titulo": "Fondo Bibliotecario Mario José Añazco Romero", "ruta": "https://jhonsmith88.github.io/biblioteca.html?page=1&codigo=MJAR&orden=desc&view=thumbnails" }]
   }
 ]
