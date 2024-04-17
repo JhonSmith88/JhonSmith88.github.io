@@ -1,34 +1,5 @@
 [
-  {
-    "id": "1",
-    "titulo": "Analisis del libro Drácula de Abraham Stoker",
-    "tema": "Analisis del libro Drácula de Abraham Stoker",
-    "resumen":"Una prueba de formato para la base de datos",
-    "categoria": "Literatura",
-    "etiquetas": ["Libro","Biblioteca", "Analisis"],
-    "autores": ["Juan Pablo Neyra"],
-    "fecha inicio": "",
-    "fecha publicacion": "22/03/2024",
-    "descripcion": [
-      {
-        "subtitulo": "",
-        "tipo": "",
-        "contenido": ""
-      }
-    ],
-    "portada": "Sin-señal.jpg",
-    "fotografias": [
-      { "tipo": "galeria", "imagenes": [{ "titulo": "", "ruta": "" }] }
-    ],
-    "videos": [{
-      "fuente":"",
-      "titulo": "",
-      "ruta": ""
-    }],
-    "documentos":"",
-    "recursos": [{ "titulo": "", "ruta": "" }],
-    "anexos": [{ "titulo": "", "ruta": "" }]
-  },
+  
   {
     "id": "2",
     "titulo": "Revista 60 años",

@@ -708,6 +708,7 @@
                                             <li><a class="option-tipo-doc" data-asignatura-doc="Anexos">Anexos</a></li>
                                             <li><a class="option-tipo-doc" data-asignatura-doc="Anuarios">Anuarios</a>
                                             </li>
+                                            <li><a class="option-tipo-doc" data-asignatura-doc="Artículos científicos">Artículos científicos</a></li>
                                             <li><a class="option-tipo-doc"
                                                     data-asignatura-doc="Bibliografía">Bibliografía</a></li>
                                             <li><a class="option-tipo-doc" data-asignatura-doc="catálogos">Catálogos</a>
@@ -975,7 +976,7 @@
 
             // Número de elementos por página
             var elementosPorPagina = 20;
-            var listCategorias = ['Agropecuaria', 'Arte', 'Artes visuales:', 'Ciencias Naturales', 'Ciencias sociales', 'cocina', 'Derecho', 'economia', 'Educación cívica', 'Emprendimiento', 'Filosofía', 'fisica', 'Informática', 'Lengua extranjera', 'Literatura', 'Matemática', 'Mecánica', 'Pedagogía', 'Psicología', 'Religión', 'Salud y bienestar', ''];
+            var listCategorias = ['Agropecuaria', 'Arte', 'Artes visuales:', 'Ciencias Naturales', 'Ciencias sociales', 'cocina', 'Derecho', 'economia', 'Educación cívica', 'Emprendimiento', 'Filosofía', 'fisica', 'Historia', 'Informática', 'Lengua extranjera', 'Literatura', 'Matemática', 'Mecánica', 'Pedagogía', 'Psicología', 'Religión', 'Salud y bienestar', ''];
 
             listCategorias.map(function (categoria) {
                 $("#listaCategorias").append("<li><a class='option-categoria'>" + categoria + "</a></li>")
@@ -1242,6 +1243,7 @@
                         })
                         .then(animate => {
                             $("#articleBook").removeClass("display-none-div");
+                            $("#site-loader-article").css("display","none")
                             setTimeout(animateArticle, 500);
                             
                             resolve();
@@ -1372,13 +1374,13 @@
                     estado = estado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
                     if (categoria_get == "Ninguno" && estado_get == "Sin definir") {
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria === "" && estado === "";
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && tipo_doc.includes(tipo_doc_get.toLocaleLowerCase()) && categoria === "" && estado === "";
                     } else if (categoria_get == "Ninguno") {
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && categoria === "";
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && tipo_doc.includes(tipo_doc_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase()) && categoria === "";
                     } else if (estado_get == "Sin definir") {
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado === "";
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && tipo_doc.includes(tipo_doc_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado === "";
                     } else {
-                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase());
+                        return titulo.includes(titulo_get.toLocaleLowerCase()) && resumen.includes(resumen_get.toLocaleLowerCase()) && codigo.includes(codigo_get.toLocaleLowerCase()) && tipo_doc.includes(tipo_doc_get.toLocaleLowerCase()) && categoria.includes(categoria_get.toLocaleLowerCase()) && estado.includes(estado_get.toLocaleLowerCase());
                     }
                 })
 
@@ -1632,7 +1634,7 @@
                 $("#articleBook").addClass("display-none-div");
                 
                 mostrarDatosPorPagina(datosJSON, numeroPagina, elementosPorPagina);
-                
+                $("#site-loader-article").css("display","none")
                 
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
@@ -1783,6 +1785,7 @@
                 });
 
                 $("#articleBook").html(datosArticleBook);
+                $("#site-loader-article").css("display","none")
                 
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
@@ -2164,6 +2167,8 @@
                     return 0; // De lo contrario, mantener el orden actual
                 }
             }
+
+            setTimeout($("#site-loader-article").css("display","none"), 500);
 
             window.addEventListener('resize', function (event) {
                 // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
