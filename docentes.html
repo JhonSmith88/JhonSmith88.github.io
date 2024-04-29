@@ -48,7 +48,7 @@
 		.social-icons {
 		  position: fixed;
 		  top: 90px;
-		  right: 0;
+		  right: 20px;
 		}
 		.social-icons a {
 		  display: inline-block;
@@ -81,16 +81,31 @@
 			position: relative;
 			text-align: center;
 			min-height: 278px;
-			align-content: center;
+			align-content: end;
 			width: 100%;
 			min-height: unset;
+            margin-bottom: 40px;
 		}
 		.page-banner h2 {
-			padding: 0px;
-			font-size: 2.4em;
-			line-height: 50px;
+			margin: 0px 50px 0px 50px;
+			padding: 0px 50px 0px 50px;
+			font-size: 2.3em;
+    		line-height: 36px;
+			text-transform: none !important;
 		}
-		@media screen and (max-width: 700px) {
+		.page-banner .row{
+			margin-bottom: 30px;
+		}
+
+        @media screen and (max-width: 1200px) {
+			.page-banner h2 {
+				padding: 14px;
+				font-size: 1.4em;
+				line-height: 22px;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
 			.section-padding {
 				padding-bottom: 19px !important;
 				padding-top: 34px !important;
@@ -98,8 +113,8 @@
 			
 			.page-banner h2 {
 				padding: 14px;
-				font-size: 26px;
-				line-height: 34px;
+				font-size: 1em;
+				line-height: 16px;
 			}
 			.page-banner{
 			background-size: cover !important;
@@ -108,10 +123,13 @@
 			background-repeat: no-repeat;
 			position: relative;
 			text-align: center;
-			align-content: center;
+			align-content: end;
 			width: 100%;
 			height: 100%;
 		}
+        .page-banner .row{
+				margin-bottom: 0px  ;
+			}
         }
 	  </style>
 
@@ -229,21 +247,28 @@
 								<li><a href="proyectos.html?proyecto=ex-alumnos" title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
 								<li><a href="proyectos.html?proyecto=productivos" title="Proyectos Productivos">Productivos</a></li>
 								<li><a href="proyectos.html?proyecto=ambientales" title="Proyectos Ambientales">Ambientales</a></li>
-								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Culturales">Culturales</a></li>
+								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Artísticos Culturales">Artísticos Culturales</a></li>
                                 <li><a href="proyectos.html?proyecto=deportivos" title="Proyectos Deportivos">Deportivos</a></li>
                                 <li><a href="proyectos.html?proyecto=educativos" title="Proyectos Educativos">Educativos</a></li>
-                                <li><a href="proyectos.html?proyecto=participacion" title="Proyectos Participación Estudiantil">Programas de Participación Estudiantil</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" title="Proyectos" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
+							<a href="#" title="Recursos" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
 								<li><a href="biblioteca.html" title="Biblioteca">Biblioteca</a></li>
+								<li><a href="blog.html" title="Blog">Blog</a></li>
 								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
 							</ul>
 						</li>
-						<li><a href="blog.html" title="Blog">Blog</a></li>
+						<li class="dropdown">
+							<a href="#" title="Novedades">Novedades</a>
+							<i class="ddl-switch fa fa-angle-down"></i>
+							<ul class="dropdown-menu">
+								<li><a href="#" title="Comunicados Oficiales">Comunicados Oficiales</a></li>
+								<li><a href="#" title="Eventos">Eventos</a></li>
+							</ul>
+						</li>
 						<li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -255,7 +280,11 @@
 	
 		<!-- Page Banner Section -->
 		<div class="page-banner container-fluid no-padding" id="page-banner">
-			<h2>"La educación no es preparación para la vida; la educación es la vida en sí misma". - John Dewey</h2>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<h2>"La educación no es preparación para la vida; la educación es la vida en sí misma". - John Dewey</h2>
+				</div>
+			</div>
 		</div><!-- Banner Section /- -->
 		
 		<div class="section-padding"></div>
@@ -383,7 +412,7 @@
             // Número de elementos por página
             var elementosPorPagina = 20;
 
-            var listCategorias = ["Matemáticas","Lengua y Literatura","Estudios Sociales (EE.SS)", "Ciencias Naturales (CC.NN)","Ingles", "EE.FF" , "Agropecuaria", "Mecánica","Cultura Estética","Interdisciplinar"];
+            var listCategorias = ["Matemáticas","Lengua y Literatura","Estudios Sociales (EE.SS)", "Ciencias Naturales (CC.NN)","Inglés", "EE.FF" , "Agropecuaria", "Mecánica","Educación Cultural y Artística (ECA)","Interdisciplinar"];
 
             listCategorias.map(function(categoria){
                 $("#listaCategorias").append("<li><a class='option-categoria'>"+ categoria +"</a></li>")
@@ -470,9 +499,9 @@
                     document.title = "Personal Docente - 8 de Noviembre";
                     $("#titulo-principal").text("PERSONAL DOCENTE");
                     if(area_get == ""){
-                        $("#title-area").text("De Todas Las Areas");
+                        $("#title-area").text("De Todas Las Áreas");
                     }else{
-                        $("#title-area").text("Area de " + area_get);
+                        $("#title-area").text("Área de " + area_get);
                     }
                     $("#inputCategoria").val(area_get);
                 }else if(cargo_get=="dece"){
@@ -512,8 +541,12 @@
                     if(cargo_get=="docentes"){
                         var area = libro["Area"].toLowerCase();
                         area = area.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                        return area.includes(area_get.toLocaleLowerCase());  
+                        if(area_get == ""){
+                            return area.includes("");
+                        }else{
+                            return area == area_get.toLocaleLowerCase();
+                        }
+                        
                     }else if(cargo_get=="directivos" || cargo_get==""){
                         return libro.hasOwnProperty("directivo");
                     }else if(cargo_get=="dece"){
@@ -710,9 +743,11 @@
                 // Filtramos los datos para obtener solo los elementos de la página actual
                 var datosPagina = datos.slice(inicio, fin);
                 var datosArticleDocente = "";
-                // Hacemos algo con los datos, por ejemplo, imprimirlos en la consola
-                
-                datosPagina.map(function(docente){
+                var indice_elemento_centrar;
+                indice_elemento_centrar = datosPagina.length - (datosPagina.length%6);
+                console.log(indice_elemento_centrar);
+                // Hacemos algo con los datos, por ejemplo, imprimirlos en la consola 
+                datosPagina.map(function(docente, indice){
                     let imagenError = "";
                     let titulo = docente["Titulo"];
                     let nombre = docente["Nombre"];
@@ -746,7 +781,21 @@
                     activeEmail = (email === undefined || email == "") ? "class='disabled-link'" : "target='_blank'";
                     whatsapp = (whatsapp === undefined || whatsapp == "") ? "#" : "https://api.whatsapp.com/send?phone="+whatsapp.replace(/\+|\s/g, '') +"&text="+mensajeWhatsapp;
                     area = (cargo === undefined || cargo =="") ?  "Area de: " + area : "Cargo: " + cargo;
-                    datosArticleDocente += `<div class="col-md-3 col-sm-6 col-xs-6 margin-top-article">	
+                    
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var cargo_get = urlParams.get('cargo');
+                    cargo_get = isNaN(cargo_get) ? cargo_get: "" ;
+                    var centrar_directivos = "";
+                    
+                    if(indice == indice_elemento_centrar){
+                        centrar_directivos = `col-md-offset-${6-(datosPagina.length%6)}`;
+                    }
+                    
+
+
+                    
+
+                    datosArticleDocente += `<div class="col-md-2 ${centrar_directivos} col-sm-6 col-xs-6 margin-top-article">	
 						<div class="team-box animated flipInY">
 							<div class="team-img">
 								<img src="images/docentes/${id}.jpg" onerror="this.onerror=null; this.src='images/docentes/${imagenError}';" width="250" height="340" alt="Team" />
@@ -847,7 +896,7 @@
 				var indice = Math.floor(Math.random() * listaFiltro.length);
 				frase = listaFiltro[indice];
 	
-				$("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
+				$("#page-banner div div").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
 			}
             escogerFrase();
             
@@ -864,7 +913,6 @@
 				var aspectoImagen =  imagenAncho / imagenAlto;
 				aspectoImagen = ""+aspectoImagen+"";
 				// Calcular la altura del div en función del ancho de la pantalla y el tamaño
-				console.log(aspectoImagen);
 				// Establecer la altura del div
 				$('#page-banner').css("aspect-ratio",aspectoImagen);
 			}

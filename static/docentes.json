@@ -48,7 +48,7 @@
     "Id": "CD07",
     "sexo": "M",
     "directivo": "INSPECTOR GENERAL",
-    "posicion": 4
+    "posicion": 5
   },
   {
     "Titulo": "LIC",
@@ -141,7 +141,7 @@
     "Id": "CD20",
     "sexo": "F",
     "directivo":"SUBINSPECTORA",
-    "posicion": 3
+    "posicion": 4
   },
   {
     "Titulo": "MGS",
@@ -185,7 +185,7 @@
     "Id": "CD26",
     "sexo": "F",
     "directivo":"VICERRECTORA DEL BGU",
-    "posicion": 5
+    "posicion": 3
   },
   {
     "Titulo": "LIC",
@@ -433,14 +433,14 @@
   {
     "Titulo": "MGS",
     "Nombre": "TANIA CARBAY ",
-    "Area": "Cultura Estetica",
+    "Area": "ECA",
     "Id": "CD61",
     "sexo": "F"
   },
   {
     "Titulo": "MGS",
     "Nombre": "DUNIA PEÑAFIEL ",
-    "Area": "Cultura Estetica",
+    "Area": "ECA",
     "Id": "CD62",
     "sexo": "F"
   },
@@ -495,5 +495,19 @@
     "Id": "CD69",
     "sexo": "F",
     "cargo": "Analista DECE"
+  },
+  {
+    "Titulo": "MGS",
+    "Nombre": "MARÍA LIBIA MORALES FEIJOO",
+    "Area": "ECA",
+    "Id": "CD70",
+    "sexo": "F"
+  },
+  {
+    "Titulo": "Lcdo",
+    "Nombre": "Bryan Antonio Torres León",
+    "Area": "EE.FF",
+    "Id": "CD71",
+    "sexo": "M"
   }
 ]

@@ -92,6 +92,8 @@ a {
 	float: left;
 }
 
+
+
 /* - Fonts Settings */
 /* - Lato Medium :- font-family:'Lato-Medium'; */
 
@@ -1233,9 +1235,9 @@ main {
 /* ========================================================================== */
 
 /* - min-width: 1200 */
-@media (min-width: 1350px) {
+@media (min-width: 1355px) {
 	.container {
-		width: 1350px;
+		width: 1355px;
 	}
 	
 	/* -- Footer */
@@ -1440,3 +1442,7 @@ main {
 		width: 33.33333%;
 	}
   }
+  @font-face {
+	font-family: 'Helvetica Medium';
+    src: url('fonts/helvetica-medium.otf') format('opentype');
+}

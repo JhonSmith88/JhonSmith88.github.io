@@ -48,7 +48,7 @@
 		.social-icons {
 		  position: fixed;
 		  top: 90px;
-		  right: 0;
+		  right: 20px;
 		}
 		.social-icons a {
 		  display: inline-block;
@@ -57,21 +57,36 @@
 		.page-banner{
 			background-position: center;
 			background-size: contain !important;
-			background-image: url(images/project-AGRO.jpg) !important;
+			background-image: url(images/Banner-agropecuaria.png) !important;
 			background-repeat: no-repeat;
 			position: relative;
 			text-align: center;
 			min-height: 278px;
-			align-content: center;
+			align-content: end;
 			width: 100%;
 			min-height: unset;
+			margin-bottom: 40px;
 		}
 		.page-banner h2 {
-			padding: 0px;
-			font-size: 2.4em;
-			line-height: 50px;
+			margin: 0px 50px 0px 50px;
+			padding: 0px 50px 0px 50px;
+			font-size: 2.3em;
+    		line-height: 36px;
+			text-transform: none !important;
 		}
-		@media screen and (max-width: 700px) {
+		.page-banner .row{
+			margin-bottom: 30px;
+		}
+
+		@media screen and (max-width: 1200px) {
+			.page-banner h2 {
+				padding: 14px;
+				font-size: 1.4em;
+				line-height: 22px;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
 			.section-padding {
 				padding-bottom: 19px !important;
 				padding-top: 34px !important;
@@ -79,21 +94,23 @@
 			
 			.page-banner h2 {
 				padding: 14px;
-				font-size: 26px;
-				line-height: 34px;
+				font-size: 1em;
+				line-height: 16px;
 			}
 			.page-banner{
-			background-size: cover !important;
-			background-position: left;
-			background-image: url(images/project-AGRO.jpg) !important;
-			background-repeat: no-repeat;
-			position: relative;
-			text-align: center;
-			align-content: center;
-			width: 100%;
-			height: 100%;
-			
-		}
+				background-size: cover !important;
+				background-position: left;
+				background-image: url(images/Banner-agropecuaria.png) !important;
+				background-repeat: no-repeat;
+				position: relative;
+				text-align: center;
+				align-content: end;
+				width: 100%;
+				height: 100%;
+			}
+			.page-banner .row{
+				margin-bottom: 0px  ;
+			}
 
         }
 	  </style>
@@ -189,9 +206,9 @@
 							<ul class="dropdown-menu">
 								<li><a href="egbs.html" title="EGBS">Educación General Básica Superior </a></li>
 								<hr>
+                                <li><a href="ciencias.html" title="Ciencias">Bachillerato en Ciencias</a></li>
 								<li><a href="agro.html" title="Produccion Agropecuaria" class="activeList">Producción Agropecuaria</a></li>
 								<li><a href="mecanica.html" title="Mecanizado">Mecanizado y Construcciones Metálicas</a></li>
-                                <li><a href="ciencias.html" title="Ciencias">Bachillerato en Ciencias</a></li>
 
 							</ul>
 						</li>
@@ -212,21 +229,28 @@
 								<li><a href="proyectos.html?proyecto=ex-alumnos" title="Proyectos de Ex-Alumnos">Ex-Alumnos</a></li>
 								<li><a href="proyectos.html?proyecto=productivos" title="Proyectos Productivos">Productivos</a></li>
 								<li><a href="proyectos.html?proyecto=ambientales" title="Proyectos Ambientales">Ambientales</a></li>
-								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Culturales">Culturales</a></li>
+								<li><a href="proyectos.html?proyecto=culturales" title="Proyectos Artísticos Culturales">Artísticos Culturales</a></li>
                                 <li><a href="proyectos.html?proyecto=deportivos" title="Proyectos Deportivos">Deportivos</a></li>
                                 <li><a href="proyectos.html?proyecto=educativos" title="Proyectos Educativos">Educativos</a></li>
-                                <li><a href="proyectos.html?proyecto=participacion" title="Proyectos Participación Estudiantil">Programas de Participación Estudiantil</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" title="Proyectos" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
+							<a href="#" title="Recursos" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Recursos</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
 								<li><a href="biblioteca.html" title="Biblioteca">Biblioteca</a></li>
+								<li><a href="blog.html" title="Blog">Blog</a></li>
 								<li><a href="#" title="Proyectos Culturales">Documentos</a></li>
 							</ul>
 						</li>
-						<li><a href="blog.html" title="Blog">Blog</a></li>
+						<li class="dropdown">
+							<a href="#" title="Novedades">Novedades</a>
+							<i class="ddl-switch fa fa-angle-down"></i>
+							<ul class="dropdown-menu">
+								<li><a href="#" title="Comunicados Oficiales">Comunicados Oficiales</a></li>
+								<li><a href="#" title="Eventos">Eventos</a></li>
+							</ul>
+						</li>
 						<li><a href="contact-us.html" title="Contactenos">CONTÁCTENOS</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -236,22 +260,25 @@
 	
 	<main class="site-main page-spacing">
 	
-		<!-- Page Banner Section -->
-		<div class="page-banner project-agro container-fluid no-padding" id="page-banner">
-			<h2>"La Agronomía es la ciencia que convierte el sol y la lluvia en comida." - Jim Gaffigan.</h2>
-		</div><!-- Banner Section /- -->
-		
-		<div class="section-padding"></div>
+		 
 		
 		<!-- Welcome Section -->
+		<div class="section-header" style="margin-top: 40px;margin-bottom: 20px;">
+			<h3>ESPECIALIDAD EN Producción Agropecuaria</h3>
+			
+		</div><!-- Section Header /- -->
+		<!-- Page Banner Section -->
+		<div class="page-banner project-agro container-fluid no-padding" id="page-banner">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<h2>"La Agronomía es la ciencia que convierte el sol y la lluvia en comida." - Jim Gaffigan.</h2>
+				</div>
+			</div>
+		</div><!-- Banner Section /- -->
 		<div class="welcome-section container-fluid no-padding">
 			<!-- Container -->
 			<div class="container">
 				<!-- Section Header -->
-				<div class="section-header">
-					<h3>ESPECIALIDAD EN Producción Agropecuaria</h3>
-	
-				</div><!-- Section Header /- -->
 				<div style="margin-bottom: 40px;">
 
 		<head>
@@ -435,11 +462,11 @@
 				var indice = Math.floor(Math.random() * listaFiltro.length);
 				frase = listaFiltro[indice];
 	
-				$("#page-banner").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
+				$("#page-banner div div").html(`<h2>"${frase["Frase"]}." - ${frase["Autor"]}</h2>`);
 			}
             escogerFrase();
 			var imagen = new Image();
-			imagen.src = "images/project-AGRO.jpg";
+			imagen.src = "images/Banner-agropecuaria.png";
 			imagen.onload = function() {
 				var imagenAncho = this.width;
 				var imagenAlto = this.height;
