@@ -138,15 +138,6 @@
             display: none;
         }
 
-        .load-parcial {
-            position: absolute !important;
-            display: none;
-            top: unset;
-            bottom: unset;
-            width: 100% !important;
-            height: 250px !important;
-            z-index: 20px;
-        }
 
         .btn-find {
             height: 100% !important;
@@ -881,16 +872,7 @@
                 <p>Resultados</p>
             </div>
             <div id="result">
-                <div>
-                    <!-- Loader -->
-                    <div id="site-loader-article" class="load-complete load-parcial">
-                        <div class="loader">
-                            <div class="loader-inner ball-clip-rotate">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div><!-- Loader /- -->
-                </div>
+                
                 <div id="articleBook" class="col-md-12 col-sm-12 display-none-div" style="padding: 0;">
 
                 </div>
@@ -1263,14 +1245,12 @@
                             return response.json();
                         })
                         .then(datos => {
-                            loaderAnimate();
                             datosJSON = datos;
                             filtrarDatos(datosJSON);
                             return datos;
                         })
                         .then(animate => {
                             $("#articleBook").removeClass("display-none-div");
-                            $("#site-loader-article").css("display","none")
                             setTimeout(animateArticle, 500);
                             
                             resolve();
@@ -1661,7 +1641,6 @@
                 $("#articleBook").addClass("display-none-div");
                 
                 mostrarDatosPorPagina(datosJSON, numeroPagina, elementosPorPagina);
-                $("#site-loader-article").css("display","none")
                 
                 // Hacer algo con los datos, por ejemplo, imprimirlos en la página
                 //
@@ -1812,7 +1791,6 @@
                 });
 
                 $("#articleBook").html(datosArticleBook);
-                $("#site-loader-article").css("display","none")
                 
                 //document.getElementById('result').innerHTML = "<h1>"+ (datosJSON.length) +"</h1>" + "<tr>" +JSON.stringify(datosPagina, null, 2) + ;
                 //
@@ -1969,14 +1947,6 @@
             // Obtener el número de página actual
             var numeroPagina = obtenerNumeroPagina();
 
-            function loaderAnimate() {
-                if (!$("html").is(" .ie6, .ie7, .ie8 ")) {
-                    $("#site-loader-article").delay(1000).fadeOut("slow");
-                }
-                else {
-                    $("#site-loader-article").css("display", "none");
-                }
-            }
 
             function escogerFrase() {
                 var archivoFrases = 'static/frases.json';
@@ -2194,9 +2164,6 @@
                     return 0; // De lo contrario, mantener el orden actual
                 }
             }
-            setTimeout(function() {
-                $("#site-loader-article").css("display","none");
-            }, 500);
 
             window.addEventListener('resize', function (event) {
                 // Aquí puedes poner el código que deseas ejecutar cuando la pantalla cambia de tamaño
