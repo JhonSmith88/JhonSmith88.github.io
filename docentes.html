@@ -162,7 +162,7 @@
 							<p>Bienvenido a la renovación en la Educación</p>
 						</div>
 						<div class="col-md-5 col-sm-12">
-							<a href="mailto:info@ourdomain.com" title="Info@ourdomain.com"><i class="fa fa-envelope"></i>admin@col8nov.com</a>
+							<a href="mailto:inst8nov@hotmail.com" title="inst8nov@hotmail.com"><i class="fa fa-envelope"></i>inst8nov@hotmail.com</a>
 							<a href="tel:+011234567896" title="+011234567896"><i class="fa fa-phone"></i> (+593) 07 2976 015</a>
 						</div>
 					</div>
@@ -451,32 +451,24 @@
                 var docentesFiltrados;
                 var datosJSON;
 
-                if(!localStorage.getItem('datosDocentes')){
-                    fetch(archivoJSON)
-                    .then(response=>{
-                        // Verificar si la solicitud fue exitosa
-                        if (!response.ok) {
-                            throw new Error('La solicitud no fue exitosa');
-                        }
-                        // Convertir la respuesta a un objeto JSON
-                        return response.json();
-                    })
-                    .then(datos=>{
-                        // Asignar los datos a la variable global
-                        datosJSON = datos;
-                        localStorage.setItem('datosDocentes', JSON.stringify(datos));
-                        filtrarDatos(datosJSON);
-                                            
-                    })
-                    .catch(error => {
-                        console.error('Ocurrió un error:', error);
-                    });
-    
-                
-                }else{
-                    datosJSON = JSON.parse(localStorage.getItem('datosDocentes'));
+                fetch(archivoJSON)
+                .then(response=>{
+                    // Verificar si la solicitud fue exitosa
+                    if (!response.ok) {
+                        throw new Error('La solicitud no fue exitosa');
+                    }
+                    // Convertir la respuesta a un objeto JSON
+                    return response.json();
+                })
+                .then(datos=>{
+                    // Asignar los datos a la variable global
+                    datosJSON = datos;
                     filtrarDatos(datosJSON);
-                }
+                                        
+                })
+                .catch(error => {
+                    console.error('Ocurrió un error:', error);
+                });
             }
 
             function filtrarDatos(datosJSON){
@@ -801,7 +793,7 @@
 								<img src="images/docentes/${id}.jpg" onerror="this.onerror=null; this.src='images/docentes/${imagenError}';" width="250" height="340" alt="Team" />
                                 <ul>
 									<li><a href="${whatsapp}" ${activeWhatsapp} title="Whatsapp"><i class="fa fa-whatsapp"></i></a></li>
-									<li><a href="${email}" ${activeEmail} title="Gmail"><i class="fa fa-envelope-o"></i></a></li>
+									<li><a href="mailto:${email}" ${activeEmail} title="Email"><i class="fa fa-envelope-o"></i></a></li>
 								</ul>
 							</div>
 							<p> ${area} ${directivo}</p>

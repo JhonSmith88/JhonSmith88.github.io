@@ -378,7 +378,7 @@
       {
         "subtitulo": "Fondo Bibliotecario Mario José Añazco Romero",
         "tipo": "parrafo",
-        "contenido": "El Colegio de Bachillerato \"8 de Noviembre\" se enorgullece en anunciar la creación del Fondo Bibliotecario Mario José Añazco Romero. Este fondo, nombrado en honor al eminente docente e investigador, el Sr. Mario José Añazco Romero, celebra su destacada trayectoria académica y su incansable dedicación al avance del conocimiento en diversas áreas, particularmente en el ámbito de la silvicultura y la agroforestería. \n\nEl fondo consta de 26 publicación de su autoría y coautoría en formato digital que pueblo consultar en este <a href=”https://jhonsmith88.github.io/biblioteca.html?page=1&codigo=MJAR&orden=desc&view=thmbnails”>enlace</a>."
+        "contenido": "El Colegio de Bachillerato \"8 de Noviembre\" se enorgullece en anunciar la creación del Fondo Bibliotecario Mario José Añazco Romero. Este fondo, nombrado en honor al eminente docente e investigador, el Sr. Mario José Añazco Romero, celebra su destacada trayectoria académica y su incansable dedicación al avance del conocimiento en diversas áreas, particularmente en el ámbito de la silvicultura y la agroforestería. \n\nEl fondo consta de 26 publicación de su autoría y coautoría en formato digital que pueblo consultar en este <a href='../biblioteca.html?page=1&codigo=MJAR&orden=desc&view=thumbnails'>enlace</a>."
       },
       {
         "subtitulo":"Un ex-novembrino destacado",

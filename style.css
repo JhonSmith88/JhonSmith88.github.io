@@ -1316,7 +1316,7 @@ main {
 }
 
 /* - max-width: 991 */
-@media (max-width: 1350px) {	
+@media (max-width: 1355px) {	
 	#slidepanel { 
 		display: none;
 	}

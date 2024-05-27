@@ -102,7 +102,7 @@
 }
 
 /* - Navigation Menu > 991 RES. */
-@media (min-width: 1350px) {
+@media (min-width: 1355px) {
 	.ow-navigation .navbar-brand { 
 		display: none;
 	}
@@ -293,7 +293,7 @@
 }
 
 /* - Navigation Menu Switch < 991 RES */
-@media (max-width: 1350px) {
+@media (max-width: 1355px) {
 	.header-section {
 		background-color: #0fa804f4;
 	}

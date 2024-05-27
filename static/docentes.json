@@ -4,42 +4,48 @@
     "Nombre": "EDWIN SÁNCHEZ",
     "Area": "Matematicas",
     "Id": "CD01",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"edwinsanchez@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "FABIAN AÑAZCO",
     "Area": "Matematicas",
     "Id": "CD02",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"fabiananazco@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "ROBERT ROMERO",
     "Area": "Matematicas",
     "Id": "CD03",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"robertromero@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MAGALY LOAYZA",
     "Area": "Matematicas",
     "Id": "CD04",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"magalyloayza@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "PAULO ROCHA",
     "Area": "Matematicas",
     "Id": "CD05",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"paulorocha@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "MAYRA ROMERO",
     "Area": "Matematicas",
     "Id": "CD06",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"mayraromero@col8nov.com"
   },
   {
     "Titulo": "LIC",
@@ -48,6 +54,7 @@
     "Id": "CD07",
     "sexo": "M",
     "directivo": "INSPECTOR GENERAL",
+    "email":"hermancampoverde@col8nov.com",
     "posicion": 5
   },
   {
@@ -55,84 +62,96 @@
     "Nombre": "MARLY LOAYZA",
     "Area": "Matematicas",
     "Id": "CD08",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"marlyloayza@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "JENNY FEIJOO",
     "Area": "Matematicas",
     "Id": "CD09",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"jennyfeijoo@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MIRIAN MATAMOROS",
     "Area": "Matematicas",
     "Id": "CD10",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"mirianmatamoros@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "MARITZA CUENCA",
     "Area": "Matematicas",
     "Id": "CD11",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"maritzacuenca@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MARIA MERCEDES CARRIÓN",
     "Area": "Lengua y literatura",
     "Id": "CD12",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"mercedescarrion@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "DEBORA PACHECO",
     "Area": "Lengua y literatura",
     "Id": "CD13",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"deborapacheco@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "JHONNY NAVARRETE",
     "Area": "Lengua y literatura",
     "Id": "CD14",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"jhonnynavarrete@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "SOLEDAD ARCENTALES",
     "Area": "Lengua y literatura",
     "Id": "CD15",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"soledadarcentales@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "REVECA RODRIGUEZ",
     "Area": "Lengua y literatura",
     "Id": "CD16",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"revecarodriguez@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "PATRICIA ARCENTALES",
     "Area": "Lengua y literatura",
     "Id": "CD17",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"daysitaarcentales@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "PATRICIA FEIJOO ",
     "Area": "Lengua y literatura",
     "Id": "CD18",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"bettypatricia@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "EDITA PALADINES ROMERO ",
     "Area": "Lengua y literatura",
     "Id": "CD19",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"Paladines@col8nov.com"
   },
   {
     "Titulo": "MGS",
@@ -141,6 +160,7 @@
     "Id": "CD20",
     "sexo": "F",
     "directivo":"SUBINSPECTORA",
+    "email":"rosatoledo@col8nov.com",
     "posicion": 4
   },
   {
@@ -148,35 +168,40 @@
     "Nombre": "DANIELA MALDONADO",
     "Area": "EE.SS",
     "Id": "CD21",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"danielamaldonado@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "LILIA  MACAS",
     "Area": "EE.SS",
     "Id": "CD22",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"liliamacas@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MARIA ELENA POGO",
     "Area": "EE.SS",
     "Id": "CD23",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"MariaPogo@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "MARÍA CATALINA LOAYZA",
     "Area": "EE.SS",
     "Id": "CD24",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"catalinaloayza@col8nov.com"
   },
   { 
     "Titulo": "LIC", 
     "Nombre": "ROSA FEJOO", 
     "Area": "EE.SS", 
     "Id": "CD25",
-    "sexo": "F" 
+    "sexo": "F",
+    "email":"rosafeijoo@col8nov.com"
   },
   {
     "Titulo": "MGS",
@@ -185,6 +210,7 @@
     "Id": "CD26",
     "sexo": "F",
     "directivo":"VICERRECTORA DEL BGU",
+    "email":"lorenaanazco@col8nov.com",
     "posicion": 3
   },
   {
@@ -192,28 +218,32 @@
     "Nombre": "MAURICIO  ROMERO ",
     "Area": "EE.SS",
     "Id": "CD27",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"mauricioromero@col8nov.com"
   },
   { 
     "Titulo": "ING", 
     "Nombre": "JENNY AYALA ", 
     "Area": "EE.SS", 
     "Id": "CD28",
-    "sexo": "F" 
+    "sexo": "F",
+    "email":"jennyayala@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "SANDRA ROMERO ",
     "Area": "EE.SS",
     "Id": "CD29",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"sandraromero@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "LARRY CABRERA",
     "Area": "CC.NN",
     "Id": "CD30",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"larrycabrera@col8nov.com"
   },
   {
     "Titulo": "MGS",
@@ -222,21 +252,24 @@
     "Id": "CD31",
     "sexo": "M",
     "directivo":"VICERRECTOR EGBS",
-    "posicion": 2
+    "posicion": 2,
+    "email":"victorlojan@col8nov.com"
   },
   {
     "Titulo": "BOQ",
     "Nombre": "JOMAYRA JULIANA HERRERA ",
     "Area": "CC.NN",
     "Id": "CD32",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"OmayraHerrera@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "MARIBEL MATAMOROS ",
     "Area": "CC.NN",
     "Id": "CD33",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"yesseniamatamoros@col8nov.com"
   },
   {
     "Titulo": "MGS",
@@ -246,6 +279,7 @@
     "sexo": "M",
     "directivo": "RECTOR",
     "whatsapp":"+593 983268527",
+    "email":"marcoromero@col8nov.com",
     "posicion": 1
   },
   {
@@ -253,224 +287,257 @@
     "Nombre": "FRANCISCO JAVIER ESPINOZA LEÓN ",
     "Area": "CC.NN",
     "Id": "CD35",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"xavierespinoza@col8nov.com"
   },
   { 
     "Titulo": "ING", 
     "Nombre": "MANUEL VELEZ", 
     "Area": "CC.NN", 
     "Id": "CD36",
-    "sexo": "M" 
+    "sexo": "M" ,
+    "email":"manuelvelez@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "MERWIN AGUILA",
     "Area": "CC.NN",
     "Id": "CD37",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"merwinaguila@col8nov.com"
   },
   { 
     "Titulo": "ING", 
     "Nombre": "RUFO FEIJOO", 
     "Area": "CC.NN", 
     "Id": "CD38",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"rufofeijoo@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "JOSÉ AGUILAR",
     "Area": "CC.NN",
     "Id": "CD39",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"joseaguilar@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "FERNANDO AGUIRRE",
     "Area": "CC.NN",
     "Id": "CD40",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"fernandoaguirre@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "YESSENIA SEDAMANOS ",
     "Area": "CC.NN",
     "Id": "CD41",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"yesseniasedamanos@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "DIEGO ZAMBRANO ",
     "Area": "CC.NN",
     "Id": "CD42",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"diegozambrano@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "FANNY PIEDRA ",
     "Area": "CC.NN",
     "Id": "CD43",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"fannypiedra@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "OSCAR AÑAZCO ",
     "Area": "Inglés",
     "Id": "CD44",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"oskaranazco@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "LUSMILA TAPIA ",
     "Area": "Inglés",
     "Id": "CD45",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"lusmilatapia@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MONICA ROMERO ",
     "Area": "Inglés",
     "Id": "CD46",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"monicaromero@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "BETTY VALAREZO ",
     "Area": "Inglés",
     "Id": "CD47",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"betyvalarezo@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "VICTOR MALDONADO ",
     "Area": "Inglés",
     "Id": "CD48",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"victormaldonado@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "MELVA GONZAGA ",
     "Area": "Inglés",
     "Id": "CD49",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"melvagonzaga@col8nov.com"
   },
   { 
     "Titulo": "LIC", 
     "Nombre": "KENNY LUNA ", 
     "Area": "EE.FF", 
     "Id": "CD50",
-    "sexo": "M" 
+    "sexo": "M",
+    "email":"kennyluna@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "FABRICIO VALAREZO",
     "Area": "EE.FF",
     "Id": "CD51",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"fabriciovalarezo@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "JOSÉ LUIS AÑAZCO",
     "Area": "EE.FF",
     "Id": "CD52",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"joseanazco@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "PAULINA ORDOÑEZ",
     "Area": "EE.FF",
     "Id": "CD53",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"paulinaordonez@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "FANNY JIMÉNEZ ",
     "Area": "Agropecuaria",
     "Id": "CD54",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"fannyimenez@col8nov.com"
   },
   {
     "Titulo": "DR",
     "Nombre": "ALVARO RAMÍREZ  ",
     "Area": "Agropecuaria",
     "Id": "CD55",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"",
+    "whatsapp":"alvaroramirez@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "HOLGER ALCIVAR TORRES YANEZ",
     "Area": "Agropecuaria",
     "Id": "CD56",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"holgertorres@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "DENIS ROMERO",
     "Area": "Mecánica",
     "Id": "CD57",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"denisromero@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "FERNANDO APOLO",
     "Area": "Mecánica",
     "Id": "CD58",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"fernandoapolo@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "FERNANDO PACHECO",
     "Area": "Mecánica",
     "Id": "CD59",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"fernandopacheco@col8nov.com"
   },
   {
     "Titulo": "TEC",
     "Nombre": "LUIS LOAYZA",
     "Area": "Mecánica",
     "Id": "CD60",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"luisloayza@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "TANIA CARBAY ",
     "Area": "ECA",
     "Id": "CD61",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"taniacarbay@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "DUNIA PEÑAFIEL ",
     "Area": "ECA",
     "Id": "CD62",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"duniapenafiel@col8nov.com"
   },
   {
     "Titulo": "ABG",
     "Nombre": "ISSIA SAMANIEGO ",
     "Area": "Interdisciplinar",
     "Id": "CD63",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"issiasamaniego@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "ADRIAN URGILES",
     "Area": "Interdisciplinar",
     "Id": "CD64",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"adrianurgiles@col8nov.com"
   },
   {
     "Titulo": "LIC",
     "Nombre": "LADY VACA ",
     "Area": "Interdisciplinar",
     "Id": "CD65",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"ladyvaca@col8nov.com"
   },
   {
     "Titulo": "ING",
     "Nombre": "WALTER ROLDAN",
     "Area": "Interdisciplinar",
     "Id": "CD66",
-    "sexo": "M"
+    "sexo": "M",
+    "email":"walterroldan@col8nov.com"
   },
   {
     "Titulo": "LIC",
@@ -478,30 +545,25 @@
     "Area": "dece",
     "Id": "CD67",
     "sexo": "F",
-    "cargo": "Coordinadora DECE" 
+    "cargo": "Coordinadora DECE",
+    "email":"amparocevallos@col8nov.com" 
   },
   {
     "Titulo": "Psicól",
-    "Nombre": "ALFOSO VINICIO ROMERO CHUCHUCA",
+    "Nombre": "ALFONSO VINICIO ROMERO CHUCHUCA",
     "Area": "dece",
     "Id": "CD68",
     "sexo": "M",
-    "cargo": "Analista DECE"
-  },
-  {
-    "Titulo": "LIC",
-    "Nombre": "FLOR INÉS LOAYZA ESCANDON",
-    "Area": "dece",
-    "Id": "CD69",
-    "sexo": "F",
-    "cargo": "Analista DECE"
+    "cargo": "Analista DECE",
+    "email":"alfonsoromero@col8nov.com"
   },
   {
     "Titulo": "MGS",
     "Nombre": "MARÍA LIBIA MORALES FEIJOO",
     "Area": "ECA",
     "Id": "CD70",
-    "sexo": "F"
+    "sexo": "F",
+    "email":"mariamorales@col8nov.com"
   },
   {
     "Titulo": "Lcdo",
